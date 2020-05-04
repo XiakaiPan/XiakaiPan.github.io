@@ -1,4 +1,4 @@
 
 I'm glad you are here. I plan to talk about ...
 
-This is what I want to show ^_^
+This is first sentence I want to display. ^_^
