@@ -1,4 +1,4 @@
-title: My-First-Page
+title: CS-Learning-Records
 author: XiakaiPan
 email: 13212017962@63.com
 description: > # this means to ignore newlines until "baseurl:"
@@ -6,7 +6,7 @@ description: > # this means to ignore newlines until "baseurl:"
   This is XiakaiPan's first (github) page.
 
 # social links
-twitter_username: None # DO NOT include the @ character, or else the build will fail!
+QQ: 程启
 github_username:  XiakaiPan # DO NOT include the @ character, or else the build will fail!
 
 show_excerpts: true # set to false to remove excerpts on the homepage
