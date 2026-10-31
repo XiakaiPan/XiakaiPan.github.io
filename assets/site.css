@@ -317,3 +317,57 @@ img { max-width: 100%; }
   h2 { break-after: avoid; font-size: 17pt; margin-top: 22px; }
   a { color: inherit; }
 }
+
+
+/* Home: result highlights */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+  margin: 18px 0 8px;
+}
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+.stat-num {
+  font: 700 28px/1.15 Georgia, "Times New Roman", serif;
+  color: var(--accent);
+}
+.stat-label {
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--ink);
+  margin: 4px 0 8px;
+  line-height: 1.35;
+}
+.stat p { font-size: 13.6px; line-height: 1.55; color: #46554f; margin: 0; }
+.source-note { font-size: 13.5px; color: var(--muted); margin-top: 6px; }
+
+/* Status tags on series cards */
+.card-status { font-size: 13.5px !important; color: var(--muted) !important; }
+.status {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  padding: 1px 8px;
+  border-radius: 999px;
+  margin-right: 6px;
+}
+.status.done { background: var(--accent-soft); color: var(--accent); border: 1px solid #bcd6ce; }
+.status.wip { background: var(--amber-soft); color: var(--amber); border: 1px solid #e6d0af; }
+
+/* Compact paper list */
+.paper-list { list-style: none; padding: 0; margin: 16px 0; }
+.paper-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14.5px;
+}
+.paper-list li:first-child { border-top: 1px solid var(--line); }
+.pl-title { display: block; font-weight: 650; color: var(--ink); line-height: 1.45; }
+.pl-meta { display: block; color: var(--muted); font-size: 13.5px; margin: 2px 0 2px; }

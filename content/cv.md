@@ -50,16 +50,16 @@ RISC-V hypervisor extensions, KVM, QEMU, and Spike; [public technical article](h
 
 ## Research & Technical Projects
 
-- **SSG:** Workload/System/Schedule representation, execution modeling and partial GPU execution prototypes.
-- **Agent-SSG / SSG-DT:** active research on cross-level execution refinement and predictive modeling.
-- **TSG:** formal modeling of persistent human–AI tasks and task evolution.
+- **SSG (System Substrate Graph):** one representation of `Execution = Schedule(Workload, System)` that enumerates legal schedules and emits runnable code or framework plans. On H20, generated GEMM kernels reach 49.6&ndash;110.1% of cuBLAS across nine shapes; on 8&times;A800, the same Schedule vocabulary expresses DP/TP/PP bindings for Qwen3 inference, SFT, and RL. Manuscript submitted September 2026.
+- **Agent-SSG / SSG-DT:** design-stage extensions: joint scheduling of agent tool calls, model inference, and GPU operators; and a digital twin that predicts unmeasured executions from the same plan.
+- **TSG (Task Substrate Graph):** a formal model of persistent, evolving human&ndash;AI tasks (preprint, September 2026).
 - **Computer architecture:** superscalar performance modeling, functional/performance hybrid simulation, and RISC-V virtualization.
 
 ## Publication
 
 **Chen Li, Xiakai Pan**, et al. *Style Adaptation module: Enhancing detector robustness to inter-manufacturer variability in surface defect detection.* **Computers in Industry**, 2024. [DOI](https://doi.org/10.1016/j.compind.2024.104084).
 
-For manuscript statuses see [Publications](/publications/). Working manuscripts are not listed as peer-reviewed publications.
+Manuscripts and preprints (not peer-reviewed): see [Publications](/publications/).
 
 ## Technical Areas
 

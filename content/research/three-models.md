@@ -23,7 +23,7 @@ Three Models investigates how complementary modeling contracts can represent the
 
 <figure class="hero-figure">
   <img src="/assets/figures/three-models-triangle.svg" alt="Three Models barycentric method triangle and external measurement anchor">
-  <figcaption><strong>Figure 1 &middot; Method Triangle &amp; External Reality Anchor.</strong> Rather than treating Formal, Simulation, and Statistical models as isolated silos, concrete engineering deliverables combine methods (the triangle is a conceptual map) (Function Prototype &rarr; Performance Prototype &rarr; Learnable Prototype). Real-world measurement stands outside the triangle as the shared calibration and audit anchor.</figcaption>
+  <figcaption><strong>Figure 1 &middot; Method Triangle &amp; External Reality Anchor.</strong> Formal, Simulation, and Statistical models are combined rather than used in isolation. SSG prototypes sit inside the triangle as Function, Performance, and Learnable Prototypes; the triangle is a qualitative map, not a set of numeric weights. Real-world measurement stands outside the triangle as the shared calibration and audit anchor.</figcaption>
 </figure>
 
 ## Core Research Question

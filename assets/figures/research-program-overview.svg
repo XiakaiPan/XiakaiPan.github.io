@@ -65,8 +65,8 @@
 
   <!-- Measurement external anchor badge -->
   <rect x="826" y="110" width="40" height="52" fill="#fff" stroke="#8a5612" stroke-dasharray="3 2" rx="4"/>
-  <text x="846" y="134" text-anchor="middle" class="b-sm" style="font-weight:700;fill:#8a5612">Real</text>
-  <text x="846" y="148" text-anchor="middle" class="b-sm" style="font-size:9.5px;fill:#8a5612">Anchor</text>
+  <text x="846" y="134" text-anchor="middle" class="b-sm" style="font-weight:700;fill:#8a5612;font-size:9.5px">Meas-</text>
+  <text x="846" y="148" text-anchor="middle" class="b-sm" style="font-size:9.5px;fill:#8a5612">urement</text>
 
   <!-- Connecting arrows down to Series A & B -->
   <path d="M 250 176 L 250 206" class="arr-amber"/>
@@ -77,7 +77,7 @@
   <rect x="40" y="210" width="405" height="236" class="card-green"/>
   <text x="62" y="236" class="kicker" style="fill:#19614f">SERIES A · AI COMPUTING EXECUTION WORLD</text>
   <text x="62" y="260" class="title">SSG — System Substrate Graph</text>
-  <text x="62" y="280" class="b">Unified <tspan class="mono">Workload × System × Schedule</tspan> over Compute, Memory &amp; Comm.</text>
+  <text x="62" y="280" class="b"><tspan class="mono">Execution = Schedule(Workload, System)</tspan> over CMC</text>
 
   <!-- SSG Core Box -->
   <rect x="62" y="294" width="361" height="46" class="pill-green"/>
@@ -89,55 +89,55 @@
   <text x="72" y="370" class="h-sm" style="fill:#19614f">SSG (Core)</text>
   <text x="72" y="387" class="b-sm">Op + Trainfer</text>
   <text x="72" y="402" class="b-sm">Coverage &amp; Emit</text>
-  <text x="72" y="418" class="mono" style="font-size:10px">ASPLOS'27 Sub.</text>
+  <text x="72" y="418" class="mono" style="font-size:10px">Submitted · Sep</text>
 
   <rect x="185" y="350" width="114" height="78" class="card"/>
   <text x="195" y="370" class="h-sm" style="fill:#19614f">Agent-SSG</text>
   <text x="195" y="387" class="b-sm">Agent · Model · Op</text>
   <text x="195" y="402" class="b-sm">CPU + GPU Sched.</text>
-  <text x="195" y="418" class="mono" style="font-size:10px">Sep-V5.2.1 Draft</text>
+  <text x="195" y="418" class="mono" style="font-size:10px">Design stage</text>
 
   <rect x="309" y="350" width="114" height="78" class="card"/>
   <text x="319" y="370" class="h-sm" style="fill:#19614f">SSG-DT</text>
   <text x="319" y="387" class="b-sm">Calibrated Twin</text>
   <text x="319" y="402" class="b-sm">Perf &amp; Co-Design</text>
-  <text x="319" y="418" class="mono" style="font-size:10px">Research Track</text>
+  <text x="319" y="418" class="mono" style="font-size:10px">Design stage</text>
 
   <!-- Right Column: Series B (TSG) -->
   <rect x="475" y="210" width="405" height="236" class="card-blue"/>
   <text x="497" y="236" class="kicker" style="fill:#2b5c8f">SERIES B · HUMAN–AI EVOLVING TASK WORLD</text>
   <text x="497" y="260" class="title">TSG — Task Substrate Graph</text>
-  <text x="497" y="280" class="b">Persistent task identity &amp; evolution across actors, models &amp; harnesses.</text>
+  <text x="497" y="280" class="b">The task, not the agent or session, persists.</text>
 
   <!-- TSG Core Box -->
   <rect x="497" y="294" width="361" height="46" class="pill-blue"/>
-  <text x="511" y="314" class="h-sm" style="fill:#183a5e">Context: Owner × Location × CDC; nodes: Actor × Spec × Impl</text>
-  <text x="511" y="331" class="b-sm">Nodes: Actor × Spec(R, T, C) × Impl · Exchanged Roles: C · M · A</text>
+  <text x="511" y="314" class="h-sm" style="fill:#183a5e">Context: Owner × Location × Operation(CDC)</text>
+  <text x="511" y="331" class="b-sm">Nodes: Actor × Spec(R, T, C) × Impl · Roles: C · M · A</text>
 
   <!-- TSG 3 Aspects -->
   <rect x="497" y="350" width="114" height="78" class="card"/>
   <text x="507" y="370" class="h-sm" style="fill:#2b5c8f">1. Context &amp; G_T</text>
   <text x="507" y="387" class="b-sm">Intent×Discipline</text>
   <text x="507" y="402" class="b-sm">Actor×Spec×Impl</text>
-  <text x="507" y="418" class="mono-blue" style="font-size:10px">Foundation v0.9</text>
+  <text x="507" y="418" class="mono-blue" style="font-size:10px">Graph structure</text>
 
   <rect x="620" y="350" width="114" height="78" class="card"/>
   <text x="630" y="370" class="h-sm" style="fill:#2b5c8f">2. CMA Roles</text>
   <text x="630" y="387" class="b-sm">Component·Model</text>
   <text x="630" y="402" class="b-sm">Artifact Reification</text>
-  <text x="630" y="418" class="mono-blue" style="font-size:10px">Workbench v0.1</text>
+  <text x="630" y="418" class="mono-blue" style="font-size:10px">Exchange roles</text>
 
   <rect x="744" y="350" width="114" height="78" class="card"/>
   <text x="754" y="370" class="h-sm" style="fill:#2b5c8f">3. Evolution</text>
   <text x="754" y="387" class="b-sm">Intra-Task Identity</text>
   <text x="754" y="402" class="b-sm">Inter-Task Reuse</text>
-  <text x="754" y="418" class="mono-blue" style="font-size:10px">Working draft</text>
+  <text x="754" y="418" class="mono-blue" style="font-size:10px">Task dynamics</text>
 
   <!-- Interaction footer bar -->
   <path d="M 445 325 L 475 325" class="arr-muted"/>
   <path d="M 475 312 L 445 312" class="arr-muted"/>
   <rect x="40" y="456" width="840" height="30" class="pill-gray"/>
   <text x="460" y="476" text-anchor="middle" class="b-sm">
-    <tspan style="font-weight:700;fill:#1c2825">Cross-Series Interaction:</tspan> TSG organizes human–AI research &amp; engineering tasks (e.g., MyResearch Workbench); SSG models the AI computing execution underneath.
+    <tspan style="font-weight:700;fill:#1c2825">Relationship:</tspan> Parallel series. A TSG task can describe research on SSG; SSG can execute computational steps of a task. Neither requires the other.
   </text>
 </svg>
