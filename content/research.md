@@ -1,10 +1,9 @@
 ---
-layout: default
 title: Research
 permalink: /research/
 ---
 
-[Home](/) · [Research](/research/) · [Publications](/publications/) · [Writing](/writing/) · [CV](/cv/)
+
 
 # Research
 
@@ -55,3 +54,12 @@ The research concerns how humans and AI systems develop, revise, hand off, and r
 ## Relationship
 
 SSG and TSG are parallel in research scope: one models AI-computing execution, the other models evolving human–AI tasks. They can interact without requiring one to be reduced to the other. Three Models is the overarching methodological investigation, not a prerequisite for either series.
+
+## Research pages
+
+- [Three Models](/research/three-models/) — methodology.
+- [SSG](/research/ssg/) — execution representation.
+- [Agent-SSG](/research/agent-ssg/) — cross-level composition.
+- [SSG-DT](/research/ssg-dt/) — execution/simulation correspondence.
+- [TSG](/research/tsg/) — evolving task structures.
+
