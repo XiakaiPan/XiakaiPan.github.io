@@ -44,7 +44,7 @@
 
   <!-- Left: Shared Structural Source -->
   <rect x="36" y="65" width="245" height="260" class="card-green"/>
-  <text x="54" y="92" class="kicker" style="fill:#19614f">SHARED SOURCE OF TRUTH</text>
+  <text x="54" y="92" class="kicker" style="fill:#19614f">SHARED PLAN IDENTITY</text>
   <text x="54" y="116" class="title" style="font-size:17px">Instantiated SSG</text>
   <text x="54" y="140" class="b-sm">Explicit execution structure:</text>
   <rect x="54" y="152" width="209" height="32" class="pill-green"/>
@@ -53,8 +53,8 @@
   <text x="66" y="212" class="mono" style="font-size:10.5px">Selected PhysicalEdges</text>
   <rect x="54" y="232" width="209" height="32" class="pill-green"/>
   <text x="66" y="252" class="mono" style="font-size:10.5px">Pipeline &amp; Sync Depth</text>
-  <text x="54" y="290" class="b-sm">Identical graph feeds both</text>
-  <text x="54" y="306" class="b-sm">execution and simulation.</text>
+  <text x="54" y="290" class="b-sm">Shared IDs connect both</text>
+  <text x="54" y="306" class="b-sm">execution and prediction.</text>
 
   <!-- Fork Arrows -->
   <path d="M 281 135 L 330 115" class="arr"/>
@@ -70,8 +70,8 @@
 
   <!-- Bottom Center: Digital Twin Path -->
   <rect x="334" y="207" width="255" height="118" class="card-blue"/>
-  <text x="352" y="232" class="kicker" style="fill:#2b5c8f">PATH B · DIGITAL TWIN (SSG-DT)</text>
-  <text x="352" y="254" class="h">Calibrated Cost &amp; Sim Engine</text>
+  <text x="352" y="232" class="kicker" style="fill:#2b5c8f">PATH B · PROPOSED DIGITAL TWIN</text>
+  <text x="352" y="254" class="h">Cost Calibration &amp; Replay Design</text>
   <text x="352" y="274" class="b-sm">• Node/Edge parameter calibration</text>
   <text x="352" y="292" class="b-sm">• Compositional critical-path &amp; overlap</text>
   <text x="352" y="310" class="b-sm">• Static + local event simulation</text>

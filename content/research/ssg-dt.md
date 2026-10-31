@@ -1,51 +1,98 @@
 ---
-title: "SSG-DT: Structure-Preserving Digital Twin"
+title: "SSG-DT: Execution Generation and Digital Twins"
 permalink: /research/ssg-dt/
-description: "Calibrated multi-fidelity simulation and hardware/software co-design on the System Substrate Graph"
+description: "Rule-guided legal execution variants, physical realization, trace attribution, and structure-preserving counterfactual prediction"
 ---
 
 [Research](/research/) / [SSG series](/research/ssg/) / SSG-DT
 
-# SSG-DT: Structure-Preserving Digital Twin
+# SSG-DT: Execution Generation and Digital Twins
 
-**Performance Prototype (PP) of SSG &middot; Calibrated simulation &amp; counterfactual hardware/software co-design**
+**Rule-Guided Cross-Scale Execution Generation and Structure-Preserving Digital Twins**
 
-While **[Paper 1 (SSG)](/research/ssg/)** establishes the formal representation and executable Backend Realizer (**Function Prototype, FP**), **SSG-DT** develops the **Performance Prototype (PP)** along the Model Capability axis: a calibrated, structure-preserving digital twin that consumes the exact same `InstantiatedSSG` plans to predict latency, memory traffic, and bottleneck shifts across multi-fidelity regimes (`D1 / D2 / D3`).
+SSG-DT asks whether the same hierarchical execution representation can support **generating legal alternatives, realizing them on hardware, attributing measurements, and predicting unmeasured alternatives**. Its target spans operators and model graphs through training, inference, and RL over chip, scale-up, and scale-out systems. Actual claims remain bounded to implemented and measured paths.
+
+**Current working draft:** `2026.10.4.3.1` · updated 28 October 2026. **Status:** architecture, hypotheses, and evaluation protocol; no measured SSG-DT results are claimed. Base-SSG execution measurements provide starting evidence, rather than digital-twin validation. Agent/tool execution and Agent-level DT are assigned to separate Agent-SSG and future Agent-SSG-DT work.
 
 <div class="jump-bar">
-  <span class="jump-label">On This Page</span>
-  <a class="btn-pill primary" href="#execution-and-simulation-structural-correspondence">Structural Correspondence &darr;</a>
-  <a class="btn-pill" href="#multi-fidelity-ladder-d1-d2-d3">Multi-Fidelity (D1/D2/D3) &darr;</a>
-  <a class="btn-pill" href="#roadmap-and-manuscript-status">Roadmap &amp; Status &darr;</a>
-  <a class="btn-pill" href="/research/ssg/">Base SSG Paper (Sep-V2.4.7) &rarr;</a>
+<a class="btn-pill primary" href="#execution-and-simulation-structural-correspondence">Twin Contract</a>
+<a class="btn-pill" href="#rule-guided-execution-population">Execution Population</a>
+<a class="btn-pill" href="#three-execution-frontiers">Execution Frontiers</a>
+<a class="btn-pill" href="#multi-fidelity-ladder-d1-d2-d3">Fidelity</a>
+<a class="btn-pill" href="#roadmap-and-manuscript-status">Status</a>
 </div>
-
-<figure class="hero-figure">
-  <img src="/assets/figures/ssg-dt-correspondence.svg" alt="SSG-DT Structure-Preserving Execution-Simulation Correspondence">
-  <figcaption><strong>Figure 1 &middot; Structure-Preserving Execution&ndash;Simulation Correspondence.</strong> A single committed <code>InstantiatedSSG</code> drives both real execution (Path A: Backend Realizer &rarr; CUDA/Triton/NCCL) and calibrated performance simulation (Path B: SSG-DT &rarr; D1/D2/D3). Neither path flattens the graph into an ad-hoc analytical formula, guaranteeing node- and edge-level attribution alignment.</figcaption>
-</figure>
 
 ## Execution and Simulation Structural Correspondence
 
-Most performance models for deep learning either rely on coarse analytical roofline formulas (which miss schedule-dependent pipelining and memory-bank conflicts) or cycle-level hardware simulators (which cannot scale to multi-GPU training/inference). SSG-DT enforces a **strict structural isomorphism** between execution and simulation:
+<figure class="hero-figure">
+<img src="/assets/figures/ssg-dt-correspondence.svg" alt="Proposed correspondence between an instantiated SSG, physical execution, and multi-fidelity prediction">
+<figcaption><strong>Shared plan identity.</strong> Execution artifacts, observations, and predictions refer to the same selected InstantiatedSSG. Declared aggregation is allowed with a mapping back to relevant events; strict graph isomorphism and cycle accuracy are not assumed.</figcaption>
+</figure>
 
-- **Shared Input Contract:** SSG-DT takes the exact `InstantiatedSSG` produced by the Resolver (`Build -> Traverse -> Translate`)&mdash;with committed tile sizes, memory placements, pipeline stages, and selected `PhysicalEdge` primitives.
-- **Calibration from Micro-Benchmarks &amp; Realizer Runs:** Hardware node efficiencies (`eta_compute`) and edge transfer curves (`BW_eff(size, stride, contention)`) in `CalibratedSSG` are fitted against physical micro-benchmarks and audited against Path A Realizer traces.
-- **Counterfactual Hardware Co-Design:** By perturbing `CalibratedSSG` parameters (e.g., SM/TMA bandwidth ratios, L2 capacity, inter-node scale-up vs. scale-out links, or **RS-DSA** specialized engines), SSG-DT evaluates candidate architectures over the full enumerated strategy space without requiring silicon.
+A proposed twin is `D_t = (I_σ, x_t, θ_t, O_t, V_t)`: the selected execution plan, measured or estimated live state, timing/resource parameters, attributed observations, and provenance/fidelity information. These are overlays on the existing SSG objects. **CalibratedSSG names the System representation; its presence does not establish that a performance predictor has been calibrated.**
+
+| Contract | Required correspondence |
+|---|---|
+| Structural fidelity | Compute, Remap, Sync, resource bindings, and relevant dependencies remain attributable through prediction and execution |
+| Trace consistency | Stable plan/artifact/region identifiers; distinguish queues, launches, device work, movement, and overlap |
+| Calibration | Reproducible observation IDs, declared warm/cold conditions, and separate calibration/validation populations |
+| Legality and support | Reject or flag queries without legal realizations, backend capabilities, or calibration support |
+| Uncertainty | Report fidelity level, assumptions, interpolation/transfer status, and unresolved interference |
+
+## Rule-Guided Execution Population
+
+Starting from `AbstractSSG(W)` and target `CalibratedSSG(h)`, semantic decomposition/composition rules derive transformations `τ`; capability checks admit schedules `σ`; Instantiate produces CRS plans; Translate produces runnable artifacts and graph manifests. Lazy, bounded generation records rule IDs, parameters, and pruning decisions so another run can reconstruct the candidate population.
+
+The proposed evidence ladder is:
+
+**Representable → Semantically legal → Capability-feasible → Generated → Translated → Correct → Run → Attributed → Predictable / Selectable.**
+
+Counts and attrition at each stage matter. A broad legal space does not establish a broad code generator, and a correct generated variant need not be faster. Numerical equivalence must specify tolerances and any allowed reduction reassociation.
+
+The minimal twin loop is **generate → compile/execute → observe → calibrate → query a held-out variant → verify**. Statistical models can rank candidates or estimate residuals within this loop; they do not replace the execution and observation contracts.
+
+## Three Execution Frontiers
+
+The latest draft distinguishes three properties of a chosen realization:
+
+| Frontier | Boundary being selected | Example consequence |
+|---|---|---|
+| **Dispatch** | External kernel or engine invocation | Launch/submit overhead and allocation lifetime |
+| **Scheduling** | Smallest independently schedulable tile, chunk, core, or stream task | Available concurrency and blocked-resource occupancy |
+| **Materialization** | State that must be committed before a consumer proceeds | Memory traffic, residency, and producer–consumer visibility |
+
+These are derived analysis coordinates, rather than new top-level SSG primitives. Static fusion, tile pipelines, independent kernels, and persistent task schedulers can place the boundaries differently. A retained kernel boundary can enable specialized launches or overlap; removing it can introduce spills or hold resources while stalled. The research question concerns where those crossovers occur across supported variants.
+
+The 28 October literature update uses *One Megakernel is Not Enough* as a close comparator for region/tile/event refinement and publication-aware boundary selection. Such refinement and profile-based fusion selection alone are not SSG-DT's distinguishing claim.
 
 ## Multi-Fidelity Ladder: D1 / D2 / D3
 
-| Fidelity Tier | Granularity | Primary Mechanism | Target Use Case |
-|---|---|---|---|
-| **D1 &middot; Analytical Roofline** | Subgraph / MacroOp | Peak capacity &amp; bottleneck bound over `CalibratedSSG` capacities | Fast pruning during large-scale `Traverse` enumeration (`10^4+` candidates/sec) |
-| **D2 &middot; Event-Driven Critical Path** | Tile / Pipeline Stage | Token/tile dependency DAG with async overlap (`cp.async`, `tma`, double-buffering) and collective queuing | Accurate strategy ranking and intra-/inter-device trade-off attribution |
-| **D3 &middot; Contention-Calibrated Hybrid** | Sub-tile / Shared Resource | Calibrated contention penalties for shared memory banks, L2 cache pressure, and NVLink/PCIe arbitration | High-fidelity audit of top-*k* strategies and counterfactual DSA architecture studies |
+The existing diagram's D1/D2/D3 labels are retained as planning shorthand. The current draft specifies fidelity through the following operational contracts, rather than an achieved speed or accuracy target:
+
+| Planning level | Current contract | Verification needed |
+|---|---|---|
+| D1 · Leaf / coarse cost | Measured compiled variants, lookup/analytical/interpolated estimates at declared shapes | Reference timing and resource footprint under stated conditions |
+| D2 · Dependency replay | Event readiness, launches, data movement, Sync, resource contention, and overlap | Held-out schedule ranking and trace correspondence |
+| D3 · Stateful counterfactuals | Queues, shared resources, residency, and supported transitions | Validity range, uncertainty, and intervention-level fidelity |
+
+A cold-start choice compares separately executable plans. A live switch additionally requires an implemented state-transition relation and explicit one-time transition cost. A representable switch is insufficient evidence that a safe runtime transition exists.
+
+## Cross-Scale Attribution and Evaluation
+
+Predicting each kernel accurately does not establish end-to-end fidelity: queueing, batching, overlap, and contention change how local costs compose. The proposed test compares **predicted and observed effects of a held-out intervention**, including critical-path and bottleneck changes, rather than multiplying local speedups.
+
+Evaluation should report absolute error, ranking regret, selected-plan performance, memory/movement/Sync attribution, and generation coverage. Whole-graph comparisons include launch, allocation, fallback islands, framework conversions, and numerical correctness. Cross-hardware claims require matching physical workloads on a distinct accelerator family; documented architecture contrasts remain separate from measured portability.
+
+Cyclotron informs the logical-communication versus physical-event boundary; Primus Projection informs measurement/projection/search comparisons. Compiler and graph systems such as AKG, TVM, IREE, XLA, Korch, Welder, and Mirage are substantive prior work. Their roles here follow the draft's positioning and do not imply implemented integrations.
 
 ## Roadmap and Manuscript Status
 
-Within the **[SSG 3D Research Space](/research/ssg/#ssg-3d-research-space)** (`d-ssg-research-roadmap v1.5.2`), SSG-DT corresponds to **Wave 2 (`T1/T2 x PP`)**:
+SSG-DT occupies **Operator + Trainfer × Performance Prototype** in the [SSG research space](/research/ssg/#ssg-3d-research-space). Initial evidence can come from a bounded H20 operator-to-model path; cross-architecture and scale-out/RL claims require their own realizations and observations. The future Agent-SSG-DT depends on both this twin machinery and actual Agent-SSG execution support.
 
-- **Foundation Landed in Paper 1 (`Sep-V2.4.7`):** The `CalibratedSSG` hardware substrate schema, capability profiles (including **RS-DSA** out-of-core validation in Appendix B), and the `InstantiatedSSG` dual-consumption interface are already frozen and verified in the **[SSG ASPLOS'27 submission](/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf)**.
-- **Active SSG-DT Track (`in progress`):** Expanding D2/D3 calibrated event simulation, cross-hardware transfer validation (H20 / A800 / counterfactual DSA profiles), and systematic ranking-fidelity audits against measured Realizer sweeps.
+| Snapshot | Development |
+|---|---|
+| `2026.10.4.3.1` · 28 October | Megakernel boundary selection, region/tile/event refinement, physical resource lifetime and publication constraints |
+| `2026.10.3.1.1` · 19 October | Cyclotron communication refinement; Primus measurement/projection/search boundary |
+| Earlier October drafts | Rule-guided generation, cross-hardware realization, physical attribution, and Operator/Trainfer DT scope |
 
-[Back to SSG Series Overview &rarr;](/research/ssg/) &middot; [Explore Companion Track: Agent-SSG &rarr;](/research/agent-ssg/) &middot; [Explore Methodology: Three Models &rarr;](/research/three-models/)
+[SSG](/research/ssg/) · [Agent-SSG](/research/agent-ssg/) · [Three Models](/research/three-models/)

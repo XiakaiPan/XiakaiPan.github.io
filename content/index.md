@@ -44,7 +44,7 @@ I work on computer architecture, AI infrastructure, compilers, and runtime syste
     <div>
       <div class="series-kicker">Series A · AI Computing World</div>
       <h3><a href="/research/ssg/">SSG — System Substrate Graph</a></h3>
-      <p>Unified <code>Workload &times; System &times; Schedule</code> representation across compute, memory, and communication—spanning Operators (T1), Trainfer/RL (T2), and Heterogeneous Agent workflows (T3).</p>
+      <p>Unified <code>Workload / System / Schedule</code> representation across compute, memory, and communication—spanning Operators (T1), Trainfer/RL (T2), and Heterogeneous Agent workflows (T3).</p>
     </div>
     <div class="card-links">
       <a class="btn-pill primary" href="/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf">SSG PDF (Sep-V2.4.7) &nearr;</a>
@@ -58,10 +58,10 @@ I work on computer architecture, AI infrastructure, compilers, and runtime syste
     <div>
       <div class="series-kicker">Series B · Human–AI Task World</div>
       <h3><a href="/research/tsg/">TSG — Task Substrate Graph</a></h3>
-      <p>Persistent and evolving task structures situated by <code>Owner &times; Actor &times; Location &times; CDC</code>, decoupling graph nodes (<code>Actor &times; Spec &times; Impl</code>) from exchanged <code>Component · Model · Artifact</code> roles.</p>
+      <p>Persistent and evolving task structures situated by <code>Owner &times; Location &times; Operation(CDC)</code>, decoupling graph nodes (<code>Actor &times; Spec &times; Impl</code>) from exchanged <code>Component · Model · Artifact</code> roles.</p>
     </div>
     <div class="card-links">
-      <a class="btn-pill primary" href="/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf">TSG PDF (v0.9) &nearr;</a>
+      <a class="btn-pill primary" href="/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf">Historical TSG PDF (Sep-V3.1.13) &nearr;</a>
       <a class="btn-pill" href="/research/tsg/">TSG Overview</a>
       <a class="btn-pill" href="/research/tsg/#historical-lineage-tli-and-workbench-to-tsg">3 Manuscripts &rarr;</a>
     </div>
@@ -78,7 +78,7 @@ I work on computer architecture, AI infrastructure, compilers, and runtime syste
     <span class="badge">ASPLOS'27 Submission Snapshot · Sep-V2.4.7</span>
   </div>
   <div class="paper-meta">
-    <strong>Scope:</strong> Cross-scale <code>AbstractSSG &rarr; CalibratedSSG &rarr; InstantiatedSSG</code> representation, bounded strategy enumeration, and executable realization across GPU operators (GEMM, GQA, MoE) and distributed Trainfer workloads.
+    <strong>Scope:</strong> Cross-scale representation with independent <code>AbstractSSG</code> (Workload) and <code>CalibratedSSG</code> (System) inputs bound into <code>InstantiatedSSG</code>, bounded strategy enumeration, and executable realization across GPU operators (GEMM, GQA, MoE) and distributed Trainfer workloads.
   </div>
   <div class="paper-actions">
     <a class="btn-pill primary" href="/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf">Download PDF (Sep-V2.4.7) &nearr;</a>
@@ -90,13 +90,13 @@ I work on computer architecture, AI infrastructure, compilers, and runtime syste
 <div class="paper-anchor-box blue">
   <div class="paper-anchor-header">
     <span class="paper-anchor-title">Task Substrate Graph: Representing Persistent and Evolving Task Structure</span>
-    <span class="badge blue">arXiv Submitted (8122073) · Sep-V3.1.14 / v0.9</span>
+    <span class="badge blue">Current draft: 2026.10.4.3.1 · Historical PDF: Sep-V3.1.13</span>
   </div>
   <div class="paper-meta">
-    <strong>Scope:</strong> Domain-independent representation of persistent task identity, <code>Actor &times; Spec(R,T,C) &times; Impl</code> structural factorization, activity-relative CMA roles, and <code>Intra-Task</code> vs. <code>Inter-Task</code> evolution.
+    <strong>Current draft (28 October 2026):</strong> Domain-independent representation of persistent task identity, <code>Actor &times; Spec(R,T,C) &times; Impl</code> structural factorization, activity-relative CMA roles, and <code>Intra-Task</code> vs. <code>Inter-Task</code> evolution.
   </div>
   <div class="paper-actions">
-    <a class="btn-pill primary" href="/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf">Download Foundation PDF (Sep-V3.1.13) &nearr;</a>
+    <a class="btn-pill primary" href="/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf">Historical Foundation PDF (Sep-V3.1.13) &nearr;</a>
     <a class="btn-pill" href="/assets/papers/tsg/v0.1/tsg-preprint-v3.1.14-source.tar.gz">Sep-V3.1.14 TeX Source (.tar.gz) &nearr;</a>
     <a class="btn-pill" href="/assets/papers/tsg/v0.1/tli-aug-v4.2.pdf">TLI Draft PDF (Aug-V4.2) &nearr;</a>
     <a class="btn-pill" href="/assets/papers/tsg/v0.1/workbench-aug-v0.1.pdf">Workbench PDF (Aug-V0.1) &nearr;</a>
@@ -110,7 +110,7 @@ I work on computer architecture, AI infrastructure, compilers, and runtime syste
     <span class="badge">Working Draft Snapshot · Sep-V5.2.1 (Archived Line)</span>
   </div>
   <div class="paper-meta">
-    <strong>Scope:</strong> Problem-domain extension (Tick T3) composing coding-agent workflows, tool/context materialization on Host CPU/NUMA, and model/operator execution on GPU substrates.
+    <strong>Current draft:</strong> <code>2026.10.4.3.1</code> (28 October 2026) proposes dynamically revealed workloads, effect-aware tool overlap, model/operator refinement, and traceable dispatch. Results remain pending; the linked September PDF is historical.
   </div>
   <div class="paper-actions">
     <a class="btn-pill primary" href="/assets/papers/agent-ssg/v0.1/agent-ssg-mlsys27-v5.2.1.pdf">Download Draft PDF (Sep-V5.2.1) &nearr;</a>
@@ -123,3 +123,4 @@ I work on computer architecture, AI infrastructure, compilers, and runtime syste
 **Research areas:** AI Systems · Compiler/Runtime · Heterogeneous Scheduling · Computer Architecture · Agent Systems
 
 [Research](/research/) · [Publications](/publications/) · [Writing](/writing/) · [CV](/cv/) · [GitHub](https://github.com/XiakaiPan)
+

@@ -1,76 +1,107 @@
 ---
 title: "Task Substrate Graph (TSG)"
 permalink: /research/tsg/
-description: "Substrate-level representation for evolving human-AI task worlds across research, engineering, and creative creation"
+description: "A formal model of evolving tasks: semantic context, Actor–Spec–Impl, CMA exchange roles, and intra-/inter-task evolution"
 ---
 
 [Research](/research/) / TSG series
 
 # Task Substrate Graph (TSG)
 
-**Modeling the evolving human&ndash;AI task world &middot; Task graphs, CMA roles, and intra-/inter-task evolution**
+**A Formal Model of Evolving Tasks**
 
-As AI agents increasingly share long-horizon research, engineering, and creative work with humans, task structure is either left implicit in chat transcripts or locked inside rigid workflow engines. TSG provides a **substrate-level representation** that makes task situations, step specifications (`R x T x C`), activity-relative object roles (`CMA`), and revision/transfer evolution explicit without turning the representation into an authoritarian scheduler.
+TSG investigates how a task can remain a persistent object while its actors, specifications, implementations, and relationships change. Humans, programs, models, and harnesses can realize the work at different times. The research object is the task's evolving structure, including changes to what the work means and what counts as a valid result.
+
+**Current working draft:** `2026.10.4.3.1` · 28 October 2026. The draft develops a formal model and its boundaries; complete edge algebra, task-identity criteria, evolution policy, and general empirical validation remain open. The [September PDF](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf) and [source archive](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.14-source.tar.gz) are retained as historical artifacts, not relabeled as the October draft. The historical arXiv submission reference is not a public arXiv identifier or evidence of publication.
 
 <div class="jump-bar">
-  <span class="jump-label">Quick Jump</span>
-  <a class="btn-pill primary" href="/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf">Download TSG Paper PDF (v3.1.13) &nearr;</a>
-  <a class="btn-pill" href="/assets/papers/tsg/v0.1/tsg-preprint-v3.1.14-source.tar.gz">v3.1.14 Source (.tar.gz) &nearr;</a>
-  <a class="btn-pill" href="#tsg-three-core-aspects">Three Core Aspects &darr;</a>
-  <a class="btn-pill" href="#historical-lineage-tli-and-workbench-to-tsg">Historical Lineage &darr;</a>
-  <a class="btn-pill" href="#version-history">Version History &darr;</a>
-</div>
-
-<div class="paper-anchor-box">
-  <div class="paper-anchor-header">
-    <span class="paper-anchor-title">Task Substrate Graph: Representing Evolving Human&ndash;AI Tasks</span>
-    <span class="badge">arXiv Preprint Track (Submission 8122073) &middot; Sep-V3.1.14 / PDF v3.1.13</span>
-  </div>
-  <div class="paper-meta">
-    <strong>Scope &amp; Contribution:</strong> Formalizes the four-axis task context (<code>Owner &times; Actor &times; Location &times; CDC</code>), the task graph <code>G_T = (V_T, E_T)</code> with <code>Spec = R &times; T &times; C</code>, activity-relative <code>Component / Model / Artifact (CMA)</code> roles, and <code>Instantiation</code> + <code>Intra-Task</code> / <code>Inter-Task Evolve</code> across three concrete task traces.<br>
-    <strong>Precursor Manuscripts:</strong> Incorporates and unifies earlier standalone formulations of <strong>TLI (Thought&ndash;Language Interface)</strong> and <strong>Personal Research &amp; Creation Workbench</strong>.
-  </div>
-  <div class="paper-actions">
-    <a class="btn-pill primary" href="/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf">Open TSG Preprint PDF (Sep-V3.1.13, 132 KB) &nearr;</a>
-    <a class="btn-pill" href="/assets/papers/tsg/v0.1/tsg-preprint-v3.1.14-source.tar.gz">Download Sep-V3.1.14 Source Archive (arXiv 8122073) &nearr;</a>
-    <a class="btn-pill" href="/assets/papers/tsg/v0.1/tli-aug-v4.2.pdf">Precursor: TLI Paper PDF (Aug-V4.2) &nearr;</a>
-    <a class="btn-pill" href="/assets/papers/tsg/v0.1/workbench-aug-v0.1.pdf">Precursor: Workbench Paper PDF (Aug-V0.1) &nearr;</a>
-  </div>
+<a class="btn-pill primary" href="#tsg-three-core-aspects">Core Model</a>
+<a class="btn-pill" href="#instantiation-and-two-scopes-of-evolution">Task Dynamics</a>
+<a class="btn-pill" href="#negative-evidence-and-specification-revision">Evidence</a>
+<a class="btn-pill" href="#neighboring-systems-and-semantic-boundaries">Comparisons</a>
+<a class="btn-pill" href="#version-history">Versions</a>
 </div>
 
 ## TSG Three Core Aspects
 
-To answer how open-ended human&ndash;AI tasks can be represented, revised, and reused without freezing exploration prematurely, TSG is organized around **three tightly coupled aspects**:
-
 <figure class="hero-figure">
-  <img src="/assets/figures/tsg-three-aspects.svg" alt="TSG Three Core Aspects: Semantic Context & Task Graph, Activity-Relative CMA Roles, and Instantiation & Intra/Inter-Task Evolve">
-  <figcaption><strong>Figure 1 &middot; The Three Core Aspects of TSG.</strong> <strong>(1) Semantic Context &amp; Task Graph:</strong> situates activities in <code>Owner &times; Actor &times; Location(Intent, Discipline) &times; CDC</code> and decomposes work into nodes <code>V_T &sube; Actor &times; Spec(R, T, C) &times; Impl</code>. <strong>(2) Activity-Relative CMA Roles:</strong> distinguishes persistent object identity from contextual role (<code>Component</code> consumed, <code>Model</code> consulted, <code>Artifact</code> produced/modified). <strong>(3) Instantiation &amp; Evolution:</strong> separates routine step execution from identity-preserving <code>Intra-Task Evolve</code> and cross-task <code>Inter-Task Evolve</code>.</figcaption>
+<img src="/assets/figures/tsg-three-aspects.svg" alt="TSG semantic context, Actor–Spec–Impl task graph, activity-relative CMA, and two evolution scopes">
+<figcaption><strong>Context, graph, exchange, and evolution.</strong> Owner records persistent responsibility. Current activity identifies an Actor in a semantic Location and CDC operation. Instantiation applies the formalism to a task; the resulting graph evolves within and across task boundaries.</figcaption>
 </figure>
 
-### Aspect 1: Semantic Situation & Task Graph (`G_T`)
+### Semantic Context and Structural Core
 
-Every task is situated in a four-axis semantic context before graph decomposition:
+The contextual coordinates are **Owner × Location × Operation**, with `Location = (Intent, Discipline)` and `Operation ∈ {Consume, Digest, Create}`. Owner answers whose task persists through handoffs. Actor identifies who is undertaking a concrete activity. Intent can describe exploration, explanation, optimization, or creation; Discipline locates the domain. These coordinates can be attached recursively to subtasks.
 
-- **Owner:** The agent (human, AI, or joint team) holding acceptance authority over task outcomes.
-- **Actor:** The entity executing a specific activity (`Human`, `Agent`, or `Collaborative`).
-- **Activity Location (`Intent x Discipline`):** Pairs motivational regime (`Emotion`, `Function`, `Performance`) with the domain coordinate (`Discipline`) where outputs accumulate.
-- **Macro-Operation (`CDC`):** Classification into **Consume** (low-friction intake), **Digest** (compressing and structuring into reusable knowledge), and **Create** (producing new research, engineering, or creative outputs).
+**Consume** acquires or observes state; **Digest** structures information into understanding; **Create** externalizes or modifies structure. They are primitive operation classes, not a mandatory three-step pipeline. Lightweight reading can retain a thin, implicit specification.
 
-Within this context, a task graph `G_T = (V_T, E_T)` represents executable steps `v = (alpha, s, iota)` where `s = (R, T, C)` specifies **Representation**, **Transformation**, and **Constraints**, and `iota` binds the concrete prompt, script, or tool invocation.
+The structural core is `G_T = (V_T, E_T)`, with `V_T ⊆ Actor × Spec × Impl`. A node relates an Actor to a Spec through an Impl:
 
-### Aspect 2: Activity-Relative Object Roles (`CMA`)
+| Coordinate | Meaning | What can vary |
+|---|---|---|
+| **Actor** | Human, AI, program, or collective undertaking an activity | Replace the executor; assign contextual reviewer/implementer roles |
+| **Spec** | Relatively stable meaning and validity conditions | Elaborate or revise the specification as evidence changes |
+| **Impl** | One concrete realization: procedure, prompt, program, workflow, experiment, or document structure | Substitute a realization under the applicable Spec |
 
-Unlike static repository ontologies that permanently label a file as an "input" or "output", TSG separates **persistent object identity** from **activity-relative role** via a partial labeling `rho_T: V_T x O -> {C, M, A}`:
+Inside Spec, **RTC = (Representation, Transformation, Constraint)** specifies the structured object, its meaningful/admissible changes, and conditions to preserve. RTC is internal to Spec, rather than another graph axis. Typed edge families may include dependency, flow, refinement, realization, synchronization, replacement, and evidential influence; a complete edge algebra is still under development.
 
-- **Component (`C`):** Material consumed or transformed by the step (`in`, `dep`).
-- **Model (`M`):** Evaluative, predictive, or structural reference consulted without being consumed (`ref` &mdash; e.g., a formal grammar, calibrated simulator, or statistical policy).
-- **Artifact (`A`):** Material output produced or updated by the step (`out`), which may subsequently become a `Component` or `Model` in downstream nodes.
+### Activity-Relative CMA Roles
 
-### Aspect 3: Instantiation, Intra-Task Evolve & Inter-Task Evolve
+**Component, Model, Artifact** describe exchange roles relative to an activity. They are not globally exclusive file types or additional dimensions of the core graph.
 
-- **Instantiation (`G_T -> G_T^(tau)`):** Binds abstract step specifications and object slots to concrete runtime handles during execution.
-- **Intra-Task Evolve (`G_T^(t) -> G_T^(t+1)`):** Revises nodes, dependencies, or implementations when intermediate outputs fail constraints `C`, **while preserving task identity** and recording lineage (`supersedes`, `forked_from`, `merged_from`, `dissents_from`).
-- **Inter-Task Evolve (`(G_{T1}, G_{T2}) -> G_{T'}`):** Transfers validated subgraphs (`Spec` skeletons) and distilled objects across distinct tasks without copying episodic execution noise.
+| Role | Meaning in the current draft | Example |
+|---|---|---|
+| **Component** | Reusable capability, structure, or functional unit | Software module, retrieval capability, experiment procedure, task fragment |
+| **Model** | Representation used to reason about the task or an external domain | Formal grammar, simulator, statistical predictor, or reified task graph |
+| **Artifact** | Materialized output or state carrier | Code, document, dataset, figure, checkpoint, serialized graph |
+
+A file may materialize a Model and serve as an Artifact in another activity. A concrete TSG graph is itself a Formal Task Model; reifying it allows it to be exchanged as a Model. Such recursive reuse does not identify all Models with TSG.
+
+## Instantiation and Two Scopes of Evolution
+
+**Instantiation** applies the formalism to context: `Instantiate(TSG, Context_T) ⇒ G_T`. It is not a third runtime dynamic or a separate graph instance for every step.
+
+**Intra-Task Evolve** changes one persistent graph: `G_T(t) → G_T(t+Δt)`. Changes can replace an Actor or Impl, revise Spec/RTC, add or remove edges, revise CMA bindings, or branch and merge work. Whether a revision preserves task identity is an open semantic obligation, rather than something established by sharing a thread ID.
+
+**Inter-Task Evolve** captures how reusable Components, Models, Artifacts, or graph structures change another task. Reuse needs to consider the receiving Spec and inherited assumptions. Copying an artifact or observing successful reuse does not by itself establish a general admissibility theory.
+
+## Negative Evidence and Specification Revision
+
+A failed experiment can reveal an implementation defect, insufficient measurement, or a limitation in the motivating hypothesis. The proposed evolution account distinguishes **observed outcome → interpretation (Digest) → proposed Spec/Impl revision → check and adoption**. Recording a failure establishes history; showing which admissible choices it changes requires further evidence.
+
+Relations such as `informed_by`, `supports`, `refutes`, `refines`, and `validates` have different strengths. They are candidate relation types to formalize, not established primitives. Chronological proximity alone cannot supply causality or validity.
+
+For example, in an SSG-DT research task, an inaccurate prediction is an Artifact of an experiment. Diagnosis may change the implementation, the representation of contention, or the evaluation constraints. TSG would record which of these changed and why, while SSG-DT models the physical computation under study.
+
+## Neighboring Systems and Semantic Boundaries
+
+The current draft treats persistent execution and research systems as substantive comparators:
+
+| Neighbor | Relevant capability described in the draft | Remaining TSG question |
+|---|---|---|
+| **Delta / DeltaDB** | Conversation, code operations, worktrees, and collaborative history | When does an edit revise Impl, change Spec, or create a distinct task? |
+| **Athanor** | Durable experiment records, jobs, results, and checkpoint lineage | How do experiments revise task meaning and admissible RTC? |
+| **CIG** | Explicit evidence/hypothesis/intervention/outcome improvement state | Can semantic task evolution be represented beyond a fixed improvement target? |
+| **Euler** | Domain-specific research contracts, obligations, evidence, and verified facts | Which structures generalize beyond its mathematical domain? |
+| **CORTEX / GitSwarm** | Verified reuse or cumulative contribution lineage | How does adopted experience change the receiving task's Spec and identity? |
+| **SCARCE** | Cross-task commitments and actor-relationship state | Which relations belong to actor context, and which govern a particular task? |
+| **FAOP / PAP–Touba** | Typed workflows and rewriting; responsibility and guarded dispatch | How do workflow/authorization contracts relate to changing task specifications? |
+
+These comparisons follow the October manuscript and are not new integration claims. In particular, task ownership does not confer operational permission, and evolution of task meaning does not replace a runtime's authorization mechanism.
+
+## Relationship to Three Models, SSG, and a Workbench
+
+[Three Models](/research/three-models/) supplies a general modeling perspective. TSG is currently a formal task-world research line; it need not reproduce SSG's FP/PP/LP engineering sequence. [SSG](/research/ssg/) models computation and can realize selected computational activities. Conversely, a TSG instance can represent the research process that constructs SSG. These are parallel research series with possible interfaces, rather than a mandatory frontend/backend chain.
+
+A future Workbench would retain task snapshots, active specifications, object lineage, evidence, substitutions, and adoption decisions across human and AI actors. The formal model does not prescribe one scheduler, approval protocol, or harness. Open research includes task boundaries, RTC semantics, edge composition, CMA typing, and evaluation against strong persistence/reuse baselines.
+
+## Current Draft Lineage
+
+| Date | Snapshot | Change |
+|---|---|---|
+| 2026-10-28 | `2026.10.4.3.1` | PAP/Touba responsibility and admission comparison; retains earlier formal structure and literature |
+| 2026-10-19 | `2026.10.3.1.1` | FAOP workflow normalization/type/effect comparison |
+| Earlier October revisions | Athanor/SCARCE archive line | Experiment lineage, actor relationships, DeltaDB, and task/evolution boundaries |
 
 ## Historical Lineage: TLI and Workbench to TSG
 

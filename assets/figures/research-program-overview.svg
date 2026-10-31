@@ -111,7 +111,7 @@
 
   <!-- TSG Core Box -->
   <rect x="497" y="294" width="361" height="46" class="pill-blue"/>
-  <text x="511" y="314" class="h-sm" style="fill:#183a5e">Owner · Activity (Actor × Location × CDC) → G_T</text>
+  <text x="511" y="314" class="h-sm" style="fill:#183a5e">Context: Owner × Location × CDC; nodes: Actor × Spec × Impl</text>
   <text x="511" y="331" class="b-sm">Nodes: Actor × Spec(R, T, C) × Impl · Exchanged Roles: C · M · A</text>
 
   <!-- TSG 3 Aspects -->
@@ -131,7 +131,7 @@
   <text x="754" y="370" class="h-sm" style="fill:#2b5c8f">3. Evolution</text>
   <text x="754" y="387" class="b-sm">Intra-Task Identity</text>
   <text x="754" y="402" class="b-sm">Inter-Task Reuse</text>
-  <text x="754" y="418" class="mono-blue" style="font-size:10px">arXiv:8122073</text>
+  <text x="754" y="418" class="mono-blue" style="font-size:10px">Working draft</text>
 
   <!-- Interaction footer bar -->
   <path d="M 445 325 L 475 325" class="arr-muted"/>
