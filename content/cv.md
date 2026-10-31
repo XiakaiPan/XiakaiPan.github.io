@@ -68,6 +68,6 @@ C/C++ · Python · GPU/NPU Operators · CUDA/Triton · TVM/MLIR/XLA · vLLM · A
 
 ---
 
-*CV updated October 2026. This public-oriented summary intentionally excludes private contact information, proprietary architectural detail, unpublished benchmark claims, and unverified acceptance claims.*
+*CV updated October 2026. Performance figures are reported in the linked submitted manuscript and have not been independently reproduced. Submitted and working manuscripts are distinguished from peer-reviewed publications. Proprietary architectural details and unverified acceptance claims are excluded.*
 
 [Download Markdown CV](/downloads/Xiakai_Pan_CV.md)

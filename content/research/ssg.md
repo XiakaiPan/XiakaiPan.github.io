@@ -119,7 +119,7 @@ Numbers from the submitted manuscript (&sect;5&ndash;7). They cover single-node 
 | **Framework: inference (8&times;A800)** | Qwen3-8B at offered load 512: DP4&times;TP2 reaches 7,781 tok/s, **+57% over TP8** | The best binding moves with load; one Schedule vocabulary covers DP/TP/PP |
 | **Framework: transport** | PP2&times;TP4 vs. TP8 ratio spans 0.59&ndash;1.03 on NVLink and 0.86&ndash;3.40 with P2P disabled (Qwen3-8B) | The preferred binding also moves with the System input |
 | **Framework: training / RL** | SFT scales 1.316&times; from 4 to 8 devices (65.8% efficiency); two RL resource partitions give 13.05 s and 22.32 s step times | Plans emitted to framework-native execution |
-| **Model path: Qwen3 MoE** | SSG router region inside fused MoE on TP8&times;EP8 reaches 95.6% of framework decode throughput; prefill is much slower | Diagnostic integration, not an end-to-end speedup |
+| **Model path: Qwen3 MoE** | A mixed execution configuration records 205.0 tok/s, 95.6% of framework decode throughput, with substantially slower prefill | Graph capture records 48 fallbacks, so decode replay can use the framework implementation. This measures the mixed configuration, not isolated SSG-router throughput or an end-to-end speedup |
 
 ## Manuscripts and Artifacts
 
