@@ -50,14 +50,14 @@
   <rect x="56" y="114" width="340" height="62" class="card"/>
   <text x="72" y="135" class="h-sm" style="fill:#19614f">L0 · Agent Workflow &amp; Tool Graph</text>
   <text x="72" y="153" class="b-sm">Coding Agent turns · Tool calls · Context/Artifact I/O</text>
-  <text x="72" y="168" class="mono" style="font-size:10px">Stochastic boundaries marked explicitly</text>
+  <text x="72" y="168" class="mono" style="font-size:10px">Known graph grows as work is revealed</text>
 
   <path d="M 226 176 L 226 192" class="arr"/>
 
   <rect x="56" y="194" width="340" height="62" class="card"/>
   <text x="72" y="215" class="h-sm" style="fill:#19614f">L1 · Model Invocation &amp; KV State</text>
   <text x="72" y="233" class="b-sm">Prefill / Decode stages · Prefix reuse · Batching</text>
-  <text x="72" y="248" class="mono" style="font-size:10px">access_pattern = loop · single/multi-user scope</text>
+  <text x="72" y="248" class="mono" style="font-size:10px">Opaque or refined: backend authority required</text>
 
   <path d="M 226 256 L 226 272" class="arr"/>
 
@@ -79,8 +79,8 @@
 
   <rect x="504" y="194" width="340" height="62" class="card"/>
   <text x="520" y="215" class="h-sm" style="fill:#2b5c8f">Inter-Device Tier · Serving &amp; Comm Fabric</text>
-  <text x="520" y="233" class="b-sm">Host↔Device DMA · NVLink / Collective links</text>
-  <text x="520" y="248" class="mono-blue" style="font-size:10px">ScheduleView + Thin Framework Adapter</text>
+  <text x="520" y="233" class="b-sm">CPU–GPU paths under supported adapters</text>
+  <text x="520" y="248" class="mono-blue" style="font-size:10px">Initial evidence scope: single-node CPU–GPU</text>
 
   <path d="M 674 256 L 674 272" class="arr-blue"/>
 
@@ -96,6 +96,6 @@
   <!-- Bottom Summary -->
   <rect x="36" y="356" width="828" height="38" class="pill-gray"/>
   <text x="450" y="380" text-anchor="middle" class="b-sm">
-    <tspan style="font-weight:700">Key Design Principle:</tspan> Extend problem domain (T3) on unchanged SSG Meta primitives (Compute, Memory, Comm, Remap, Domain).
+    <tspan style="font-weight:700">Proposed Contract:</tspan> Preserve dependencies/effects; link selected plans, artifacts and actual dispatch events.
   </text>
 </svg>

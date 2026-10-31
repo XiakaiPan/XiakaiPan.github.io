@@ -43,7 +43,7 @@ Rather than conflating kernel codegen, distributed scheduling, performance simul
 
 <figure class="hero-figure">
   <img src="/assets/figures/ssg-research-space-3d.svg" alt="SSG 3D Research Space spanning Workload & System Scope, Model Capability (FP/PP/LP), and MVP/MMP Investment">
-  <figcaption><strong>Figure 1 &middot; SSG 3D Research Space &amp; Cumulative Wave Staging.</strong> <strong>Axis 1 (Workload &amp; System):</strong> T1 (Operators &amp; Subgraphs) &rarr; T2 (Trainfer = Training + Inference + RL) &rarr; T3 (Heterogeneous Agent + Host/Device mixtures). <strong>Axis 2 (Model Capability):</strong> Function Prototype (FP) &rarr; Performance Prototype (PP / <a href="/research/ssg-dt/">SSG-DT</a>) &rarr; Learnable Prototype (LP). <strong>Axis 3 (Investment):</strong> MVP (paper evidence) &rarr; MMP (frozen spec extensible by third parties).</figcaption>
+  <figcaption><strong>Figure 1 &middot; SSG 3D Research Space &amp; Cumulative Wave Staging.</strong> <strong>Axis 1 (Workload &amp; System):</strong> T1 (Operators &amp; Subgraphs) &rarr; T2 (Trainfer = Training + Inference + RL) &rarr; T3 (Heterogeneous Agent + Host/Device mixtures). <strong>Axis 2 (Model Capability):</strong> Function Prototype (FP) &rarr; Performance Prototype (PP / <a href="/research/ssg-dt/">SSG-DT</a>) &rarr; Learnable Prototype (LP). <strong>Axis 3 (Investment):</strong> MVP &rarr; MMP engineering maturity within each scope/capability cell.</figcaption>
 </figure>
 
 ## Core Architecture: Abstract, Calibrated and Instantiated SSG
@@ -67,6 +67,28 @@ Between open frontend IRs (PyTorch FX, ONNX, Triton, StableHLO) and closed vendo
 | **2. Hardware System** | `CalibratedSSG` (`Substrate`) | `Node` (compute/memory), `Domain` tree (`parent__child`), candidate `PhysicalEdge` | Encodes hardware hierarchy capacities, legal communication primitives (`lsu`, `cp.async`, `tma`, `nvlink`), and sync scopes |
 | **3. SW &times; HW Binding** | `InstantiatedSSG` | Committed per-Domain tiling, placement, pipeline stages, and selected `edge_id`s | Verified legal execution plan consumed by the **Backend Realizer** (or **[SSG-DT](/research/ssg-dt/)** simulator) |
 
+### Execution Semantics: CMC to CRS
+
+**CMC (Compute–Memory–Communication)** describes workload/system structure before a mapping is chosen. **CRS (Compute–Remap–Sync)** describes the selected execution. The relationship is not a one-to-one renaming: a logical communication relation can become a local layout change, a transfer, a collective, or no materialized transfer when a realization removes the boundary.
+
+`AbstractSSG(W)` and `CalibratedSSG(S)` are independent Build outputs. Traverse binds them with a Schedule; Instantiate records that mapping; Translate produces a supported backend artifact. The System object's historical name, CalibratedSSG, does not imply digital-twin timing calibration.
+
+### Schedule as Parallel × Pipeline
+
+The lean-framing working draft organizes Schedule into **Parallel** (partitioning, replication, ownership, and placement) and **Pipeline** (staging, ordering, buffering, and overlap). DP/TP/EP/FSDP and PP/1F1B are specific projections or compositions within those families. The schematic `M × N × K` authoring surface motivates reuse across hardware, workloads, and strategies; it is not a proved asymptotic complexity reduction.
+
+Compute tiling semantics separate **Input Partializability, Output Finalization, and Ordering Constraint (IPOFOC)**. Compute–compute fusion needs compatible partitions, finalization, and ordering. Compute–Remap fusion additionally depends on the selected execution and target capabilities. Remap requirements can originate in workload communication, hardware layout adaptation, or mapping/execution boundaries.
+
+### Research Space and Manuscript Boundaries
+
+| Coupled scope | Functional | Performance | Learnable |
+|---|---|---|---|
+| Operator | Base SSG realization | SSG-DT operator entry case | Future learned operator/schedule search |
+| Trainfer (training/inference/RL) | Supported SSG framework paths | SSG-DT cross-scale validation target | Future execution decision models |
+| Agent | Agent-SSG execution proposal | Future Agent-SSG-DT | Future Agent-level learning |
+
+Each cell can advance from MVP to MMP. This is a portfolio of research/engineering targets, not eighteen established capabilities or separate paper requirements. Agent-SSG and SSG-DT extend different axes; Agent-SSG-DT would depend on both. TSG is a parallel research series outside this cube.
+
 ### Evaluation Groups in Paper 1 (`Sep-V2.4.7`)
 
 <div class="fig-grid">
@@ -81,14 +103,14 @@ Between open frontend IRs (PyTorch FX, ONNX, Triton, StableHLO) and closed vendo
 </div>
 
 - **Group 1 (Intra-Device Operators):** Bounded enumeration, legality filtering, and CUDA/Triton realization for GEMM on NVIDIA H20.
-- **Group 2 (Distributed Trainfer &mdash; Training / Inference / RL):** Cross-device DP &times; TP &times; PP strategy trade-offs, pipeline ratio sweeps, and disaggregated prefill/decode analysis on 8&times;A800.
-- **Group 3 (Composite Model Subgraphs):** Multi-operator GQA producer/consumer chains and MoE routing/expert execution paths, plus out-of-core **RS-DSA** capability-profile validation (Appendix B).
+- **Group 2 (Trainfer framework experiments):** The attached submission reports selected DP/TP/PP and prefill/decode studies on A800. Representational coverage of training/inference/RL does not establish every scale-out or RL execution path as physically validated.
+- **Group 3 (Composite Model Subgraphs):** Multi-operator GQA producer/consumer chains and MoE routing/expert execution paths, plus **RS-DSA** capability-profile discussion (Appendix B), distinct from measured cross-hardware portability.
 
 ## Manuscripts and Artifacts
 
 ### Primary Manuscript: *SSG: A Unified System Substrate Graph for Cross-Scale AI Computing*
 
-- **Current Version:** `Sep-V2.4.7[cursor]` (HotCRP submission snapshot `asplos27-sep-paper2050`, promoted 2026-09-14).
+- **Attached submission snapshot:** `Sep-V2.4.7[cursor]` (HotCRP submission snapshot `asplos27-sep-paper2050`, promoted 2026-09-14).
 - **Direct PDF:** **[ssg-asplos27-v2.4.7.pdf](/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf)** (11 pages body + references &amp; appendices).
 - **Claim Modality:** *Attainability and structural coverage*, not universal superiority over hand-tuned vendor libraries. Calibrated runtime prediction and hardware co-design are explicitly scoped to **[SSG-DT](/research/ssg-dt/)**.
 
