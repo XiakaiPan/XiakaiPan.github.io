@@ -1,126 +1,97 @@
 ---
 title: Xiakai Pan
 permalink: /
-description: "Structural modeling from AI computing substrates to evolving human-AI task substrates."
+description: "AI systems, compilers/runtimes, and accelerator architecture: one representation for how AI workloads are mapped onto hardware."
 ---
 
 # Xiakai Pan (潘夏凯)
 
-**AI Computing & Task Intelligence** · *Structural modeling from execution substrates to evolving task substrates.*
+**AI systems &middot; compilers and runtimes &middot; accelerator architecture**
 
-I work on computer architecture, AI infrastructure, compilers, and runtime systems. My research investigates how implicit structure in **AI computing execution** and **long-horizon human–AI work** can be turned into explicit, checkable substrate graphs—connecting one methodological foundation (**Three Models**) with two parallel research series (**SSG** and **TSG**).
+I build representations that make AI execution decisions explicit and checkable. A GEMM tiling, a TP/PP choice for an LLM, and the scheduling of an agent's tool calls are normally decided by different compilers, frameworks, and runtimes. My main project, **SSG (System Substrate Graph)**, describes all of them as one mapping of a *Workload* onto a *System* through a *Schedule*, and uses that description to generate and select real executions on GPUs. A parallel project, **TSG (Task Substrate Graph)**, applies the same structural approach to long-running human&ndash;AI work.
+
+Currently a heterogeneous computing engineer at Baidu (Kunlun accelerator operators, vLLM integration). Previously NPU architecture and performance modeling at Li Auto. M.S., Tsinghua University.
 
 <div class="jump-bar">
-  <span class="jump-label">Quick Jump</span>
-  <a class="btn-pill primary" href="#featured-manuscripts-and-direct-pdfs">Featured Manuscripts &amp; PDFs &darr;</a>
-  <a class="btn-pill" href="/research/three-models/">Three Models</a>
-  <a class="btn-pill" href="/research/ssg/">SSG Series</a>
-  <a class="btn-pill" href="/research/tsg/">TSG Series</a>
-  <a class="btn-pill" href="/publications/">Publications</a>
+  <a class="btn-pill primary" href="#ssg-results-at-a-glance">Results &darr;</a>
+  <a class="btn-pill" href="#research-map">Research map &darr;</a>
+  <a class="btn-pill" href="#papers">Papers &darr;</a>
   <a class="btn-pill" href="/cv/">CV</a>
+  <a class="btn-pill" href="https://github.com/XiakaiPan">GitHub &nearr;</a>
 </div>
+
+## SSG Results at a Glance
+
+<div class="stat-grid">
+  <div class="stat"><div class="stat-num">2,892+</div><div class="stat-label">legal schedules per GEMM shape</div><p>Enumerated from one representation on NVIDIA H20. Generated kernels reach <strong>49.6&ndash;110.1% of cuBLAS</strong> across nine shapes with elementwise-identical output.</p></div>
+  <div class="stat"><div class="stat-num">1.09&ndash;2.79&times;</div><div class="stat-label">vs. CUB on 66 row reductions</div><p>Mostly from emitting one fused launch where the library needs two. Reported as a launch-structure effect, not a general kernel speedup.</p></div>
+  <div class="stat"><div class="stat-num">+57%</div><div class="stat-label">throughput from a different parallel binding</div><p>Qwen3-8B on 8&times;A800: DP4&times;TP2 vs. TP8 at offered load 512. The best binding changes with load, which the same Schedule vocabulary expresses.</p></div>
+  <div class="stat"><div class="stat-num">40.2%</div><div class="stat-label">of measured GEMM variants fail correctness</div><p>Negative results are reported with their structure: 77 pipelined variants fail while their 77 parallel pairs pass. Legal is not the same as correct.</p></div>
+</div>
+
+<p class="source-note">Source: <a href="/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf">SSG submitted manuscript</a> (September 2026), &sect;5&ndash;7. Single-node H20 and 8&times;A800 configurations only.</p>
+
+## Research Map
 
 <figure class="hero-figure">
-  <img src="/assets/figures/research-program-overview.svg" alt="Research Program Overview connecting Three Models methodology with SSG and TSG series">
-  <figcaption><strong>Figure 1 · Overall Research Program.</strong> <em>Three Models</em> (Formal · Simulation · Statistical, anchored against real measurement) provides the shared modeling methodology. <strong>Series A (SSG)</strong> models the AI computing execution world across operators, training/inference/RL, and agents; <strong>Series B (TSG)</strong> models the evolving human–AI task world across actors, specifications, implementations, and activity-relative CMA objects.</figcaption>
+  <img src="/assets/figures/research-program-overview.svg" alt="Research map: Three Models methodology above two parallel series, SSG for AI execution and TSG for evolving tasks">
+  <figcaption><strong>One methodology, two parallel series.</strong> <em>Three Models</em> (Formal, Simulation, Statistical, checked against measurement) is the shared way of building models. <strong>SSG</strong> models how AI workloads execute on hardware. <strong>TSG</strong> models how human&ndash;AI tasks persist and change. Neither series depends on the other.</figcaption>
 </figure>
 
-## Research Program at a Glance
-
 <div class="card-grid">
-  <div class="series-card amber">
-    <div>
-      <div class="series-kicker">Methodological Foundation</div>
-      <h3><a href="/research/three-models/">Three Models of World Modeling</a></h3>
-      <p><strong>Formal · Simulation · Statistical</strong> contracts anchored against external measurement: Formal defines legal structure, Simulation evaluates dynamics and cost, and Statistical amortizes calibration and search.</p>
-    </div>
-    <div class="card-links">
-      <a class="btn-pill" href="/research/three-models/">Methodology Page &rarr;</a>
-      <a class="btn-pill" href="/research/three-models/#barycentric-prototypes-in-ssg-and-tsg">Barycentric Map &rarr;</a>
-    </div>
-  </div>
-
   <div class="series-card">
     <div>
-      <div class="series-kicker">Series A · AI Computing World</div>
-      <h3><a href="/research/ssg/">SSG — System Substrate Graph</a></h3>
-      <p>Unified <code>Workload / System / Schedule</code> representation across compute, memory, and communication—spanning Operators (T1), Trainfer/RL (T2), and Heterogeneous Agent workflows (T3).</p>
+      <div class="series-kicker">Main project &middot; AI execution</div>
+      <h3><a href="/research/ssg/">SSG &mdash; System Substrate Graph</a></h3>
+      <p><code>Execution = Schedule(Workload, System)</code>. One representation spans operators (H20 GEMM, reductions), distributed training/inference/RL (8&times;A800), and live Qwen3 GQA/MoE paths. It generates candidates, checks legality, and emits runnable code or framework plans.</p>
+      <p class="card-status"><span class="status done">Submitted</span> September 2026 manuscript with measured results.</p>
     </div>
     <div class="card-links">
-      <a class="btn-pill primary" href="/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf">SSG PDF (Sep-V2.4.7) &nearr;</a>
-      <a class="btn-pill" href="/research/ssg/">SSG</a>
-      <a class="btn-pill" href="/research/agent-ssg/">Agent-SSG</a>
-      <a class="btn-pill" href="/research/ssg-dt/">SSG-DT</a>
+      <a class="btn-pill primary" href="/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf">PDF &nearr;</a>
+      <a class="btn-pill" href="/research/ssg/">Overview &rarr;</a>
     </div>
   </div>
-
+  <div class="series-card">
+    <div>
+      <div class="series-kicker">SSG extensions &middot; in progress</div>
+      <h3><a href="/research/agent-ssg/">Agent-SSG</a> and <a href="/research/ssg-dt/">SSG-DT</a></h3>
+      <p><strong>Agent-SSG</strong> extends the scope upward: schedule an agent's CPU tool calls and GPU model calls together, down to operator choices. <strong>SSG-DT</strong> extends capability: a digital twin that predicts unmeasured executions from the same plan.</p>
+      <p class="card-status"><span class="status wip">Design stage</span> Protocols written; measurements pending.</p>
+    </div>
+    <div class="card-links">
+      <a class="btn-pill" href="/research/agent-ssg/">Agent-SSG &rarr;</a>
+      <a class="btn-pill" href="/research/ssg-dt/">SSG-DT &rarr;</a>
+    </div>
+  </div>
   <div class="series-card blue">
     <div>
-      <div class="series-kicker">Series B · Human–AI Task World</div>
-      <h3><a href="/research/tsg/">TSG — Task Substrate Graph</a></h3>
-      <p>Persistent and evolving task structures situated by <code>Owner &times; Location &times; Operation(CDC)</code>, decoupling graph nodes (<code>Actor &times; Spec &times; Impl</code>) from exchanged <code>Component · Model · Artifact</code> roles.</p>
+      <div class="series-kicker">Parallel series &middot; human&ndash;AI tasks</div>
+      <h3><a href="/research/tsg/">TSG &mdash; Task Substrate Graph</a></h3>
+      <p>A formal model that treats the task itself, not the agent or chat session, as the persistent object. Nodes are <code>Actor &times; Spec &times; Impl</code>; objects play activity-relative Component / Model / Artifact roles; tasks evolve within and across task boundaries.</p>
+      <p class="card-status"><span class="status done">Preprint</span> September 2026; October revision in progress.</p>
     </div>
     <div class="card-links">
-      <a class="btn-pill primary" href="/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf">Historical TSG PDF (Sep-V3.1.13) &nearr;</a>
-      <a class="btn-pill" href="/research/tsg/">TSG Overview</a>
-      <a class="btn-pill" href="/research/tsg/#historical-lineage-tli-and-workbench-to-tsg">3 Manuscripts &rarr;</a>
+      <a class="btn-pill primary" href="/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf">PDF &nearr;</a>
+      <a class="btn-pill" href="/research/tsg/">Overview &rarr;</a>
     </div>
   </div>
 </div>
 
-## Featured Manuscripts and Direct PDFs
+Methodology: [Three Models of World Modeling](/research/three-models/) &middot; Full index with versions: [Research](/research/)
 
-*Working manuscripts and submission snapshots are linked directly below with version tags and provenance. Unaccepted manuscripts are explicitly distinguished from peer-reviewed publications.*
+## Papers
 
-<div class="paper-anchor-box">
-  <div class="paper-anchor-header">
-    <span class="paper-anchor-title">SSG: A Unified System Substrate Graph for Cross-Scale AI Computing</span>
-    <span class="badge">ASPLOS'27 Submission Snapshot · Sep-V2.4.7</span>
-  </div>
-  <div class="paper-meta">
-    <strong>Scope:</strong> Cross-scale representation with independent <code>AbstractSSG</code> (Workload) and <code>CalibratedSSG</code> (System) inputs bound into <code>InstantiatedSSG</code>, bounded strategy enumeration, and executable realization across GPU operators (GEMM, GQA, MoE) and distributed Trainfer workloads.
-  </div>
-  <div class="paper-actions">
-    <a class="btn-pill primary" href="/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf">Download PDF (Sep-V2.4.7) &nearr;</a>
-    <a class="btn-pill" href="/research/ssg/#manuscripts-and-artifacts">Paper Details &amp; Abstract &rarr;</a>
-    <a class="btn-pill" href="/research/ssg/#version-history">Version Lineage &rarr;</a>
-  </div>
-</div>
+<ul class="paper-list">
+  <li><span class="pl-title">System Substrate Graph: One Cross-Scale Representation of Workload, System, and Schedule for AI Computing</span><span class="pl-meta">Submitted manuscript &middot; September 2026 &middot; 13 pp.</span><a href="/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf">PDF</a> &middot; <a href="/research/ssg/">Project page</a></li>
+  <li><span class="pl-title">Task Substrate Graph: A Formal Model of Evolving Human&ndash;AI Tasks</span><span class="pl-meta">Xiakai Pan &middot; Preprint &middot; September 2026 &middot; 27 pp.</span><a href="/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf">PDF</a> &middot; <a href="/research/tsg/">Project page</a></li>
+  <li><span class="pl-title">Agent-SSG: Cross-Layer Scheduling of Agent Workflows on Heterogeneous AI Systems</span><span class="pl-meta">Working draft &middot; September 2026 &middot; 6 pp. &middot; superseded by an October design revision</span><a href="/assets/papers/agent-ssg/v0.1/agent-ssg-mlsys27-v5.2.1.pdf">PDF</a> &middot; <a href="/research/agent-ssg/">Project page</a></li>
+  <li><span class="pl-title">Style Adaptation module: Enhancing detector robustness to inter-manufacturer variability in surface defect detection</span><span class="pl-meta">Chen Li, Xiakai Pan, et al. &middot; <em>Computers in Industry</em>, 2024 &middot; peer-reviewed</span><a href="https://doi.org/10.1016/j.compind.2024.104084">DOI</a></li>
+</ul>
 
-<div class="paper-anchor-box blue">
-  <div class="paper-anchor-header">
-    <span class="paper-anchor-title">Task Substrate Graph: Representing Persistent and Evolving Task Structure</span>
-    <span class="badge blue">Current draft: 2026.10.4.3.1 · Historical PDF: Sep-V3.1.13</span>
-  </div>
-  <div class="paper-meta">
-    <strong>Current draft (28 October 2026):</strong> Domain-independent representation of persistent task identity, <code>Actor &times; Spec(R,T,C) &times; Impl</code> structural factorization, activity-relative CMA roles, and <code>Intra-Task</code> vs. <code>Inter-Task</code> evolution.
-  </div>
-  <div class="paper-actions">
-    <a class="btn-pill primary" href="/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf">Historical Foundation PDF (Sep-V3.1.13) &nearr;</a>
-    <a class="btn-pill" href="/assets/papers/tsg/v0.1/tsg-preprint-v3.1.14-source.tar.gz">Sep-V3.1.14 TeX Source (.tar.gz) &nearr;</a>
-    <a class="btn-pill" href="/assets/papers/tsg/v0.1/tli-aug-v4.2.pdf">TLI Draft PDF (Aug-V4.2) &nearr;</a>
-    <a class="btn-pill" href="/assets/papers/tsg/v0.1/workbench-aug-v0.1.pdf">Workbench PDF (Aug-V0.1) &nearr;</a>
-    <a class="btn-pill" href="/research/tsg/#historical-lineage-tli-and-workbench-to-tsg">TSG Paper Suite &rarr;</a>
-  </div>
-</div>
+Earlier TSG precursor drafts and full version histories: [Publications](/publications/).
 
-<div class="paper-anchor-box">
-  <div class="paper-anchor-header">
-    <span class="paper-anchor-title">Agent-SSG: Cross-Layer Scheduling of Agent Workflows on Heterogeneous AI Systems</span>
-    <span class="badge">Working Draft Snapshot · Sep-V5.2.1 (Archived Line)</span>
-  </div>
-  <div class="paper-meta">
-    <strong>Current draft:</strong> <code>2026.10.4.3.1</code> (28 October 2026) proposes dynamically revealed workloads, effect-aware tool overlap, model/operator refinement, and traceable dispatch. Results remain pending; the linked September PDF is historical.
-  </div>
-  <div class="paper-actions">
-    <a class="btn-pill primary" href="/assets/papers/agent-ssg/v0.1/agent-ssg-mlsys27-v5.2.1.pdf">Download Draft PDF (Sep-V5.2.1) &nearr;</a>
-    <a class="btn-pill" href="/research/agent-ssg/#architecture-l0-l1-l2-on-heterogeneous-substrates">Agent-SSG Details &rarr;</a>
-  </div>
-</div>
+## Contact
 
----
+Open to conversations about research and engineering roles, and collaborations, in AI systems, compilers/runtimes, performance modeling, and agent infrastructure.
 
-**Research areas:** AI Systems · Compiler/Runtime · Heterogeneous Scheduling · Computer Architecture · Agent Systems
-
-[Research](/research/) · [Publications](/publications/) · [Writing](/writing/) · [CV](/cv/) · [GitHub](https://github.com/XiakaiPan)
-
+[GitHub](https://github.com/XiakaiPan) &middot; [CV](/cv/) &middot; [Writing](/writing/)

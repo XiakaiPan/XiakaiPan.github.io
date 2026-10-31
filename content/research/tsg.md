@@ -12,7 +12,20 @@ description: "A formal model of evolving tasks: semantic context, Actor–Spec�
 
 TSG investigates how a task can remain a persistent object while its actors, specifications, implementations, and relationships change. Humans, programs, models, and harnesses can realize the work at different times. The research object is the task's evolving structure, including changes to what the work means and what counts as a valid result.
 
-**Current working draft:** `2026.10.4.3.1` · 28 October 2026. The draft develops a formal model and its boundaries; complete edge algebra, task-identity criteria, evolution policy, and general empirical validation remain open. The [September PDF](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf) and [source archive](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.14-source.tar.gz) are retained as historical artifacts, not relabeled as the October draft. The historical arXiv submission reference is not a public arXiv identifier or evidence of publication.
+**Current working draft:** `2026.10.4.3.1` · 28 October 2026. The draft develops a formal model and its boundaries; complete edge algebra, task-identity criteria, evolution policy, and general empirical validation remain open. The [September PDF](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf) and [source archive](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.14-source.tar.gz) are retained as historical artifacts, not relabeled as the October draft. The preprint is not yet publicly listed on arXiv.
+
+<div class="paper-anchor-box blue">
+  <div class="paper-anchor-header">
+    <span class="paper-anchor-title">Task Substrate Graph: A Formal Model of Evolving Human&ndash;AI Tasks</span>
+    <span class="badge">Preprint &middot; 24 September 2026 &middot; 27 pp.</span>
+  </div>
+  <div class="paper-meta"><strong>One-line idea:</strong> make the task, rather than the agent, session, or workflow, the persistent object of intelligent work, with an explicit structure that can be revised and reused.</div>
+  <div class="paper-actions">
+    <a class="btn-pill primary" href="/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf">PDF (132 KB) &nearr;</a>
+    <a class="btn-pill" href="/assets/papers/tsg/v0.1/tsg-preprint-v3.1.14-source.tar.gz">Next-revision LaTeX source &nearr;</a>
+    <a class="btn-pill" href="#historical-lineage-tli-and-workbench-to-tsg">Earlier drafts &darr;</a>
+  </div>
+</div>
 
 <div class="jump-bar">
 <a class="btn-pill primary" href="#tsg-three-core-aspects">Core Model</a>
@@ -109,18 +122,18 @@ The TSG manuscript synthesizes two earlier August 2026 research tracks into a si
 
 | Stage | Manuscript | Core Focus | How It Entered TSG |
 |---|---|---|---|
-| **Precursor A** | **[TLI: Thought&ndash;Language Interface](/assets/papers/tsg/v0.1/tli-aug-v4.2.pdf)** (`Aug-V4.2`) | Typed cognitive alignment (`Intent / Representation / Transformation / Constraint`) between human intent and LLM generation | Became the step-level `Spec = R x T x C` and `Intent(E x F x P)` coordinates inside `V_T` |
-| **Precursor B** | **[Personal Research &amp; Creation Workbench](/assets/papers/tsg/v0.1/workbench-aug-v0.1.pdf)** (`Aug-V0.1`) | Auditable entity-relation hub (`IDO x outside`), multi-model panel deliberation (`dissents_from`), and human approval gates | Became the persistent object layer `O`, `CDC` macro-operations, and empirical case-study workbench |
-| **Unified Track** | **[Task Substrate Graph (TSG)](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf)** (`Sep-V3.1.13` / `v3.1.14`) | Substrate-level task graph `G_T`, activity-relative `CMA` roles, and `Instantiation` / `Intra-Task` / `Inter-Task Evolve` | Unifies step-level cognitive specs and hub-level lifecycle into a general task-world substrate |
+| **Precursor A** | **[Task-Level Intelligence: Task Substrate Graphs for Recursive Intelligent Creation](/assets/papers/tsg/v0.1/tli-aug-v4.2.pdf)** (`Aug-V4.2`, 29 pp.) | Asks what lies above the agent harness; introduces the TSG name and typed Intent / Representation / Transformation / Constraint specifications | Became the step-level `Spec = R x T x C` and `Intent(E x F x P)` coordinates inside `V_T` |
+| **Precursor B** | **[Toward an AI-Native Workbench: Unifying Consume, Digest, and Create](/assets/papers/tsg/v0.1/workbench-aug-v0.1.pdf)** (`Aug-V0.1`, 28 pp.) | Organizes AI work around persistent human activity instead of applications; introduces Consume / Digest / Create and Location | Became the persistent object layer `O`, `CDC` macro-operations, and empirical case-study workbench |
+| **Unified Track** | **[Task Substrate Graph: A Formal Model of Evolving Human&ndash;AI Tasks](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf)** (`Sep-V3.1.13`, 27 pp.) | Substrate-level task graph `G_T`, activity-relative `CMA` roles, and `Instantiation` / `Intra-Task` / `Inter-Task Evolve` | Unifies step-level cognitive specs and hub-level lifecycle into a general task-world substrate |
 
 ## Version History
 
 | Date | Version Tag | Artifact / Snapshot | Substantive Changes &amp; Provenance |
 |---|---|---|---|
-| **2026-09-20** | `Sep-V3.1.14` | **[Source .tar.gz](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.14-source.tar.gz)** (`5837bd8`) | Pure representation framing pass for arXiv submission `8122073`; reframed runtime protocols (`propose -> apply`, approval gates) as reference implementation choices rather than core graph semantics. |
-| **2026-09-20** | `Sep-V3.1.13` | **[Compiled PDF](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf)** (`a69dc19`) | Restored TikZ architecture figures (`fig:overview`, `fig:evolve`), expanded 24-entry bibliography, and audited three end-to-end human&ndash;AI task traces (9 pages). |
+| **2026-09-20** | `Sep-V3.1.14` | **[Source .tar.gz](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.14-source.tar.gz)** | Representation-framing revision; reframed runtime protocols (`propose -> apply`, approval gates) as reference implementation choices rather than core graph semantics. |
+| **2026-09-20** | `Sep-V3.1.13` | **[Compiled PDF](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf)** | Preprint dated 24 September (27 pages): restored architecture figures, 24-entry bibliography, three end-to-end human&ndash;AI task traces. |
 | **2026-09-18** | `Sep-V3.1` | Draft milestone | Completed four-axis context (`Owner x Actor x Location x CDC`) and `CMA` role formalization across research, engineering, and creative tasks. |
-| **2026-08-19** | `TLI Aug-V4.2` | **[Precursor PDF](/assets/papers/tsg/v0.1/tli-aug-v4.2.pdf)** (`3046fa0`) | 20-page Thought&ndash;Language Interface manuscript establishing `IRTC` cognitive alignment and multi-domain protocols. |
-| **2026-08-19** | `Workbench Aug-V0.1` | **[Precursor PDF](/assets/papers/tsg/v0.1/workbench-aug-v0.1.pdf)** (`39bfcb5`) | 12-page Personal Research &amp; Creation Workbench manuscript detailing the 468-material / 140-theme Hub and Model Panel deliberation workflow. |
+| **2026-08-19** | `TLI Aug-V4.2` | **[Precursor PDF](/assets/papers/tsg/v0.1/tli-aug-v4.2.pdf)** | *Task-Level Intelligence* draft (29 pages): TSG name, typed `IRTC` specifications, multi-domain protocols. |
+| **2026-08-19** | `Workbench Aug-V0.1` | **[Precursor PDF](/assets/papers/tsg/v0.1/workbench-aug-v0.1.pdf)** | *Toward an AI-Native Workbench* draft (28 pages): Consume / Digest / Create, Location, and materialization across tools. |
 
 [Explore Companion Series: SSG &rarr;](/research/ssg/) &middot; [Explore Methodology: Three Models &rarr;](/research/three-models/) &middot; [All Publications](/publications/)

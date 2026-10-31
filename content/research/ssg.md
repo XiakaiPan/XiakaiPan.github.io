@@ -14,7 +14,8 @@ SSG investigates how a single substrate graph built from **Compute, Memory, and 
 
 <div class="jump-bar">
   <span class="jump-label">Quick Jump</span>
-  <a class="btn-pill primary" href="/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf">Download Paper PDF (Sep-V2.4.7) &nearr;</a>
+  <a class="btn-pill primary" href="/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf">Paper PDF &nearr;</a>
+  <a class="btn-pill" href="#measured-results">Measured Results &darr;</a>
   <a class="btn-pill" href="#ssg-3d-research-space">3D Research Space &darr;</a>
   <a class="btn-pill" href="#core-architecture-abstract-calibrated-and-instantiated-ssg">Core Architecture &darr;</a>
   <a class="btn-pill" href="#manuscripts-and-artifacts">Manuscript &amp; Abstract &darr;</a>
@@ -23,17 +24,17 @@ SSG investigates how a single substrate graph built from **Compute, Memory, and 
 
 <div class="paper-anchor-box">
   <div class="paper-anchor-header">
-    <span class="paper-anchor-title">SSG: A Unified System Substrate Graph for Cross-Scale AI Computing</span>
-    <span class="badge">ASPLOS'27 Submission Snapshot &middot; Sep-V2.4.7 (Promoted 2026-09-14)</span>
+    <span class="paper-anchor-title">System Substrate Graph: One Cross-Scale Representation of Workload, System, and Schedule for AI Computing</span>
+    <span class="badge">Submitted manuscript &middot; September 2026</span>
   </div>
   <div class="paper-meta">
-    <strong>Target &amp; Format:</strong> ASPLOS 2027 submission cycles &middot; 11-page body + references &amp; appendices (<code>acmart sigplan</code>).<br>
-    <strong>Key Contribution:</strong> Factorizing the <code>M &times; N &times; K</code> workload&ndash;schedule&ndash;system explosion via paired <code>OpHierarchy</code> and <code>DomainHierarchy</code>, bounded strategy enumeration, and an executable Backend Realizer evaluated on NVIDIA H20 and A800.
+    <strong>Format:</strong> 13 pages, ACM format, anonymized for review.<br>
+    <strong>Contributions:</strong> (1) paired Op and System hierarchies over shared Compute&ndash;Memory&ndash;Communication, bound by a Parallel &times; Pipeline schedule and materialized as Compute&ndash;Remap&ndash;Sync; (2) a Build / Traverse / Translate architecture that separates graph transformation from strategy mapping; (3) a three-group evaluation on H20 and 8&times;A800 that reports representation, legality, correctness, and measured performance as separate evidence states.
   </div>
   <div class="paper-actions">
-    <a class="btn-pill primary" href="/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf">Open Compiled PDF (Sep-V2.4.7, 485 KB) &nearr;</a>
-    <a class="btn-pill" href="#manuscripts-and-artifacts">Read Full Abstract &amp; Scope &darr;</a>
-    <a class="btn-pill" href="#version-history">View Draft &amp; Freeze Lineage &darr;</a>
+    <a class="btn-pill primary" href="/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf">PDF (485 KB) &nearr;</a>
+    <a class="btn-pill" href="#measured-results">Measured results &darr;</a>
+    <a class="btn-pill" href="#version-history">Versions &darr;</a>
   </div>
 </div>
 
@@ -106,22 +107,36 @@ Each cell can advance from MVP to MMP. This is a portfolio of research/engineeri
 - **Group 2 (Trainfer framework experiments):** The attached submission reports selected DP/TP/PP and prefill/decode studies on A800. Representational coverage of training/inference/RL does not establish every scale-out or RL execution path as physically validated.
 - **Group 3 (Composite Model Subgraphs):** Multi-operator GQA producer/consumer chains and MoE routing/expert execution paths, plus **RS-DSA** capability-profile discussion (Appendix B), distinct from measured cross-hardware portability.
 
+## Measured Results
+
+Numbers from the submitted manuscript (&sect;5&ndash;7). They cover single-node H20 and 8&times;A800 configurations only.
+
+| Scope | Result | How to read it |
+|---|---|---|
+| **Operator: GEMM (H20)** | 2,892&ndash;2,988 legal candidates per shape; generated kernels reach **49.6&ndash;110.1% of cuBLAS** on nine FP16 shapes, elementwise identical to the reference | Best-in-pool per shape, not automatic selection |
+| **Operator: correctness funnel** | 194 of 482 measured variants (40.2%) fail correctness; 77 pipelined variants fail while their 77 parallel pairs pass | Legality and correctness are reported as separate stages |
+| **Operator: row reduction** | **1.09&ndash;2.79&times;** CUB throughput on all 66 declared cases | Mostly from one fused launch vs. two library launches |
+| **Framework: inference (8&times;A800)** | Qwen3-8B at offered load 512: DP4&times;TP2 reaches 7,781 tok/s, **+57% over TP8** | The best binding moves with load; one Schedule vocabulary covers DP/TP/PP |
+| **Framework: transport** | PP2&times;TP4 vs. TP8 ratio spans 0.59&ndash;1.03 on NVLink and 0.86&ndash;3.40 with P2P disabled (Qwen3-8B) | The preferred binding also moves with the System input |
+| **Framework: training / RL** | SFT scales 1.316&times; from 4 to 8 devices (65.8% efficiency); two RL resource partitions give 13.05 s and 22.32 s step times | Plans emitted to framework-native execution |
+| **Model path: Qwen3 MoE** | SSG router region inside fused MoE on TP8&times;EP8 reaches 95.6% of framework decode throughput; prefill is much slower | Diagnostic integration, not an end-to-end speedup |
+
 ## Manuscripts and Artifacts
 
-### Primary Manuscript: *SSG: A Unified System Substrate Graph for Cross-Scale AI Computing*
+### *System Substrate Graph: One Cross-Scale Representation of Workload, System, and Schedule for AI Computing*
 
-- **Attached submission snapshot:** `Sep-V2.4.7[cursor]` (HotCRP submission snapshot `asplos27-sep-paper2050`, promoted 2026-09-14).
-- **Direct PDF:** **[ssg-asplos27-v2.4.7.pdf](/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf)** (11 pages body + references &amp; appendices).
+- **Status:** submitted manuscript, September 2026 (internal version `Sep-V2.4.7`).
+- **PDF:** **[ssg-asplos27-v2.4.7.pdf](/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf)** (13 pages, anonymized).
 - **Claim Modality:** *Attainability and structural coverage*, not universal superiority over hand-tuned vendor libraries. Calibrated runtime prediction and hardware co-design are explicitly scoped to **[SSG-DT](/research/ssg-dt/)**.
 
 ## Version History
 
 | Date | Version Tag | Artifact / Snapshot | Substantive Changes &amp; Provenance |
 |---|---|---|---|
-| **2026-09-14** | `Sep-V2.4.7` | **[PDF v2.4.7](/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf)** (`59648bc`) | Promoted HotCRP ASPLOS'27 submission to live paper SoT; finalized 11-page rapid-review intro, G1&ndash;G3 measured figures (H20 &amp; A800), and RS-DSA appendix. |
-| **2026-08-29** | `Aug-V4.3.2` | Frozen archive (`Sep-pre-V2.4.7`) | Completed D1&ndash;D21 alignment decisions, honesty wording audit on unmeasured cells, and paired Workload&ndash;System TikZ diagrams (`482ad83`). |
-| **2026-08-18** | `Aug-V3.0` | Frozen archive (`Aug-pre-V4`) | Four-lane review synthesis (`9ab8a15`); landed measured experiment figures and unified `AbstractSSG / CalibratedSSG / InstantiatedSSG` prose. |
-| **2026-08-14** | `Aug-V2.4.3` | Draft snapshot (`1b24d45`) | First complete 11-page ACM `acmart` LaTeX build and related-work integration (including TAOT, CUDA Tile IR, and CuTe dialect comparisons). |
-| **2026-08-06** | `Roadmap v1.5.2` | Design spec (`d-ssg-research-roadmap`) | Established the 3D Planning Cube (`Workload&System x Model Capability x Investment`), Wave 1&ndash;4 envelopes, and external Measurement anchor. |
+| **2026-09-14** | `Sep-V2.4.7` | **[PDF](/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf)** | Submitted version: revised introduction, G1&ndash;G3 measured figures (H20 and A800), RS-DSA appendix. |
+| **2026-08-29** | `Aug-V4.3.2` | Internal draft | Terminology alignment, wording audit of unmeasured claims, paired Workload&ndash;System diagrams. |
+| **2026-08-18** | `Aug-V3.0` | Internal draft | First measured experiment figures; unified `AbstractSSG / CalibratedSSG / InstantiatedSSG` terminology. |
+| **2026-08-17** | `Aug-V2.4.3` | Internal draft | First complete ACM-format build; related work including TAOT, CUDA Tile IR, and CuTe. |
+| **2026-08-06** | `Roadmap v1.5.2` | Research plan | Three-axis research space (scope &times; model capability &times; engineering maturity), staged waves, measurement kept separate from simulation. |
 
 [Explore Companion Track: Agent-SSG &rarr;](/research/agent-ssg/) &middot; [Explore Companion Track: SSG-DT &rarr;](/research/ssg-dt/) &middot; [All Publications](/publications/)
