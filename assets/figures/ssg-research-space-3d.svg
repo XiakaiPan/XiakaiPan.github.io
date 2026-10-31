@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 490" role="img" aria-label="SSG 3D Research Space and Wave Staging">
+  
+  <defs>
+    <style>
+      .title { font: 700 18px Georgia, "Times New Roman", serif; fill: #1c2825; }
+      .subtitle { font: 600 13px system-ui, -apple-system, sans-serif; fill: #19614f; letter-spacing: 0.4px; }
+      .kicker { font: 700 10.5px system-ui, -apple-system, sans-serif; fill: #64726d; letter-spacing: 1.2px; text-transform: uppercase; }
+      .h { font: 650 14px system-ui, -apple-system, sans-serif; fill: #1c2825; }
+      .h-sm { font: 650 12.5px system-ui, -apple-system, sans-serif; fill: #1c2825; }
+      .b { font: 450 12px system-ui, -apple-system, sans-serif; fill: #33433e; }
+      .b-sm { font: 450 11px system-ui, -apple-system, sans-serif; fill: #52615c; }
+      .mono { font: 600 11px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #19614f; }
+      .mono-amber { font: 600 11px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #8a5612; }
+      .mono-blue { font: 600 11px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #1e4b7a; }
+      .card { fill: #ffffff; stroke: #ced8d1; stroke-width: 1.25; rx: 8; }
+      .card-green { fill: #f2f7f5; stroke: #19614f; stroke-width: 1.5; rx: 8; }
+      .card-blue { fill: #f3f7fb; stroke: #2b5c8f; stroke-width: 1.5; rx: 8; }
+      .card-amber { fill: #fdf8f0; stroke: #b07219; stroke-width: 1.5; rx: 8; }
+      .pill-green { fill: #e3f0ec; stroke: #19614f; stroke-width: 1; rx: 5; }
+      .pill-blue { fill: #e6eff8; stroke: #2b5c8f; stroke-width: 1; rx: 5; }
+      .pill-amber { fill: #faeedb; stroke: #b07219; stroke-width: 1; rx: 5; }
+      .pill-gray { fill: #eef2ef; stroke: #95a39d; stroke-width: 1; rx: 5; }
+      .arr { stroke: #19614f; stroke-width: 1.6; fill: none; marker-end: url(#arrow-green); }
+      .arr-blue { stroke: #2b5c8f; stroke-width: 1.6; fill: none; marker-end: url(#arrow-blue); }
+      .arr-amber { stroke: #b07219; stroke-width: 1.6; fill: none; marker-end: url(#arrow-amber); }
+      .arr-muted { stroke: #64726d; stroke-width: 1.4; stroke-dasharray: 5 4; fill: none; marker-end: url(#arrow-muted); }
+    </style>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#19614f"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#2b5c8f"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#b07219"/>
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#64726d"/>
+    </marker>
+  </defs>
+
+  <rect width="920" height="490" fill="#fafbf8" rx="10" stroke="#dbe2dc" stroke-width="1.5"/>
+  <text x="460" y="30" text-anchor="middle" class="kicker">SSG 3D RESEARCH SPACE · WORKLOAD &amp; SYSTEM × MODEL CAPABILITY (3 MODELS) × INVESTMENT</text>
+
+  <!-- Axis Headers -->
+  <text x="200" y="62" text-anchor="middle" class="kicker" style="fill:#1c2825">AXIS 1: WORKLOAD &amp; SYSTEM SCOPE</text>
+  <text x="415" y="58" text-anchor="middle" class="h-sm" style="fill:#19614f">1. Function Prototype (FP)</text>
+  <text x="415" y="74" text-anchor="middle" class="b-sm">Formal Legality + Execution</text>
+
+  <text x="615" y="58" text-anchor="middle" class="h-sm" style="fill:#2b5c8f">2. Performance Prototype (PP)</text>
+  <text x="615" y="74" text-anchor="middle" class="b-sm">Calibrated Sim + Co-Design</text>
+
+  <text x="805" y="58" text-anchor="middle" class="h-sm" style="fill:#8a5612">3. Learnable Prototype (LP)</text>
+  <text x="805" y="74" text-anchor="middle" class="b-sm">Statistical Policy + Sim Reward</text>
+
+  <!-- Row 1: T1 Op -->
+  <rect x="28" y="88" width="275" height="96" class="card"/>
+  <text x="44" y="112" class="mono">T1 · Op × Intra&amp;Inter-Device</text>
+  <text x="44" y="132" class="h-sm">Operators &amp; Subgraphs</text>
+  <text x="44" y="150" class="b-sm">GEMM · Attention (GQA) · MoE</text>
+  <text x="44" y="167" class="b-sm">Warp / CTA / SM / Chip Hierarchy</text>
+
+  <!-- Row 2: T2 Trainfer -->
+  <rect x="28" y="196" width="275" height="96" class="card"/>
+  <text x="44" y="220" class="mono">T2 · MacroOp × Inter-Device</text>
+  <text x="44" y="240" class="h-sm">Trainfer (Train + Infer + RL)</text>
+  <text x="44" y="258" class="b-sm">DP / TP / PP / EP · PD Disaggregation</text>
+  <text x="44" y="275" class="b-sm">Multi-GPU &amp; Cluster Topologies</text>
+
+  <!-- Wave 1 Spanning Cell (T1 + T2 under FP) -->
+  <rect x="320" y="88" width="190" height="204" class="card-green" style="stroke-width:2"/>
+  <rect x="334" y="102" width="76" height="22" class="pill-green"/>
+  <text x="372" y="117" text-anchor="middle" class="mono" style="font-size:10.5px">WAVE 1</text>
+  <text x="334" y="145" class="title" style="font-size:17px">SSG (Paper 1)</text>
+  <text x="334" y="167" class="b-sm">Unified CMC Representation</text>
+  <text x="334" y="184" class="b-sm">Bounded Strategy Enumeration</text>
+  <text x="334" y="201" class="b-sm">Executable Realizer (H20/A800)</text>
+  <text x="334" y="218" class="b-sm">RS-DSA Capability Profile</text>
+  <rect x="334" y="236" width="162" height="38" fill="#ffffff" stroke="#19614f" rx="5"/>
+  <text x="344" y="253" class="mono" style="font-size:10px">ASPLOS'27 Submitted</text>
+  <text x="344" y="267" class="b-sm" style="font-size:10px">Snapshot: Sep-V2.4.7</text>
+
+  <!-- Wave 2 Cell: SSG-DT (T1 + T2 under PP) -->
+  <rect x="522" y="88" width="186" height="204" class="card-blue"/>
+  <rect x="536" y="102" width="76" height="22" class="pill-blue"/>
+  <text x="574" y="117" text-anchor="middle" class="mono-blue" style="font-size:10.5px">WAVE 2</text>
+  <text x="536" y="145" class="title" style="font-size:17px">SSG-DT</text>
+  <text x="536" y="167" class="b-sm">Structure-Preserving Twin</text>
+  <text x="536" y="184" class="b-sm">Node/Edge Cost Calibration</text>
+  <text x="536" y="201" class="b-sm">Compositional Error Attr.</text>
+  <text x="536" y="218" class="b-sm">HW/SW Co-Design What-If</text>
+  <rect x="536" y="236" width="158" height="38" fill="#ffffff" stroke="#2b5c8f" rx="5"/>
+  <text x="546" y="253" class="mono-blue" style="font-size:10px">Active Research Track</text>
+  <text x="546" y="267" class="b-sm" style="font-size:10px">Gates Wave 3 LP Reward</text>
+
+  <!-- Wave 3 Cell: SSG LP (T1 + T2 under LP) -->
+  <rect x="720" y="88" width="172" height="204" class="card-amber" style="stroke-dasharray:5 3"/>
+  <rect x="734" y="102" width="76" height="22" class="pill-amber"/>
+  <text x="772" y="117" text-anchor="middle" class="mono-amber" style="font-size:10.5px">WAVE 3</text>
+  <text x="734" y="145" class="title" style="font-size:17px">SSG-LP</text>
+  <text x="734" y="167" class="b-sm">Amortized Schedule Search</text>
+  <text x="734" y="184" class="b-sm">Resolver Legality Labels</text>
+  <text x="734" y="201" class="b-sm">DT-Predicted Reward</text>
+  <rect x="734" y="236" width="144" height="38" fill="#ffffff" stroke="#b07219" rx="5"/>
+  <text x="744" y="253" class="mono-amber" style="font-size:10px">Pre-Registered Stage</text>
+  <text x="744" y="267" class="b-sm" style="font-size:10px">Requires D2 Calibration</text>
+
+  <!-- Row 3: T3 Agent -->
+  <rect x="28" y="306" width="275" height="106" class="card"/>
+  <text x="44" y="330" class="mono">T3 · Op&amp;MacroOp × Device &amp; Host</text>
+  <text x="44" y="350" class="h-sm">Agent &amp; Heterogeneous Mixture</text>
+  <text x="44" y="368" class="b-sm">Coding Agent · Tool Calls · LLM Stages</text>
+  <text x="44" y="385" class="b-sm">Host CPU / NUMA + GPU / NPU</text>
+
+  <!-- Wave 2 Cell: Agent-SSG (T3 under FP) -->
+  <rect x="320" y="306" width="190" height="106" class="card-green"/>
+  <rect x="334" y="318" width="76" height="20" class="pill-green"/>
+  <text x="372" y="332" text-anchor="middle" class="mono" style="font-size:10px">WAVE 2</text>
+  <text x="334" y="355" class="h" style="color:#19614f">Agent-SSG</text>
+  <text x="334" y="373" class="b-sm">Cross-Layer Agent/Model/Op</text>
+  <text x="334" y="390" class="mono" style="font-size:10px">Draft: Sep-V5.2.1 (Archived)</text>
+
+  <!-- Wave 3 Cell: Agent-SSG-DT (T3 under PP) -->
+  <rect x="522" y="306" width="186" height="106" class="card-blue" style="stroke-dasharray:5 3"/>
+  <rect x="536" y="318" width="76" height="20" class="pill-blue"/>
+  <text x="574" y="332" text-anchor="middle" class="mono-blue" style="font-size:10px">WAVE 3</text>
+  <text x="536" y="355" class="h">Agent-SSG-DT</text>
+  <text x="536" y="373" class="b-sm">Uncertainty-Aware Twin</text>
+  <text x="536" y="390" class="b-sm">Trace-Driven Event Sim</text>
+
+  <!-- Wave 4 Cell: Agent-SSG-LP (T3 under LP) -->
+  <rect x="720" y="306" width="172" height="106" class="card-amber" style="stroke-dasharray:5 3"/>
+  <rect x="734" y="318" width="76" height="20" class="pill-amber"/>
+  <text x="772" y="332" text-anchor="middle" class="mono-amber" style="font-size:10px">WAVE 4</text>
+  <text x="734" y="355" class="h">Agent-SSG-LP</text>
+  <text x="734" y="373" class="b-sm">Closed-Loop Learned Policy</text>
+  <text x="734" y="390" class="b-sm">Cross-Scale Co-Optimization</text>
+
+  <!-- Axis 3 Footer Bar: Productization Investment -->
+  <rect x="28" y="426" width="864" height="46" class="pill-gray"/>
+  <text x="46" y="446" class="h-sm" style="fill:#1c2825">Axis 3 — Productization Investment (MVP → MMP):</text>
+  <text x="385" y="446" class="b-sm"><tspan style="font-weight:700">MVP</tspan> = internal research prototype for paper evidence · <tspan style="font-weight:700">MMP</tspan> = frozen spec extensible by third parties.</text>
+  <text x="46" y="463" class="b-sm">Governed by three rules: <tspan class="mono">Sparse</tspan> (not all cells productized) · <tspan class="mono">Ordered</tspan> (clear failure gates S1–S5 / D1–D3 first) · <tspan class="mono">Single Occupancy</tspan> (at most one MMP at a time).</text>
+</svg>
