@@ -1,36 +1,51 @@
 ---
-title: "SSG-DT"
+title: "SSG-DT: Structure-Preserving Digital Twin"
 permalink: /research/ssg-dt/
-description: "Execution / simulation correspondence"
+description: "Calibrated multi-fidelity simulation and hardware/software co-design on the System Substrate Graph"
 ---
 
-[Research](/research/) / SSG series
+[Research](/research/) / [SSG series](/research/ssg/) / SSG-DT
 
-# SSG-DT
+# SSG-DT: Structure-Preserving Digital Twin
 
-**Execution / simulation correspondence**
+**Performance Prototype (PP) of SSG &middot; Calibrated simulation &amp; counterfactual hardware/software co-design**
 
-SSG-DT investigates performance modeling and simulation derived from instantiated SSG execution structures.
+While **[Paper 1 (SSG)](/research/ssg/)** establishes the formal representation and executable Backend Realizer (**Function Prototype, FP**), **SSG-DT** develops the **Performance Prototype (PP)** along the Model Capability axis: a calibrated, structure-preserving digital twin that consumes the exact same `InstantiatedSSG` plans to predict latency, memory traffic, and bottleneck shifts across multi-fidelity regimes (`D1 / D2 / D3`).
 
-## Research question
+<div class="jump-bar">
+  <span class="jump-label">On This Page</span>
+  <a class="btn-pill primary" href="#execution-and-simulation-structural-correspondence">Structural Correspondence &darr;</a>
+  <a class="btn-pill" href="#multi-fidelity-ladder-d1-d2-d3">Multi-Fidelity (D1/D2/D3) &darr;</a>
+  <a class="btn-pill" href="#roadmap-and-manuscript-status">Roadmap &amp; Status &darr;</a>
+  <a class="btn-pill" href="/research/ssg/">Base SSG Paper (Sep-V2.4.7) &rarr;</a>
+</div>
 
-How much predictive fidelity and transfer can be obtained when execution and simulation preserve the same structural source?
+<figure class="hero-figure">
+  <img src="/assets/figures/ssg-dt-correspondence.svg" alt="SSG-DT Structure-Preserving Execution-Simulation Correspondence">
+  <figcaption><strong>Figure 1 &middot; Structure-Preserving Execution&ndash;Simulation Correspondence.</strong> A single committed <code>InstantiatedSSG</code> drives both real execution (Path A: Backend Realizer &rarr; CUDA/Triton/NCCL) and calibrated performance simulation (Path B: SSG-DT &rarr; D1/D2/D3). Neither path flattens the graph into an ad-hoc analytical formula, guaranteeing node- and edge-level attribution alignment.</figcaption>
+</figure>
 
-## Scope and relationships
+## Execution and Simulation Structural Correspondence
 
-This work extends the performance capability of the SSG series. Calibration, prediction error and counterfactual transfer are central evaluation questions.
+Most performance models for deep learning either rely on coarse analytical roofline formulas (which miss schedule-dependent pipelining and memory-bank conflicts) or cycle-level hardware simulators (which cannot scale to multi-GPU training/inference). SSG-DT enforces a **strict structural isomorphism** between execution and simulation:
 
-## Current status
+- **Shared Input Contract:** SSG-DT takes the exact `InstantiatedSSG` produced by the Resolver (`Build -> Traverse -> Translate`)&mdash;with committed tile sizes, memory placements, pipeline stages, and selected `PhysicalEdge` primitives.
+- **Calibration from Micro-Benchmarks &amp; Realizer Runs:** Hardware node efficiencies (`eta_compute`) and edge transfer curves (`BW_eff(size, stride, contention)`) in `CalibratedSSG` are fitted against physical micro-benchmarks and audited against Path A Realizer traces.
+- **Counterfactual Hardware Co-Design:** By perturbing `CalibratedSSG` parameters (e.g., SM/TMA bandwidth ratios, L2 capacity, inter-node scale-up vs. scale-out links, or **RS-DSA** specialized engines), SSG-DT evaluates candidate architectures over the full enumerated strategy space without requiring silicon.
 
-Work in progress. This page describes the research direction; detailed implementation and manuscript status will be recorded with each released version.
+## Multi-Fidelity Ladder: D1 / D2 / D3
 
-## Manuscripts and artifacts
+| Fidelity Tier | Granularity | Primary Mechanism | Target Use Case |
+|---|---|---|---|
+| **D1 &middot; Analytical Roofline** | Subgraph / MacroOp | Peak capacity &amp; bottleneck bound over `CalibratedSSG` capacities | Fast pruning during large-scale `Traverse` enumeration (`10^4+` candidates/sec) |
+| **D2 &middot; Event-Driven Critical Path** | Tile / Pipeline Stage | Token/tile dependency DAG with async overlap (`cp.async`, `tma`, double-buffering) and collective queuing | Accurate strategy ranking and intra-/inter-device trade-off attribution |
+| **D3 &middot; Contention-Calibrated Hybrid** | Sub-tile / Shared Resource | Calibrated contention penalties for shared memory banks, L2 cache pressure, and NVLink/PCIe arbitration | High-fidelity audit of top-*k* strategies and counterfactual DSA architecture studies |
 
-No manuscript or artifact is attached to this website yet. Public versions will receive stable file URLs and explicit version records here.
+## Roadmap and Manuscript Status
 
-## Version history
+Within the **[SSG 3D Research Space](/research/ssg/#ssg-3d-research-space)** (`d-ssg-research-roadmap v1.5.2`), SSG-DT corresponds to **Wave 2 (`T1/T2 x PP`)**:
 
-No website release recorded yet. For each release, record the date, manuscript version, immutable PDF link, corresponding code revision and substantive changes.
+- **Foundation Landed in Paper 1 (`Sep-V2.4.7`):** The `CalibratedSSG` hardware substrate schema, capability profiles (including **RS-DSA** out-of-core validation in Appendix B), and the `InstantiatedSSG` dual-consumption interface are already frozen and verified in the **[SSG ASPLOS'27 submission](/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf)**.
+- **Active SSG-DT Track (`in progress`):** Expanding D2/D3 calibrated event simulation, cross-hardware transfer validation (H20 / A800 / counterfactual DSA profiles), and systematic ranking-fidelity audits against measured Realizer sweeps.
 
-[Publications and manuscripts](/publications/)
-
+[Back to SSG Series Overview &rarr;](/research/ssg/) &middot; [Explore Companion Track: Agent-SSG &rarr;](/research/agent-ssg/) &middot; [Explore Methodology: Three Models &rarr;](/research/three-models/)
