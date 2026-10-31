@@ -20,6 +20,7 @@ My research focuses on structural modeling for AI computing and evolving human�
 
 ### Baidu — Heterogeneous Computing Engineer
 **September 2025 – Present**
+*Open to new opportunities.*
 
 - GPU/NPU execution infrastructure, inference operator implementation and runtime adaptation.
 - AWQ-related Kunlun accelerator operator optimization and integration with vLLM.
@@ -70,4 +71,3 @@ C/C++ · Python · GPU/NPU Operators · CUDA/Triton · TVM/MLIR/XLA · vLLM · A
 *CV updated October 2026. This public-oriented summary intentionally excludes private contact information, proprietary architectural detail, unpublished benchmark claims, and unverified acceptance claims.*
 
 [Download Markdown CV](/downloads/Xiakai_Pan_CV.md)
-

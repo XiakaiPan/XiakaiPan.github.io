@@ -10,13 +10,14 @@ description: "AI systems, compilers/runtimes, and accelerator architecture: one 
 
 I build representations that make AI execution decisions explicit and checkable. A GEMM tiling, a TP/PP choice for an LLM, and the scheduling of an agent's tool calls are normally decided by different compilers, frameworks, and runtimes. My main project, **SSG (System Substrate Graph)**, describes all of them as one mapping of a *Workload* onto a *System* through a *Schedule*, and uses that description to generate and select real executions on GPUs. A parallel project, **TSG (Task Substrate Graph)**, applies the same structural approach to long-running human&ndash;AI work.
 
-Currently a heterogeneous computing engineer at Baidu (Kunlun accelerator operators, vLLM integration). Previously NPU architecture and performance modeling at Li Auto. M.S., Tsinghua University.
+Heterogeneous computing engineer at Baidu. Open to new research-focused or senior engineering opportunities in AI systems and agent infrastructure. Previously NPU architecture and performance modeling at Li Auto. M.S., Tsinghua University.
 
 <div class="jump-bar">
   <a class="btn-pill primary" href="#ssg-results-at-a-glance">Results &darr;</a>
   <a class="btn-pill" href="#research-map">Research map &darr;</a>
   <a class="btn-pill" href="#papers">Papers &darr;</a>
   <a class="btn-pill" href="/cv/">CV</a>
+  <a class="btn-pill" href="mailto:panxiakai@gmail.com">Contact &nearr;</a>
   <a class="btn-pill" href="https://github.com/XiakaiPan">GitHub &nearr;</a>
 </div>
 
