@@ -1,10 +1,9 @@
 ---
-layout: default
 title: Publications
 permalink: /publications/
 ---
 
-[Home](/) · [Research](/research/) · [Publications](/publications/) · [Writing](/writing/) · [CV](/cv/)
+
 
 # Publications & Research Manuscripts
 
@@ -18,10 +17,11 @@ Co-author contributions included data curation and manuscript review/editing, ac
 
 ## Research in progress (not accepted publications)
 
-- **Three Models of World Modeling** — methodological working manuscript.
-- **System Substrate Graph (SSG)** — research manuscript and partial execution prototypes.
-- **Agent-SSG** — cross-level agent/model/operator execution design and evaluation.
-- **SSG-DT** — execution/simulation correspondence and performance modeling.
-- **Task Substrate Graph (TSG)** — evolving task formalization and workbench investigation.
+- **[Three Models of World Modeling](/research/three-models/)** — methodological working manuscript.
+- **[System Substrate Graph (SSG)](/research/ssg/)** — research manuscript and partial execution prototypes.
+- **[Agent-SSG](/research/agent-ssg/)** — cross-level agent/model/operator execution design and evaluation.
+- **[SSG-DT](/research/ssg-dt/)** — execution/simulation correspondence and performance modeling.
+- **[Task Substrate Graph (TSG)](/research/tsg/)** — evolving task formalization and workbench investigation.
 
 No publication or acceptance status is implied by inclusion here. Public manuscript links will be added only when release and review requirements permit.
+

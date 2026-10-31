@@ -13,3 +13,4 @@ This branch is a **private staging draft**, not approval to publish.
 - [ ] Test rendering and mobile navigation; consider replacing the basic Cayman theme later.
 
 Existing GitHub Learning Lab history remains in the repository.
+

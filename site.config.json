@@ -1,0 +1,31 @@
+{
+  "title": "Xiakai Pan",
+  "description": "Structural modeling for AI computing and evolving human–AI tasks.",
+  "github": "https://github.com/XiakaiPan",
+  "url": "",
+  "basePath": "",
+  "indexable": false,
+  "navigation": [
+    [
+      "Home",
+      "/"
+    ],
+    [
+      "Research",
+      "/research/"
+    ],
+    [
+      "Publications",
+      "/publications/"
+    ],
+    [
+      "Writing",
+      "/writing/"
+    ],
+    [
+      "CV",
+      "/cv/"
+    ]
+  ]
+}
+

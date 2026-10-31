@@ -1,10 +1,9 @@
 ---
-layout: default
 title: CV
 permalink: /cv/
 ---
 
-[Home](/) · [Research](/research/) · [Publications](/publications/) · [Writing](/writing/) · [CV](/cv/)
+
 
 # Xiakai Pan (潘夏凯)
 
@@ -69,3 +68,6 @@ C/C++ · Python · GPU/NPU Operators · CUDA/Triton · TVM/MLIR/XLA · vLLM · A
 ---
 
 *CV updated October 2026. This public-oriented summary intentionally excludes private contact information, proprietary architectural detail, unpublished benchmark claims, and unverified acceptance claims.*
+
+[Download Markdown CV](/downloads/Xiakai_Pan_CV.md)
+
