@@ -62,7 +62,7 @@ function add(num, dict) {
   cursor += data.length;
 }
 add(556, '<< /Type /Catalog /Pages 557 0 R /Lang (en-US) >>');
-add(557, '<< /Type /Pages /Count 14 /Kids [558 0 R 552 0 R] >>');
+add(557, '<< /Type /Pages /Count 14 /Kids [558 0 R 523 0 R] >>');
 add(558, '<< /Type /Page /Parent 557 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 559 0 R >> >> /Contents 560 0 R >>');
 add(559, '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>');
 add(560, '<< /Length ' + ascii(contentStream).length + ' >>\nstream\n' + contentStream + 'endstream');
