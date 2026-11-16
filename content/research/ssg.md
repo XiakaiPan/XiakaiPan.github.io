@@ -124,7 +124,7 @@ Numbers reported in the September 2026 technical manuscript (&sect;5&ndash;7). T
 
 ### *System Substrate Graph: One Cross-Scale Representation of Workload, System, and Schedule for AI Computing*
 
-- **Status:** technical manuscript, September 2026 (Sep-V2.4.7), previously submitted to the ASPLOS 2027 September cycle; no longer under review after a rapid-reject decision; not peer-reviewed.
+- **Status:** September 2026 technical manuscript (Sep-V2.4.7), not peer-reviewed; later research content is kept distinct from this historical snapshot.
 - **PDF:** **[ssg-asplos27-v2.4.7.pdf](/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf)** (13 pages, anonymized).
 - **Claim Modality:** *Attainability and structural coverage*, not universal superiority over hand-tuned vendor libraries. Calibrated runtime prediction and hardware co-design are explicitly scoped to **[SSG-DT](/research/ssg-dt/)**.
 
