@@ -16,7 +16,7 @@ Research-oriented systems engineer experienced in computer architecture, acceler
 
 ## Selected Technical and Research Evidence
 
-- **SSG:** Workload–System–Schedule, Build–Traverse–Translate and CMC/CRS execution modeling; operator, model and Agent workload scope. A [2026 technical manuscript](/assets/papers/ssg/author-2026-11/ssg-technical-report-xiakai-pan.pdf) reports best generated H20 GEMM kernels at **49.6–110.1% of cuBLAS** across nine FP16 shapes and a **+57%** Qwen3-8B throughput comparison on 8×A800 at one offered load. These are specific reported configurations, not universal guarantees.
+- **SSG:** Workload–System–Schedule, Build–Traverse–Translate and CMC/CRS execution modeling; operator, model and Agent workload scope. A [2026 technical manuscript](/assets/papers/ssg/author-2026-11/ssg-technical-report-2026-11.pdf) reports best generated H20 GEMM kernels at **49.6–110.1% of cuBLAS** across nine FP16 shapes and a **+57%** Qwen3-8B throughput comparison on 8×A800 at one offered load. These are specific reported configurations, not universal guarantees.
 - **TSG:** formal research into evolving human–AI task structures, reusable artifacts and specification changes; [2026 preprint](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf).
 - **Architecture:** NPU functional/performance models, vector/memory and interconnect studies; gem5/SST-based simulation; RISC-V virtualization.
 - **Peer-reviewed work:** [industrial computer vision, Computers in Industry (2024)](https://doi.org/10.1016/j.compind.2024.104084).

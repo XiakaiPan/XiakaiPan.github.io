@@ -64,7 +64,7 @@ export async function build() {
       '<link rel="stylesheet" href="' + href('/assets/site.css') + '"></head><body>' +
       '<a class="skip" href="#main">Skip to content</a><header><a class="brand" href="' + href('/') + '">' + escape(config.title) +
       '<span>AI Computing &amp; Task Intelligence</span></a><nav aria-label="Main navigation">' + nav + '</nav></header>' +
-      '<main id="main"><article>' + content + '</article></main><footer><span>Xiakai Pan · Research &amp; writing</span>' +
+      '<main id="main"><article>' + content + '</article></main><footer><span>&copy; 2026 Xiakai Pan · Research &amp; writing</span>' +
       '<a href="' + escape(config.github) + '">GitHub ↗</a></footer></body></html>';
     const target = join(out, meta.permalink, 'index.html');
     await mkdir(dirname(target), { recursive: true });

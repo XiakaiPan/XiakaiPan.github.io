@@ -1,22 +1,93 @@
-MIT License
+Copyright © 2026 Xiakai Pan. All rights reserved except as expressly
+granted below.
 
-Copyright (c) 2019 GitHub, Inc.
+This repository contains original research writing, diagrams, and manuscript
+drafts. It is published so that readers can read and cite the work — not so that
+the work can be reused as if it were unowned. Nothing here is released into the
+public domain, and no permission is implied except in the three sections below.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+====================================================================
+1. Written content, diagrams, figures, and manuscripts
+====================================================================
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+The prose, page layout, diagrams, figure images, and the manuscript PDFs in
+assets/papers/ are licensed under:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+    Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
+    International (CC BY-NC-ND 4.0)
 
+Canonical text: https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+
+You are free to:
+
+  - Read, download, and share the work in its original, unmodified form.
+  - Cite the work, and quote short passages with attribution, as normal
+    scholarly practice allows.
+
+Under these conditions:
+
+  - Attribution — you must credit "Xiakai Pan" and indicate the source.
+  - NonCommercial — you may not use the material for commercial purposes.
+  - NoDerivatives — you may not distribute modified versions, translations, or
+    adaptations without separate written permission.
+
+What this deliberately does not allow, without permission:
+
+  - Republishing this text or these figures in another site, book, course
+    material, or product.
+  - Distributing modified versions, excerpts assembled into a new work, or
+    translations.
+  - Any commercial use, including training data for a commercial product or
+    redistributing the content behind a paywall.
+
+The author retains copyright and all rights not expressly granted. Copyright is
+not transferred or assigned to anyone by this document.
+
+Separate licensing may apply to a manuscript after formal publication; the venue
+or publisher terms then govern that version, and this notice does not override
+them.
+
+====================================================================
+2. Source code and build tooling
+====================================================================
+
+All rights reserved. The scripts in scripts/ and the build configuration are
+made visible for transparency and for the purpose of building this site. No
+license is granted to copy, modify, redistribute, or use them in another
+project. This includes scripts/build.mjs, scripts/check.mjs, scripts/dev.mjs and
+scripts/release-check.mjs.
+
+If you would like to reuse the build tooling, ask first.
+
+====================================================================
+3. Excluded material
+====================================================================
+
+This license covers only work created by Xiakai Pan.
+
+  - Do not imply endorsement by, or affiliation with, any employer, university,
+    research group, or the venues named on these pages. All organisations are
+    named descriptively; their names and marks remain theirs.
+  - Third-party quotations, links, and citations remain the property of their
+    owners and are used here for commentary and reference.
+  - Material under assets/ or content/ that carries its own attribution notice
+    is governed by that notice instead.
+
+====================================================================
+No warranty
+====================================================================
+
+The content is provided "as is", without warranty of any kind. Research claims
+are stated together with their evidence status; unpublished or submitted results
+are clearly marked as such and should not be treated as established findings.
+
+====================================================================
+Permission requests
+====================================================================
+
+For reuse beyond the terms above — including figures for talks, teaching,
+adapted diagrams, or any commercial use — contact:
+
+    xiakpan@gmail.com
+
+A short description of the intended use is enough to start.

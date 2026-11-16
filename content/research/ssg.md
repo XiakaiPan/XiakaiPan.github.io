@@ -14,7 +14,7 @@ SSG studies how explicit **Compute, Memory, Communication (CMC)** structures rep
 
 <div class="jump-bar">
   <span class="jump-label">Quick Jump</span>
-  <a class="btn-pill primary" href="/assets/papers/ssg/author-2026-11/ssg-technical-report-xiakai-pan.pdf">Full Paper PDF &nearr;</a>
+  <a class="btn-pill primary" href="/assets/papers/ssg/author-2026-11/ssg-technical-report-2026-11.pdf">Full Paper PDF &nearr;</a>
   <a class="btn-pill" href="#measured-results">Measured Results &darr;</a>
   <a class="btn-pill" href="#workload-scope-operators-models-and-agents">Workload Scope &darr;</a>
   <a class="btn-pill" href="#key-figures-and-evidence">Figures &amp; Mechanism &darr;</a>
@@ -28,12 +28,12 @@ SSG studies how explicit **Compute, Memory, Communication (CMC)** structures rep
     <span class="badge">Technical manuscript · 2026 · not peer-reviewed</span>
   </div>
   <div class="paper-meta">
-    <strong>Author:</strong> Xiakai Pan<br>
+    <strong>Authors:</strong> Xiakai Pan, Peichao Han<br>
     <strong>Format:</strong> 14-page author edition: cover plus original 13-page ACM-format manuscript, unchanged.<br>
     <strong>Contributions:</strong> (1) paired Op and System hierarchies over shared Compute&ndash;Memory&ndash;Communication, bound by a Parallel &times; Pipeline schedule and materialized as Compute&ndash;Remap&ndash;Sync; (2) a Build / Traverse / Translate architecture that separates graph transformation from strategy mapping; (3) a three-group evaluation on H20 and 8&times;A800 that reports representation, legality, correctness, and measured performance as separate evidence states.
   </div>
   <div class="paper-actions">
-    <a class="btn-pill primary" href="/assets/papers/ssg/author-2026-11/ssg-technical-report-xiakai-pan.pdf">Author edition PDF (14 pp.) &nearr;</a>
+    <a class="btn-pill primary" href="/assets/papers/ssg/author-2026-11/ssg-technical-report-2026-11.pdf">Author edition PDF (14 pp.) &nearr;</a>
     <a class="btn-pill" href="#measured-results">Measured results &darr;</a>
     <a class="btn-pill" href="#version-history">Versions &darr;</a>
   </div>
@@ -131,7 +131,7 @@ Numbers reported in the September 2026 technical manuscript (&sect;5&ndash;7). T
 
 ## Full Paper and Versions
 
-**[Download the complete SSG Technical Report — Xiakai Pan, Author Web Edition (PDF, 14 pages)](/assets/papers/ssg/author-2026-11/ssg-technical-report-xiakai-pan.pdf).**
+**[Download the complete SSG Technical Report — Xiakai Pan and Peichao Han, Author Web Edition (PDF, 14 pages)](/assets/papers/ssg/author-2026-11/ssg-technical-report-2026-11.pdf).**
 
 The new first page identifies the author, without institutional affiliation; pages 2–14 preserve the original anonymous September 2026 technical manuscript unchanged. The additional cover is **not a revised experiment or a peer-reviewed publication**. The original 13-page anonymous PDF remains in the private source repository, rather than being shipped as a second public paper.
 
@@ -140,12 +140,12 @@ The new first page identifies the author, without institutional affiliation; pag
 ### *System Substrate Graph: One Cross-Scale Representation of Workload, System, and Schedule for AI Computing*
 
 - **Status:** September 2026 technical manuscript (Sep-V2.4.7), not peer-reviewed; later research content is kept distinct from this historical snapshot.
-- **Public PDF:** **[Author Web Edition — full technical report](/assets/papers/ssg/author-2026-11/ssg-technical-report-xiakai-pan.pdf)** (14 pages, including the new cover).
+- **Public PDF:** **[Author Web Edition — full technical report](/assets/papers/ssg/author-2026-11/ssg-technical-report-2026-11.pdf)** (14 pages, including the new cover).
 - **Claim Modality:** *Attainability and structural coverage*, not universal superiority over hand-tuned vendor libraries. Calibrated runtime prediction and hardware co-design are explicitly scoped to **[SSG-DT](/research/ssg-dt/)**.
 
 ## Version History
 
-**2026-11-16 — [SSG Author Web Edition (PDF)](/assets/papers/ssg/author-2026-11/ssg-technical-report-xiakai-pan.pdf):** attribution cover plus unchanged original body, not a new scientific version.
+**2026-11-16 — [SSG Author Web Edition (PDF)](/assets/papers/ssg/author-2026-11/ssg-technical-report-2026-11.pdf):** attribution cover plus unchanged original body, not a new scientific version.
 
 
 | Date | Version Tag | Artifact / Snapshot | Substantive Changes &amp; Provenance |

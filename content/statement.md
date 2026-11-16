@@ -24,7 +24,7 @@ The shared mechanism is **Build → Traverse → Translate**. Build constructs i
 
 SSG's workload range is **operators → model training/inference/RL → agent/tool/model execution**. The former Agent-SSG line is now incorporated into SSG's Agent workload scope; it is not a separate active research series. Agent-level dynamics and cross-hardware execution remain research questions, not established results.
 
-The [2026 SSG Technical Report — author edition](/assets/papers/ssg/author-2026-11/ssg-technical-report-xiakai-pan.pdf) reports limited H20 and A800 implementations, measured performance, numerical failures, and fallback behavior. Those results support claims only within their tested settings. A related [SSG-DT direction](/research/ssg-dt/) investigates calibrated performance prediction over selected execution plans, but measured twin validation remains pending.
+The [2026 SSG Technical Report — author edition](/assets/papers/ssg/author-2026-11/ssg-technical-report-2026-11.pdf) reports limited H20 and A800 implementations, measured performance, numerical failures, and fallback behavior. Those results support claims only within their tested settings. A related [SSG-DT direction](/research/ssg-dt/) investigates calibrated performance prediction over selected execution plans, but measured twin validation remains pending.
 
 ## Research Line II: TSG — Persistent and Evolving Tasks
 
