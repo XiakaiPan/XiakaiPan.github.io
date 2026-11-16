@@ -1,30 +1,25 @@
-# Research website publication review — 16 November 2026
+# Publication safety and delivery audit — 16 Nov 2026
 
-This branch is **private staging**, not approval to publish. A successful CI check does not verify research claims or PDF confidentiality.
+## Checks completed
 
-## Content status
+- [x] Complete personal website source resides in this GitHub repository.
+- [x] Agent-SSG is now an SSG workload scope; standalone historical page excluded.
+- [x] Existing work is separated into peer-reviewed publication, technical report, preprint and research notes.
+- [x] Build copies only explicit public candidate assets, never the entire private assets tree.
+- [x] The release workflow is manual-only and blocked without documented per-asset approval and exact blob matching.
+- [x] Canonical URL preset; site remains noindex during staging.
+- [x] Vulnerable yaml 2.8.1 dependency updated to 2.9.1; CI has an npm audit gate.
 
-- [x] Research-method-first homepage, Research Statement, academic CV and industry resume.
-- [x] Former Agent-SSG integrated into SSG Agent workload scope; historical standalone page excluded.
-- [x] September ASPLOS rapid-rejected SSG submission no longer labeled as an active submission or peer-reviewed article.
-- [x] Three Models described as a research note, not a completed standalone paper.
-- [x] SSG-DT and new Agent execution evidence correctly marked as proposed or pending.
-- [ ] Verify author names, bibliographic data, experience and academic facts.
+## Not established by automated tools
 
-## Intellectual-property gate — required before deployment
+- [ ] Full-text review and employer/coauthor disclosure rights for the 13-page SSG PDF and H20/A800 numerical findings.
+- [ ] Full-text review, ownership and future submission policy of the 27-page TSG PDF.
+- [ ] Complete licensing/metadata inspection of every research diagram, including the large SSG PNG.
+- [ ] Independent verification of CV/contact, bibliography and external links.
+- [ ] Desktop/mobile browser, GitHub Pages settings and live site availability.
 
-- [ ] Review **entire SSG PDF**, H20/A800 data, coauthor contributions and any employer disclosure restrictions.
-- [ ] Review **entire TSG PDF**, novel unpublished material and policies of any future submission venue.
-- [ ] Inspect every PNG/SVG in the publicAssets whitelist for confidential diagrams, attribution and licenses.
-- [ ] Confirm whether the public contact email and all personal claims are correct.
-- [ ] Reconfirm applicable policies for future anonymous review. ASPLOS rapid rejection settles only that submission's live-review status.
+A private GitHub repository does not mean that a Pages website is private. Do not flip repository visibility.
 
-## Technical release gate
+## Decision
 
-- [ ] Run npm ci && npm run check and inspect successful CI.
-- [ ] Check desktop/mobile rendering, long tables, PDFs, links and accessibility.
-- [ ] Deploy **dist only**, not repository root; keep the source repository private when possible.
-- [ ] Set production URL/basePath and search indexing only after content approval.
-- [ ] Inspect actual public build output; noindex is not access control.
-
-The manifest packages candidate PDFs and figures but **does not itself approve publication**. For a disallowed asset, remove both the publicAssets item and every page link to it before deployment.
+**NOT YET APPROVED FOR PUBLICATION**. No author/employer/coauthor approvals have been invented. publication-approval.json is intentionally false. The workflow is ready for review and manual deployment after authentic rights/content approval and Pages activation.

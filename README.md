@@ -1,33 +1,45 @@
-# Xiakai Pan — Research Portfolio (private staging)
+# Xiakai Pan — Research Portfolio
 
-Markdown-first personal research site for PhD and research-oriented industry applications. The site emphasizes research method, distinct research objects, and verifiable evidence.
+This PRIVATE repository is the single source of truth for the website and PhD/Research application materials.
 
-Current structure: Three Models (methodology), parallel SSG (heterogeneous AI execution, **including Agent workloads**) and TSG (evolving human–AI tasks). SSG-DT is a performance-modeling direction. Historical Agent-SSG is no longer a standalone active research series.
+Research: Three Models (method), SSG (heterogeneous execution including Agent workloads), TSG (evolving human–AI tasks). The old standalone Agent-SSG page is an excluded historical draft.
 
-## Run locally
+## Local editing (Node.js 22+)
 
-Node.js 22+, npm, and authenticated GitHub access are required.
-
-    git clone --branch draft/research-site-2026-10 https://github.com/XiakaiPan/XiakaiPan.github.io.git
+    git clone https://github.com/XiakaiPan/XiakaiPan.github.io.git
     cd XiakaiPan.github.io
     npm ci
     npm run dev
+
+Visit http://127.0.0.1:4321. Edit content/, assets/, or site.config.json and refresh. The latest website branch before merge is draft/research-site-2026-10.
+
     npm run check
     npm run build
 
-Preview on http://127.0.0.1:4321; built static files in dist/.
+Standalone static output is dist/. Never deploy the repository root.
 
-## Content
+## Files
 
-- content/index.md — Homepage and selected evidence
+- content/index.md — homepage
 - content/statement.md — Research Statement
-- content/research.md and content/research/*.md — Methods, SSG, SSG-DT and TSG
-- content/research/agent-ssg.md — Private archived draft, excluded from build
-- content/publications.md — Publication/evidence status
-- content/cv.md and content/resume.md — Academic and industry materials
-- site.config.json — Navigation, SEO, candidate public assets manifest
-- docs/ and legacy/ — Maintenance, provenance and old site
+- content/research.md and content/research/*.md — research methods/projects
+- content/publications.md — paper status and evidence
+- content/cv.md and content/resume.md — application materials
+- assets/ — source images and PDFs, including PRIVATE historical files
+- site.config.json — navigation, canonical site URL, public asset allowlist
+- publication-approval.json — exact-blob publication review approvals
+- scripts/ — build, check, release-check, local server
+- .github/workflows/publish.yml — MANUAL approved-only Pages release
 
-## Publication boundary
+## Public release protection
 
-No deployment or public visibility change has been made. Build uses an explicit asset allowlist, but the SSG/TSG PDFs and figure candidates still require disclosure/rights review before public hosting. CI does not verify publication safety. Read [review checklist](REVIEW_BEFORE_PUBLISH.md), [publishing](docs/PUBLISHING.md) and [development](docs/DEVELOPMENT.md).
+There is no automatic deployment. The local site includes *candidate* PDF and PNG assets, whose publication rights have NOT been fully verified.
+
+After legitimate PDF, image, employer/coauthor and venue review, update the exact-file approval records and indexable flag, then run:
+
+    npm run check
+    npm run release:check
+
+The second command is intentionally BLOCKED until real approvals are recorded. Pages requires repository Settings → Pages → Source: GitHub Actions, a compatible private-repo plan, and explicit manual dispatch. Never make this source repository public merely to host Pages.
+
+See docs/PUBLISHING.md and REVIEW_BEFORE_PUBLISH.md for the full handoff.
