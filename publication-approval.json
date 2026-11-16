@@ -3,7 +3,7 @@
   "approved": false,
   "reviewer": "",
   "reviewedAt": "",
-  "notes": "UNAPPROVED: Exact-byte approval for each candidate asset and research/publication rights is required.",
+  "notes": "NOT APPROVED: Author-edition SSG PDF and full TSG preprint are intended public research artifacts, but exact-byte IP/disclosure review remains required. The old anonymous SSG PDF stays private.",
   "assets": [
     {
       "path": "assets/figures/research-program-overview.svg",
@@ -62,8 +62,8 @@
       "basis": ""
     },
     {
-      "path": "assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf",
-      "gitBlobSha": "844530393239745267eb9998a79131b6efef7c0b",
+      "path": "assets/papers/ssg/author-2026-11/ssg-technical-report-xiakai-pan.pdf",
+      "gitBlobSha": "fa1548caebda718afa5402e998cdc6f831e0103d",
       "approved": false,
       "reviewer": "",
       "basis": ""
