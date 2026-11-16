@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "approved": false,
+  "reviewer": "",
+  "reviewedAt": "",
+  "notes": "UNAPPROVED: Exact-byte approval for each candidate asset and research/publication rights is required.",
+  "assets": [
+    {
+      "path": "assets/figures/research-program-overview.svg",
+      "gitBlobSha": "9b7a6f441a7ab354de63437c31806faf919e0bac",
+      "approved": false,
+      "reviewer": "",
+      "basis": ""
+    },
+    {
+      "path": "assets/figures/ssg-mnk-overview-paper.png",
+      "gitBlobSha": "ed2177103b991c6276aed7b9427211002f23f335",
+      "approved": false,
+      "reviewer": "",
+      "basis": ""
+    },
+    {
+      "path": "assets/figures/ssg-workload-system-paper.png",
+      "gitBlobSha": "8bd4b1e23d71ee9507d8f4ad3530c0b990781a5d",
+      "approved": false,
+      "reviewer": "",
+      "basis": ""
+    },
+    {
+      "path": "assets/figures/ssg-g1-strategy-space.png",
+      "gitBlobSha": "feb5a5fc6ab848c82cf5a0dec33ef695a702c87b",
+      "approved": false,
+      "reviewer": "",
+      "basis": ""
+    },
+    {
+      "path": "assets/figures/ssg-g3-fusion-ladder.png",
+      "gitBlobSha": "27a662c2dbb43251e7b2ede58f5151acc2aaf6bf",
+      "approved": false,
+      "reviewer": "",
+      "basis": ""
+    },
+    {
+      "path": "assets/figures/ssg-dt-correspondence.svg",
+      "gitBlobSha": "22f0afd69ce25e338e0450251af6044776b1e36d",
+      "approved": false,
+      "reviewer": "",
+      "basis": ""
+    },
+    {
+      "path": "assets/figures/tsg-three-aspects.svg",
+      "gitBlobSha": "2aa9729c7a39d1403d01a7602f063611530cd6a9",
+      "approved": false,
+      "reviewer": "",
+      "basis": ""
+    },
+    {
+      "path": "assets/figures/three-models-triangle.svg",
+      "gitBlobSha": "acc336ac8a683681997e02fc72dac7ab053d8c07",
+      "approved": false,
+      "reviewer": "",
+      "basis": ""
+    },
+    {
+      "path": "assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf",
+      "gitBlobSha": "844530393239745267eb9998a79131b6efef7c0b",
+      "approved": false,
+      "reviewer": "",
+      "basis": ""
+    },
+    {
+      "path": "assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf",
+      "gitBlobSha": "d3b068c5e873b50c7284a304a98d0376d00fd48d",
+      "approved": false,
+      "reviewer": "",
+      "basis": ""
+    }
+  ]
+}
