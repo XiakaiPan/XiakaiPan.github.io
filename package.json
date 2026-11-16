@@ -10,8 +10,7 @@
   "scripts": {
     "dev": "node scripts/dev.mjs",
     "build": "node scripts/build.mjs",
-    "check": "node scripts/check.mjs",
-    "release:check": "node scripts/release-check.mjs"
+    "check": "node scripts/check.mjs"
   },
   "dependencies": {
     "marked": "18.1.2",

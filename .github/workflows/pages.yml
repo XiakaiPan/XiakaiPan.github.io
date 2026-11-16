@@ -47,15 +47,6 @@ jobs:
       # Builds dist/ and validates every internal link, asset and anchor.
       - run: npm run check
 
-      # The disclosure gate is reported, not enforced: publication-approval.json
-      # records the owner's own sign-off for distributing each manuscript and
-      # figure, and that judgement is a human step. Keeping it non-blocking means
-      # CI always shows whether approvals are complete without letting a red gate
-      # silently stop the site from building.
-      - name: Report disclosure-approval status
-        continue-on-error: true
-        run: npm run release:check
-
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v4
