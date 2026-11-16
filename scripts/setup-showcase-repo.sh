@@ -5,6 +5,7 @@ REPO="${1:-XiakaiPan/research-portfolio}"
 if [[ ! "$REPO" =~ ^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]]; then echo "Expected owner/repo" >&2; exit 2; fi
 for bin in gh git; do command -v "$bin" >/dev/null || { echo "Install $bin" >&2; exit 1; }; done
 gh auth status >/dev/null
+gh auth setup-git >/dev/null
 if gh repo view "$REPO" >/dev/null 2>&1; then
   if [[ "$(gh repo view "$REPO" --json isPrivate --jq '.isPrivate')" != true ]]; then echo "Not private: $REPO" >&2; exit 1; fi
   echo "Existing private showcase: https://github.com/$REPO"
@@ -15,7 +16,7 @@ if [[ "$(gh repo view "$REPO" --json isPrivate --jq '.isPrivate')" != true ]]; t
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 gh repo clone "$REPO" "$TMP/site"
-git -C "$TMP/site" switch -c main
+git -C "$TMP/site" symbolic-ref HEAD refs/heads/main
 mkdir -p "$TMP/site/public"
 cat > "$TMP/site/public/index.html" <<'HTML'
 <!doctype html>
