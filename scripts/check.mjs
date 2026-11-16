@@ -24,3 +24,14 @@ for (const file of (await walk(out)).filter(f => f.endsWith('.html'))) {
 }
 console.log('Validated ' + count + ' internal links/assets/anchors.');
 
+
+// Ensure the build cannot silently leak a private paper or source archive.
+const actualAssets = (await walk(join(out, 'assets'))).map(p => p.slice(out.length + 1)).sort();
+const approvedCandidates = ['assets/site.css', 'assets/favicon.svg', ...(config.publicAssets || [])].sort();
+if (JSON.stringify(actualAssets) !== JSON.stringify(approvedCandidates)) {
+  throw new Error('Public asset manifest mismatch: ' + JSON.stringify({ actualAssets, approvedCandidates }));
+}
+if (actualAssets.some(p => p.endsWith('.tar.gz') || p.includes('/agent-ssg/'))) {
+  throw new Error('Private archives included in site output');
+}
+console.log('Validated public asset whitelist: ' + actualAssets.length + ' files.');

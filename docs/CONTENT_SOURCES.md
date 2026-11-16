@@ -24,3 +24,15 @@ The three calendar-versioned drafts were the newest matching manuscript snapshot
 ## Maintenance
 
 Update current content and historical artifact metadata separately. A new content summary is not a new compiled PDF release. Retain old URLs; attach a new PDF only when its bytes, source snapshot, authorship, and release status are available. Preserve current section anchors used by the homepage and research index.
+
+
+## Research portfolio update — 16 November 2026
+
+Presentation update only, not new experimental evidence or a new manuscript.
+
+- The author confirmed that Agent-SSG is now **integrated into SSG's Agent workload scope**; the old standalone page is draft-only and its PDF is excluded from dist.
+- Public SSG text discusses Workload/System/Schedule, OpHierarchy/DomainHierarchy, CMC/CRS and Build–Traverse–Translate from later research discussions, but does **not** attribute unverified November results to the archived September paper.
+- The September ASPLOS submission received rapid rejection; SSG is now presented as an unreviewed historical technical manuscript.
+- Three Models has a research note, not a standalone paper PDF. SSG and TSG have version-specific candidate PDF assets that still require disclosure review.
+- The homepage, Statement, Research, Publications, CV and Resume provide different reading paths into one evidence-based research portfolio.
+- Only site.config.json publicAssets plus required CSS/favicon are packaged. This does not authorize deployment or publication.
