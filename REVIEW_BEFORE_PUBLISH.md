@@ -50,21 +50,23 @@ from the site being online.
 This repository is public, so its commit history is public too. Earlier commits
 carried two addresses that were removed on 16 November 2026:
 
-- `a personal address (removed)` — the local part was the mobile number
-- `an employer address (removed)` — an employer address
+- a 163.com mailbox whose local part was the mobile number
+- an employer address at baidu.com
 
-Both were rewritten out with `git filter-repo`: author and committer identities
-now use the GitHub noreply address, and the two historical `_config.yml` blobs
-that contained the addresses were scrubbed. Verified afterwards across all
-reachable objects: no occurrence in author/committer fields, blob contents, or
-commit messages. Stale branches were deleted so only `master` remains.
+The exact strings are deliberately not reproduced here. Both were rewritten out
+with `git filter-repo`: author and committer identities now use the GitHub
+noreply address, and the historical `_config.yml` blobs that contained the
+addresses were scrubbed. Verified afterwards across all reachable objects: no
+occurrence in author/committer fields, blob contents, or commit messages. Stale
+branches were deleted so only `master` remains.
 
 Every commit id changed, so any old clone must be re-cloned rather than pulled.
 
 Caveat worth knowing: a host may keep rewritten objects reachable by exact hash
 for a while. The repository was private throughout, so nothing was exposed while
 those objects existed. If a hard guarantee is ever needed, recreate the
-repository before announcing it.
+repository (delete and push the current tree again) rather than relying on the
+rewrite alone.
 
 The remaining historical addresses in the log belong to third parties (the 2020
 GitHub Learning Lab authors); they are public GitHub identities and are left
