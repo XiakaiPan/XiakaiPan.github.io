@@ -28,6 +28,7 @@ SSG studies how explicit **Compute, Memory, Communication (CMC)** structures rep
     <span class="badge">Technical manuscript · 2026 · not peer-reviewed</span>
   </div>
   <div class="paper-meta">
+    <strong>Author:</strong> Xiakai Pan<br>
     <strong>Format:</strong> 13 pages, ACM format, anonymized for review.<br>
     <strong>Contributions:</strong> (1) paired Op and System hierarchies over shared Compute&ndash;Memory&ndash;Communication, bound by a Parallel &times; Pipeline schedule and materialized as Compute&ndash;Remap&ndash;Sync; (2) a Build / Traverse / Translate architecture that separates graph transformation from strategy mapping; (3) a three-group evaluation on H20 and 8&times;A800 that reports representation, legality, correctness, and measured performance as separate evidence states.
   </div>
