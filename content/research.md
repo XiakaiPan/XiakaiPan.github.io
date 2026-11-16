@@ -38,7 +38,7 @@ Physical measurements and observed task histories remain external to these model
 - **Representation:** Workload, System and Schedule; OpHierarchy and DomainHierarchy; Compute–Memory–Communication (CMC) and selected Compute–Remap–Sync (CRS).
 - **Mechanism:** Build independent workload and system descriptions; Traverse legal choices domain by domain; Translate selected structures using target-supported backends.
 - **Scope:** operators and composite model graphs; training, inference, RL; dynamically revealed Agent, tool and model calls.
-- **Evidence:** a [2026 technical manuscript](/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf) with bounded H20 and A800 results, including limitations and numerical failures.
+- **Evidence:** a [2026 technical manuscript](/assets/papers/ssg/author-2026-11/ssg-technical-report-xiakai-pan.pdf) with bounded H20 and A800 results, including limitations and numerical failures.
 
 **Agent-level execution is part of SSG, not a separate Agent-SSG project.** A previous Agent-SSG working draft remains a private historical record, not a current paper. [SSG-DT](/research/ssg-dt/) explores performance prediction over selected SSG execution structures; validated twin results remain pending.
 
@@ -60,7 +60,7 @@ Physical measurements and observed task histories remain external to these model
 | Work | Public evidence candidate | Status |
 |---|---|---|
 | Three Models | [Research note](/research/three-models/) | Methodological account; no standalone paper |
-| SSG | [Technical manuscript](/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf) | Measured H20/A800 cases; not peer-reviewed |
+| SSG | [Technical manuscript](/assets/papers/ssg/author-2026-11/ssg-technical-report-xiakai-pan.pdf) | Measured H20/A800 cases; not peer-reviewed |
 | SSG Agent workload | [Integrated SSG research](/research/ssg/#workload-scope-operators-models-and-agents) | Execution scope; new end-to-end validation needed |
 | SSG-DT | [Modeling proposal](/research/ssg-dt/) | No measured digital-twin results yet |
 | TSG | [Preprint](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf) | Formal research; empirical generalization open |

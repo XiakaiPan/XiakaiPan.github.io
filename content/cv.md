@@ -20,7 +20,7 @@ Structural modeling, representation and transformation for heterogeneous AI comp
 
 ### SSG — System Substrate Graph
 
-Workload–System–Schedule representation and Build–Traverse–Translate mechanism for heterogeneous AI execution, including operators, training/inference/RL, and Agent/tool/model workloads. The former Agent-SSG work is integrated into SSG; it is **not** a separate current paper. A [2026 technical manuscript](/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf) (not peer-reviewed) reports bounded H20 and 8×A800 results and negative correctness/fallback evidence. Later generalizations require separate validation.
+Workload–System–Schedule representation and Build–Traverse–Translate mechanism for heterogeneous AI execution, including operators, training/inference/RL, and Agent/tool/model workloads. The former Agent-SSG work is integrated into SSG; it is **not** a separate current paper. A [2026 SSG Technical Report — author edition](/assets/papers/ssg/author-2026-11/ssg-technical-report-xiakai-pan.pdf) (not peer-reviewed) reports bounded H20 and 8×A800 results and negative correctness/fallback evidence. Later generalizations require separate validation.
 
 ### TSG — Task Substrate Graph
 

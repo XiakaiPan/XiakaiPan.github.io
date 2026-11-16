@@ -36,3 +36,7 @@ Presentation update only, not new experimental evidence or a new manuscript.
 - Three Models has a research note, not a standalone paper PDF. SSG and TSG have version-specific candidate PDF assets that still require disclosure review.
 - The homepage, Statement, Research, Publications, CV and Resume provide different reading paths into one evidence-based research portfolio.
 - Only site.config.json publicAssets plus required CSS/favicon are packaged. This does not authorize deployment or publication.
+
+## Author web edition and evidence-first site update — 16 November 2026
+
+An original 13-page September 2026 anonymous SSG manuscript is preserved privately. The author-edition PDF adds one Xiakai Pan cover (no affiliation), preserving original manuscript content as pages 2–14. The file is reproducible from scripts/make-ssg-author-report.mjs and verified by CI for total pages, PDF metadata and extracted text identity; it does not introduce revised scientific results. The public asset whitelist now selects the author edition rather than the anonymous source. Site sections emphasize Overview → Key Figures/Evidence → Full Paper on SSG and TSG; Three Models is still a research note. All candidate approvals remain false until genuine disclosure review.

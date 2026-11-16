@@ -12,7 +12,7 @@ description: "A formal model of evolving tasks: semantic context, Actor–Spec�
 
 TSG investigates how a task can remain a persistent object while its actors, specifications, implementations, and relationships change. Humans, programs, models, and harnesses can realize the work at different times. The research object is the task's evolving structure, including changes to what the work means and what counts as a valid result.
 
-**Current working draft:** `2026.10.4.3.1` · 28 October 2026. The draft develops a formal model and its boundaries; complete edge algebra, task-identity criteria, evolution policy, and general empirical validation remain open. The [September PDF](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf); later source revision retained privately are retained as historical artifacts, not relabeled as the October draft. The preprint is not yet publicly listed on arXiv.
+**Current working draft:** `2026.10.4.3.1` · 28 October 2026. The draft develops a formal model and its boundaries; complete edge algebra, task-identity criteria, evolution policy, and general empirical validation remain open. The [September PDF](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf) is a fixed historical preprint; later source revisions are retained privately and are not substituted for it. The preprint is not yet publicly listed on arXiv.
 
 <div class="paper-anchor-box blue">
   <div class="paper-anchor-header">
@@ -27,14 +27,25 @@ TSG investigates how a task can remain a persistent object while its actors, spe
 </div>
 
 <div class="jump-bar">
-<a class="btn-pill primary" href="#tsg-three-core-aspects">Core Model</a>
+<a class="btn-pill primary" href="#key-figure-and-model-evidence">Figure &amp; Model</a>
+<a class="btn-pill" href="#full-paper-pdf">Full Paper PDF</a>
 <a class="btn-pill" href="#instantiation-and-two-scopes-of-evolution">Task Dynamics</a>
 <a class="btn-pill" href="#negative-evidence-and-specification-revision">Evidence</a>
 <a class="btn-pill" href="#neighboring-systems-and-semantic-boundaries">Comparisons</a>
 <a class="btn-pill" href="#version-history">Versions</a>
 </div>
 
-## TSG Three Core Aspects
+## Overview: Research Object and Current Evidence
+
+**Research question:** How can a task remain identifiable and analyzable as its actors, specifications, implementations and evidence change across long-running human–AI activity?
+
+**Evidence status:** the September preprint provides an initial formal account and example task traces. Complete task-identity criteria, relation algebra, and comparative empirical validation remain open.
+
+## Key Figure and Model Evidence
+
+This figure presents the proposed structure, exchange roles and evolution mechanisms. It does not itself demonstrate empirical superiority over existing task-persistence systems.
+
+### TSG Three Core Aspects
 
 <figure class="hero-figure">
 <img src="/assets/figures/tsg-three-aspects.svg" alt="TSG semantic context, Actor–Spec–Impl task graph, activity-relative CMA, and two evolution scopes">
@@ -114,6 +125,17 @@ A future Workbench would retain task snapshots, active specifications, object li
 | 2026-10-28 | `2026.10.4.3.1` | PAP/Touba responsibility and admission comparison; retains earlier formal structure and literature |
 | 2026-10-19 | `2026.10.3.1.1` | FAOP workflow normalization/type/effect comparison |
 | Earlier October revisions | Athanor/SCARCE archive line | Experiment lineage, actor relationships, DeltaDB, and task/evolution boundaries |
+
+## Full Paper (PDF)
+
+<div class="paper-anchor-box blue">
+<div class="paper-anchor-header">
+<span class="paper-anchor-title">Task Substrate Graph: A Formal Model of Evolving Human–AI Tasks</span>
+<span class="badge">Self-hosted preprint · 2026</span>
+</div>
+<div class="paper-meta"><strong>Author:</strong> Xiakai Pan · <strong>Format:</strong> 27 pages · <strong>Status:</strong> unreviewed preprint. The PDF preserves the September formalism, figures, and example task traces; the October working revision is documented on this page, not silently substituted for the preprint.</div>
+<div class="paper-actions"><a class="btn-pill primary" href="/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf">Read full TSG preprint (PDF) &nearr;</a></div>
+</div>
 
 ## Historical Lineage: TLI and Workbench to TSG
 

@@ -52,3 +52,7 @@ Export refuses to operate without real approvals and matching file hashes. A pri
 - REVIEW_BEFORE_PUBLISH.md — pending disclosure review
 
 The former direct GitHub Pages workflow was retired; it cannot deliver GitHub Free Pages from a private repository.
+
+## SSG author-edition PDF
+
+The website points to a complete 14-page SSG Technical Report with a new Xiakai Pan cover and unchanged 13-page September manuscript body. The original anonymous PDF stays in the private source repository. Reproduce and verify the author edition locally: `node scripts/make-ssg-author-report.mjs --check`. GitHub CI additionally verifies page count, PDF author metadata and the extracted text of all original pages with pypdf. TSG retains its full 27-page preprint; Three Models remains an evolving research note without an invented standalone PDF.

@@ -47,7 +47,7 @@ These are complementary modeling **contracts**, not mutually exclusive kinds of 
 <div><div class="series-kicker">Research line A · AI computing execution</div><h3><a href="/research/ssg/">SSG — System Substrate Graph</a></h3>
 <p>Workload, System, Schedule, and a Build–Traverse–Translate mechanism for heterogeneous realization. The workload range includes operator kernels, model training/inference/RL, and agent/tool/model execution. The earlier Agent-SSG designation is now integrated into SSG rather than a separate project.</p>
 <p class="card-status"><span class="status done">2026 technical manuscript</span> H20 and A800 measurements; more general Agent and hardware coverage remains research in progress.</p></div>
-<div class="card-links"><a class="btn-pill primary" href="/research/ssg/">Project &amp; evidence</a><a class="btn-pill" href="/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf">Manuscript PDF</a></div>
+<div class="card-links"><a class="btn-pill primary" href="/research/ssg/">Project &amp; evidence</a><a class="btn-pill" href="/assets/papers/ssg/author-2026-11/ssg-technical-report-xiakai-pan.pdf">Author-edition PDF</a></div>
 </div>
 <div class="series-card blue">
 <div><div class="series-kicker">Research line B · human–AI tasks</div><h3><a href="/research/tsg/">TSG — Task Substrate Graph</a></h3>
@@ -59,7 +59,7 @@ These are complementary modeling **contracts**, not mutually exclusive kinds of 
 
 ## Selected Evidence
 
-These numbers come from the [2026 SSG technical manuscript](/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf). They describe bounded configurations, not a general optimization guarantee.
+These numbers come from the [2026 SSG technical manuscript](/assets/papers/ssg/author-2026-11/ssg-technical-report-xiakai-pan.pdf). They describe bounded configurations, not a general optimization guarantee.
 
 <div class="stat-grid">
 <div class="stat"><div class="stat-num">2,892–2,988</div><div class="stat-label">Legal GEMM candidates per H20 shape</div><p>Enumerated strategies; legality and numerical correctness are reported separately.</p></div>
