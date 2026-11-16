@@ -47,3 +47,23 @@ and `indexable`, which controls whether pages carry `noindex` and whether
   what ends up in `dist/`.
 - State the evidence status of every document: peer-reviewed, technical report,
   preprint, or working notes. Do not describe an unreviewed draft as a result.
+## Caching
+
+GitHub Pages serves **every** file with `Cache-Control: max-age=600` and does not
+allow overriding response headers (there is no `_headers`, `.htaccess` or
+equivalent). A visitor can therefore hold a page for up to ten minutes after a
+deploy before their browser revalidates.
+
+What is handled here:
+
+- `scripts/build.mjs` appends a content fingerprint to the stylesheet and icon
+  URLs, e.g. `site.css?v=20c9613388`. A changed file gets a new URL and is
+  fetched immediately; an unchanged file keeps its cache.
+- HTML page URLs cannot be fingerprinted, so their ten-minute window remains.
+  GitHub still sends `ETag` and `Last-Modified`, so the refresh after that window
+  is a cheap 304 rather than a full download.
+
+If a page must never be served stale, that requires control of the headers:
+serve a custom domain through a proxy that can rewrite response headers (for
+example a Cloudflare response-header transform rule setting `no-cache`), or host
+on a platform that supports a `_headers` file.

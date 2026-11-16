@@ -1,6 +1,7 @@
 import { readFile, writeFile, mkdir, readdir, rm, cp } from 'node:fs/promises';
 import { resolve, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 import { Marked } from 'marked';
 import { parse } from 'yaml';
 
@@ -16,6 +17,16 @@ export async function build() {
   const base = config.basePath.replace(/\/$/, '');
   if (base && !/^\/[a-zA-Z0-9/_-]+$/.test(base)) throw new Error('Invalid basePath');
   const href = route => base + route;
+
+  // GitHub Pages serves every file with cache-control: max-age=600 and offers no
+  // way to change response headers. A content fingerprint in the URL means a
+  // changed stylesheet or icon is fetched immediately instead of after the
+  // browser cache expires, while unchanged files keep their cache benefit.
+  const fingerprint = async rel =>
+    createHash('sha1').update(await readFile(join(root, rel))).digest('hex').slice(0, 10);
+  const cssVersion = await fingerprint('assets/site.css');
+  const iconVersion = await fingerprint('assets/favicon.svg');
+
   const pages = [];
   for (const file of (await walk(join(root, 'content'))).filter(f => f.endsWith('.md'))) {
     const source = await readFile(file, 'utf8');
@@ -57,8 +68,8 @@ export async function build() {
       '<title>' + escape(meta.title) + ' · ' + escape(config.title) + '</title>' +
       '<meta name="description" content="' + escape(meta.description || config.description) + '">' +
       (config.indexable ? '' : '<meta name="robots" content="noindex,nofollow">') + canonical +
-      '<link rel="icon" href="' + href('/assets/favicon.svg') + '" type="image/svg+xml">' +
-      '<link rel="stylesheet" href="' + href('/assets/site.css') + '"></head><body>' +
+      '<link rel="icon" href="' + href('/assets/favicon.svg') + '?v=' + iconVersion + '" type="image/svg+xml">' +
+      '<link rel="stylesheet" href="' + href('/assets/site.css') + '?v=' + cssVersion + '"></head><body>' +
       '<a class="skip" href="#main">Skip to content</a><header><a class="brand" href="' + href('/') + '">' + escape(config.title) +
       '<span>AI Computing &amp; Task Intelligence</span></a><nav aria-label="Main navigation">' + nav + '</nav></header>' +
       '<main id="main"><article>' + content + '</article></main><footer><span>&copy; 2026 Xiakai Pan · Research &amp; writing</span>' +
