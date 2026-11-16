@@ -6,6 +6,20 @@
   "notes": "NOT APPROVED: Author-edition SSG PDF and full TSG preprint are intended public research artifacts, but exact-byte IP/disclosure review remains required. The old anonymous SSG PDF stays private.",
   "assets": [
     {
+      "path": "assets/cv/xiakai-pan-cv-en-preview.png",
+      "gitBlobSha": "0f828766ac8bf75d7f535ce94f36e83f7da6ab27",
+      "approved": false,
+      "reviewer": "",
+      "basis": ""
+    },
+    {
+      "path": "assets/cv/xiakai-pan-cv-en.pdf",
+      "gitBlobSha": "7df56c2125277315bbee75c25932951293873106",
+      "approved": false,
+      "reviewer": "",
+      "basis": ""
+    },
+    {
       "path": "assets/cv/xiakai-pan-cv-preview.png",
       "gitBlobSha": "97a0368cb78dca9be6cd8ef18afe18c72652f1a9",
       "approved": false,
@@ -15,20 +29,6 @@
     {
       "path": "assets/cv/xiakai-pan-cv.pdf",
       "gitBlobSha": "815237e8ed308a071287b25ebc7c6e24e797fc74",
-      "approved": false,
-      "reviewer": "",
-      "basis": ""
-    },
-    {
-      "path": "assets/cv/xiakai-pan-resume-engineer-preview.png",
-      "gitBlobSha": "ceff4d90a0dd5fc3e489e71865636f9955e634b0",
-      "approved": false,
-      "reviewer": "",
-      "basis": ""
-    },
-    {
-      "path": "assets/cv/xiakai-pan-resume-engineer.pdf",
-      "gitBlobSha": "7b24e2479ee212aef44ecaad7998b440b2c0e27d",
       "approved": false,
       "reviewer": "",
       "basis": ""

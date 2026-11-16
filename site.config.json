@@ -32,19 +32,19 @@
     ]
   ],
   "publicAssets": [
+    "assets/cv/xiakai-pan-cv-en-preview.png",
+    "assets/cv/xiakai-pan-cv-en.pdf",
+    "assets/cv/xiakai-pan-cv-preview.png",
+    "assets/cv/xiakai-pan-cv.pdf",
     "assets/figures/research-program-overview.svg",
-    "assets/figures/ssg-mnk-overview-paper.png",
-    "assets/figures/ssg-workload-system-paper.png",
+    "assets/figures/ssg-dt-correspondence.svg",
     "assets/figures/ssg-g1-strategy-space.png",
     "assets/figures/ssg-g3-fusion-ladder.png",
-    "assets/figures/ssg-dt-correspondence.svg",
-    "assets/figures/tsg-three-aspects.svg",
+    "assets/figures/ssg-mnk-overview-paper.png",
+    "assets/figures/ssg-workload-system-paper.png",
     "assets/figures/three-models-triangle.svg",
+    "assets/figures/tsg-three-aspects.svg",
     "assets/papers/ssg/author-2026-11/ssg-technical-report-2026-11.pdf",
-    "assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf",
-    "assets/cv/xiakai-pan-cv.pdf",
-    "assets/cv/xiakai-pan-cv-preview.png",
-    "assets/cv/xiakai-pan-resume-engineer.pdf",
-    "assets/cv/xiakai-pan-resume-engineer-preview.png"
+    "assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf"
   ]
 }

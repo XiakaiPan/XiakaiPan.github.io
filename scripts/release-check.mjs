@@ -20,7 +20,7 @@ for (const item of approval.assets) {
  if(sha!==item.gitBlobSha) throw new Error('PUBLICATION BLOCKED: reviewed asset changed '+item.path);
 }
 const all=(await walk(out)).map(p=>p.slice(out.length+1)).sort();
-const allowed=new Set(['.nojekyll','robots.txt','404.html','downloads/Xiakai_Pan_CV.md','assets/favicon.svg','assets/site.css',...config.publicAssets]);
+const allowed=new Set(['.nojekyll','robots.txt','404.html','assets/favicon.svg','assets/site.css',...config.publicAssets]);
 for(const p of all) if(!p.endsWith('/index.html') && p!=='index.html' && !allowed.has(p)) throw new Error('Unexpected published file '+p);
 if(!(await stat(join(out,'index.html')).catch(()=>null))) throw new Error('Run npm run check first');
 console.log('RELEASE CHECK PASS — exact bytes and approvals verified');

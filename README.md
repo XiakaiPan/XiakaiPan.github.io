@@ -1,8 +1,8 @@
 # Xiakai Pan — Research Portfolio
 
 Public research site: Three Models, SSG (including Agent workloads), TSG, the
-Research Statement, academic CV and industry resume, and ten previously
-published TinyLab RISC-V articles.
+Research Statement, the academic CV, and ten previously published TinyLab RISC-V
+articles.
 
 Live at **https://xiakaipan.github.io/** once Pages is enabled.
 
@@ -54,7 +54,7 @@ No build secrets are required. `dist/` is not committed.
 - `content/statement.md` — Research Statement
 - `content/research.md`, `content/research/*.md` — research method and projects
 - `content/publications.md` — manuscripts, preprints and evidence status
-- `content/cv.md`, `content/resume.md` — academic CV and industry resume
+- `content/cv.md` — academic CV
 - `content/writing.md` — published TinyLab articles
 - `assets/` — figures and manuscripts that may be published
 - `site.config.json` — navigation, canonical URL, public asset allowlist

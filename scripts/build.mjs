@@ -40,9 +40,6 @@ export async function build() {
     await mkdir(dirname(dest), { recursive: true });
     await cp(join(root, rel), dest);
   }
-  await mkdir(join(out, 'downloads'), { recursive: true });
-  const cv = pages.find(p => p.meta.permalink === '/cv/');
-  if (cv) await writeFile(join(out, 'downloads', 'Xiakai_Pan_CV.md'), cv.body);
   for (const { meta, body } of pages) {
     const ids = new Map();
     const markdown = new Marked({ gfm: true, renderer: {
