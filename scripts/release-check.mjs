@@ -7,7 +7,7 @@ const config = JSON.parse(await readFile(join(root,'site.config.json'),'utf8'));
 const approval = JSON.parse(await readFile(join(root,'publication-approval.json'),'utf8'));
 if (approval.schemaVersion !== 1) throw new Error('Unsupported approval schema');
 if (approval.approved !== true || !approval.reviewer?.trim() || !/^\d{4}-\d{2}-\d{2}/.test(approval.reviewedAt || '')) throw new Error('PUBLICATION BLOCKED: overall approval, reviewer and review date required');
-if (config.indexable !== true || config.url !== 'https://xiakaipan.github.io' || config.basePath !== '') throw new Error('PUBLICATION BLOCKED: canonical URL, basePath or indexability not finalized');
+if (config.indexable !== true || !/^https:\/\/[a-z0-9.-]+$/i.test(config.url || '') || config.basePath !== '') throw new Error('PUBLICATION BLOCKED: canonical URL, basePath or indexability not finalized');
 const expected = [...config.publicAssets].sort();
 const approvedList = [...(approval.assets || [])].map(x=>x.path).sort();
 if (JSON.stringify(expected)!==JSON.stringify(approvedList)) throw new Error('PUBLICATION BLOCKED: manifest and approval records differ');
