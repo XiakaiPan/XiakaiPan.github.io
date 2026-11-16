@@ -371,3 +371,7 @@ img { max-width: 100%; }
 .paper-list li:first-child { border-top: 1px solid var(--line); }
 .pl-title { display: block; font-weight: 650; color: var(--ink); line-height: 1.45; }
 .pl-meta { display: block; color: var(--muted); font-size: 13.5px; margin: 2px 0 2px; }
+
+/* Compact evidence typography and paper-friendly academic materials. */
+.stat-grid .stat-num { font-size: clamp(21px, 2.7vw, 27px); overflow-wrap: anywhere; }
+@media print { .series-card, .stat, .paper-anchor-box, .hero-figure { break-inside: avoid; box-shadow: none; } }

@@ -22,7 +22,6 @@ TSG investigates how a task can remain a persistent object while its actors, spe
   <div class="paper-meta"><strong>One-line idea:</strong> make the task, rather than the agent, session, or workflow, the persistent object of intelligent work, with an explicit structure that can be revised and reused.</div>
   <div class="paper-actions">
     <a class="btn-pill primary" href="/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf">PDF (132 KB) &nearr;</a>
-    <a class="btn-pill" href="/assets/papers/tsg/v0.1/tsg-preprint-v3.1.14-source.tar.gz">Next-revision LaTeX source &nearr;</a>
     <a class="btn-pill" href="#historical-lineage-tli-and-workbench-to-tsg">Earlier drafts &darr;</a>
   </div>
 </div>

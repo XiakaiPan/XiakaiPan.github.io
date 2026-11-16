@@ -29,7 +29,17 @@ export async function build() {
   }
   await rm(out, { recursive: true, force: true });
   await mkdir(out, { recursive: true });
-  await cp(join(root, 'assets'), join(out, 'assets'), { recursive: true });
+  // Explicit manifest. Never copy the entire private source asset directory.
+  const publicAssets = new Set(['assets/site.css', 'assets/favicon.svg', ...(config.publicAssets || [])]);
+  for (const rel of publicAssets) {
+    if (typeof rel !== 'string' || !/^assets\/(?:[A-Za-z0-9_-]+\/)*[A-Za-z0-9_.-]+$/.test(rel) ||
+        rel.split('/').includes('..') || !/\.(css|svg|png|jpe?g|webp|pdf)$/.test(rel)) {
+      throw new Error('Invalid public asset path: ' + rel);
+    }
+    const dest = join(out, rel);
+    await mkdir(dirname(dest), { recursive: true });
+    await cp(join(root, rel), dest);
+  }
   await mkdir(join(out, 'downloads'), { recursive: true });
   const cv = pages.find(p => p.meta.permalink === '/cv/');
   if (cv) await writeFile(join(out, 'downloads', 'Xiakai_Pan_CV.md'), cv.body);

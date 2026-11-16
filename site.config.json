@@ -1,6 +1,6 @@
 {
   "title": "Xiakai Pan",
-  "description": "Structural modeling for AI computing and evolving human–AI tasks.",
+  "description": "Structural modeling of AI systems across heterogeneous execution and evolving tasks.",
   "github": "https://github.com/XiakaiPan",
   "url": "",
   "basePath": "",
@@ -15,6 +15,10 @@
       "/research/"
     ],
     [
+      "Statement",
+      "/statement/"
+    ],
+    [
       "Publications",
       "/publications/"
     ],
@@ -26,6 +30,17 @@
       "CV",
       "/cv/"
     ]
+  ],
+  "publicAssets": [
+    "assets/figures/research-program-overview.svg",
+    "assets/figures/ssg-mnk-overview-paper.png",
+    "assets/figures/ssg-workload-system-paper.png",
+    "assets/figures/ssg-g1-strategy-space.png",
+    "assets/figures/ssg-g3-fusion-ladder.png",
+    "assets/figures/ssg-dt-correspondence.svg",
+    "assets/figures/tsg-three-aspects.svg",
+    "assets/figures/three-models-triangle.svg",
+    "assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf",
+    "assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf"
   ]
 }
-
