@@ -1,45 +1,54 @@
-# Xiakai Pan — Research Portfolio
+# Xiakai Pan — Research Portfolio (private authoring source)
 
-This PRIVATE repository is the single source of truth for the website and PhD/Research application materials.
+Single repository for the editable site: Three Models, SSG including Agent workloads, TSG, Research Statement, CV/Resume, and ten previously published TinyLab RISC-V articles.
 
-Research: Three Models (method), SSG (heterogeneous execution including Agent workloads), TSG (evolving human–AI tasks). The old standalone Agent-SSG page is an excluded historical draft.
+## Local preview
 
-## Local editing (Node.js 22+)
+Requires Node.js 22+ and GitHub access:
 
     git clone https://github.com/XiakaiPan/XiakaiPan.github.io.git
     cd XiakaiPan.github.io
     npm ci
     npm run dev
 
-Visit http://127.0.0.1:4321. Edit content/, assets/, or site.config.json and refresh. The latest website branch before merge is draft/research-site-2026-10.
+Open http://127.0.0.1:4321. Edit content/, assets/ or site.config.json and refresh. Validate and build:
 
     npm run check
     npm run build
 
-Standalone static output is dist/. Never deploy the repository root.
+The generated static site lives in dist/. Only explicitly allowlisted candidates enter dist/; the entire research source/history is NEVER a published artifact.
 
-## Files
+## Free hosting while keeping both GitHub repositories private
 
-- content/index.md — homepage
-- content/statement.md — Research Statement
-- content/research.md and content/research/*.md — research methods/projects
-- content/publications.md — paper status and evidence
-- content/cv.md and content/resume.md — application materials
-- assets/ — source images and PDFs, including PRIVATE historical files
-- site.config.json — navigation, canonical site URL, public asset allowlist
-- publication-approval.json — exact-blob publication review approvals
-- scripts/ — build, check, release-check, local server
-- .github/workflows/publish.yml — MANUAL approved-only Pages release
+Use a second deployment-only private GitHub repository with Cloudflare Pages Free, which supports private Git sources. Proposed name: XiakaiPan/research-portfolio. Only reviewed dist/ outputs are transferred; the first commit is a harmless placeholder.
 
-## Public release protection
+On your Mac, authenticate the GitHub CLI and create that private repo:
 
-There is no automatic deployment. The local site includes *candidate* PDF and PNG assets, whose publication rights have NOT been fully verified.
+    brew install gh
+    gh auth login
+    bash scripts/setup-showcase-repo.sh XiakaiPan/research-portfolio
 
-After legitimate PDF, image, employer/coauthor and venue review, update the exact-file approval records and indexable flag, then run:
+Then connect ONLY the showcase repo to Cloudflare Pages (main branch, public output directory, no build command). See docs/SHOWCASE.md. This GitHub connector cannot itself create repositories; the script uses your authenticated local GitHub CLI.
+
+After all PDF/IP and text approvals, set site.config.json url to the actual Cloudflare HTTPS domain and complete publication-approval.json accurately. Publish only reviewed output:
 
     npm run check
     npm run release:check
+    bash scripts/export-showcase.sh XiakaiPan/research-portfolio
 
-The second command is intentionally BLOCKED until real approvals are recorded. Pages requires repository Settings → Pages → Source: GitHub Actions, a compatible private-repo plan, and explicit manual dispatch. Never make this source repository public merely to host Pages.
+Export refuses to operate without real approvals and matching file hashes. A private GitHub repository does not make its hosted website private. Do NOT expose this research source repo.
 
-See docs/PUBLISHING.md and REVIEW_BEFORE_PUBLISH.md for the full handoff.
+## Where to work
+
+- content/index.md — homepage
+- content/statement.md — Research Statement
+- content/research.md, content/research/*.md — SSG, TSG, Three Models, SSG-DT
+- content/publications.md — manuscripts and evidence
+- content/writing.md — ten TinyLab RISC-V articles
+- content/cv.md, content/resume.md — application materials
+- site.config.json — candidate assets and final canonical URL
+- publication-approval.json — fail-closed public release record
+- docs/SHOWCASE.md — private showcase and Cloudflare setup
+- REVIEW_BEFORE_PUBLISH.md — pending disclosure review
+
+The former direct GitHub Pages workflow was retired; it cannot deliver GitHub Free Pages from a private repository.
