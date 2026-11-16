@@ -20,7 +20,7 @@ I am a heterogeneous computing engineer at Baidu, previously working on NPU arch
 <a class="btn-pill" href="/publications/">Papers &amp; Evidence</a>
 <a class="btn-pill" href="/cv/">Academic CV</a>
 <a class="btn-pill" href="/resume/">Industry Resume</a>
-<a class="btn-pill" href="mailto:panxiakai@gmail.com">Contact</a>
+<a class="btn-pill" href="mailto:xiakpan@gmail.com">Contact</a>
 </div>
 
 ## Research Method
@@ -73,4 +73,4 @@ Other evidence includes a [peer-reviewed industrial vision paper](https://doi.or
 
 [Research Statement](/statement/) · [Publications and Manuscripts](/publications/) · [Academic CV](/cv/) · [Industry Resume](/resume/) · [Writing](/writing/) · [GitHub](https://github.com/XiakaiPan)
 
-Contact: [panxiakai@gmail.com](mailto:panxiakai@gmail.com)
+Contact: [xiakpan@gmail.com](mailto:xiakpan@gmail.com)

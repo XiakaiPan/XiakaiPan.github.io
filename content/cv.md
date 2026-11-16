@@ -10,7 +10,7 @@ description: "Academic research-oriented CV: contributions, evidence, education 
 
 [Research Statement](/statement/) · [Research](/research/) · [Publications](/publications/) · [Industry Resume](/resume/) · [GitHub](https://github.com/XiakaiPan)
 
-Contact: [panxiakai@gmail.com](mailto:panxiakai@gmail.com)
+Contact: [xiakpan@gmail.com](mailto:xiakpan@gmail.com)
 
 ## Research Interests
 

@@ -8,7 +8,7 @@ description: "Concise research-oriented industry resume for heterogeneous AI com
 
 **AI Systems Research · Heterogeneous Computing · Compilers/Runtimes**
 
-[Email](mailto:panxiakai@gmail.com) · [GitHub](https://github.com/XiakaiPan) · [Research Statement](/statement/) · [Academic CV](/cv/)
+[Email](mailto:xiakpan@gmail.com) · [GitHub](https://github.com/XiakaiPan) · [Research Statement](/statement/) · [Academic CV](/cv/)
 
 ## Profile
 

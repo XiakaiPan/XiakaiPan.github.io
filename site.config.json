@@ -2,9 +2,9 @@
   "title": "Xiakai Pan",
   "description": "Structural modeling of AI systems across heterogeneous execution and evolving tasks.",
   "github": "https://github.com/XiakaiPan",
-  "url": "",
+  "url": "https://xiakaipan.github.io",
   "basePath": "",
-  "indexable": false,
+  "indexable": true,
   "navigation": [
     [
       "Home",
