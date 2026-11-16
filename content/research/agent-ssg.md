@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Agent-SSG: Agent-to-Operator Execution"
 permalink: /research/agent-ssg/
 description: "Dynamically revealed workloads, effect-aware scheduling, and traceable Agent–Model–Operator execution"
@@ -6,7 +7,9 @@ description: "Dynamically revealed workloads, effect-aware scheduling, and trace
 
 [Research](/research/) / [SSG series](/research/ssg/) / Agent-SSG
 
-# Agent-SSG
+# Agent-SSG (historical archive — merged into SSG)
+
+**Private source only:** this historical draft is no longer a separate active public project. Agent execution is integrated into [SSG](/research/ssg/#workload-scope-operators-models-and-agents).
 
 **A Unified Workload–System–Schedule Substrate for Agent-to-Operator Execution**
 

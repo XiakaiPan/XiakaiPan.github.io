@@ -12,7 +12,7 @@ description: "Rule-guided legal execution variants, physical realization, trace 
 
 SSG-DT asks whether the same hierarchical execution representation can support **generating legal alternatives, realizing them on hardware, attributing measurements, and predicting unmeasured alternatives**. Its target spans operators and model graphs through training, inference, and RL over chip, scale-up, and scale-out systems. Actual claims remain bounded to implemented and measured paths.
 
-**Current working draft:** `2026.10.4.3.1` · updated 28 October 2026. **Status:** architecture, hypotheses, and evaluation protocol; no measured SSG-DT results are claimed. Base-SSG execution measurements provide starting evidence, rather than digital-twin validation. Agent/tool execution and Agent-level DT are assigned to separate Agent-SSG and future Agent-SSG-DT work.
+**Current working draft:** `2026.10.4.3.1` · updated 28 October 2026. **Status:** architecture, hypotheses, and evaluation protocol; no measured SSG-DT results are claimed. Base-SSG execution measurements provide starting evidence, rather than digital-twin validation. Agent/tool workloads are now integrated into SSG's execution scope. Digital-twin validation here remains focused on supported operator/model workloads; an eventual Agent-level twin would require separate validation.
 
 <div class="jump-bar">
 <a class="btn-pill primary" href="#execution-and-simulation-structural-correspondence">Twin Contract</a>
@@ -87,7 +87,7 @@ Cyclotron informs the logical-communication versus physical-event boundary; Prim
 
 ## Roadmap and Manuscript Status
 
-SSG-DT occupies **Operator + Trainfer × Performance Prototype** in the [SSG research space](/research/ssg/#ssg-3d-research-space). Initial evidence can come from a bounded H20 operator-to-model path; cross-architecture and scale-out/RL claims require their own realizations and observations. The future Agent-SSG-DT depends on both this twin machinery and actual Agent-SSG execution support.
+SSG-DT occupies **Operator + Trainfer × Performance Prototype** in the [SSG research space](/research/ssg/#ssg-3d-research-space). Initial evidence can come from a bounded H20 operator-to-model path; cross-architecture and scale-out/RL claims require their own realizations and observations. The future future Agent-workload twin depends on both this twin machinery and actual SSG Agent execution support.
 
 | Snapshot | Development |
 |---|---|
@@ -95,4 +95,4 @@ SSG-DT occupies **Operator + Trainfer × Performance Prototype** in the [SSG res
 | `2026.10.3.1.1` · 19 October | Cyclotron communication refinement; Primus measurement/projection/search boundary |
 | Earlier October drafts | Rule-guided generation, cross-hardware realization, physical attribution, and Operator/Trainfer DT scope |
 
-[SSG](/research/ssg/) · [Agent-SSG](/research/agent-ssg/) · [Three Models](/research/three-models/)
+[SSG](/research/ssg/) · [SSG Agent workload](/research/ssg/#workload-scope-operators-models-and-agents) · [Three Models](/research/three-models/)
