@@ -45,10 +45,27 @@ entry. The deploy workflow reports that state without blocking, so the site stay
 reachable while the review finishes. No release permission should be inferred
 from the site being online.
 
-## Notes on repository history
+## Repository history — cleaned 16 November 2026
 
-This repository will be public, so its commit history is public too. Before
-announcing the site, check that the history contains no personal identifier you
-do not want surfaced — earlier commits carry the author e-mail addresses used at
-the time. Rewriting history is possible but changes every commit id; decide
-deliberately rather than by default.
+This repository is public, so its commit history is public too. Earlier commits
+carried two addresses that were removed on 16 November 2026:
+
+- `a personal address (removed)` — the local part was the mobile number
+- `an employer address (removed)` — an employer address
+
+Both were rewritten out with `git filter-repo`: author and committer identities
+now use the GitHub noreply address, and the two historical `_config.yml` blobs
+that contained the addresses were scrubbed. Verified afterwards across all
+reachable objects: no occurrence in author/committer fields, blob contents, or
+commit messages. Stale branches were deleted so only `master` remains.
+
+Every commit id changed, so any old clone must be re-cloned rather than pulled.
+
+Caveat worth knowing: a host may keep rewritten objects reachable by exact hash
+for a while. The repository was private throughout, so nothing was exposed while
+those objects existed. If a hard guarantee is ever needed, recreate the
+repository before announcing it.
+
+The remaining historical addresses in the log belong to third parties (the 2020
+GitHub Learning Lab authors); they are public GitHub identities and are left
+untouched.
