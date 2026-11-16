@@ -12,7 +12,7 @@ description: "A formal model of evolving tasks: semantic context, Actor–Spec�
 
 TSG investigates how a task can remain a persistent object while its actors, specifications, implementations, and relationships change. Humans, programs, models, and harnesses can realize the work at different times. The research object is the task's evolving structure, including changes to what the work means and what counts as a valid result.
 
-**Current working draft:** `2026.10.4.3.1` · 28 October 2026. The draft develops a formal model and its boundaries; complete edge algebra, task-identity criteria, evolution policy, and general empirical validation remain open. The [September PDF](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf) and [source archive](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.14-source.tar.gz) are retained as historical artifacts, not relabeled as the October draft. The preprint is not yet publicly listed on arXiv.
+**Current working draft:** `2026.10.4.3.1` · 28 October 2026. The draft develops a formal model and its boundaries; complete edge algebra, task-identity criteria, evolution policy, and general empirical validation remain open. The [September PDF](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf); later source revision retained privately are retained as historical artifacts, not relabeled as the October draft. The preprint is not yet publicly listed on arXiv.
 
 <div class="paper-anchor-box blue">
   <div class="paper-anchor-header">
@@ -104,7 +104,7 @@ These comparisons follow the October manuscript and are not new integration clai
 
 ## Relationship to Three Models, SSG, and a Workbench
 
-[Three Models](/research/three-models/) supplies a general modeling perspective. TSG is currently a formal task-world research line; it need not reproduce SSG's FP/PP/LP engineering sequence. [SSG](/research/ssg/) models computation and can realize selected computational activities. Conversely, a TSG instance can represent the research process that constructs SSG. These are parallel research series with possible interfaces, rather than a mandatory frontend/backend chain.
+[Three Models](/research/three-models/) supplies a general modeling perspective. TSG is currently a formal task-world research line; it need not reproduce SSG's FP/PP/LP engineering sequence. [SSG](/research/ssg/) models heterogeneous execution including Agent workloads, and can realize selected computational activities. Conversely, a TSG instance can represent the research process that constructs SSG. These are parallel research series with possible interfaces, rather than a mandatory frontend/backend chain.
 
 A future Workbench would retain task snapshots, active specifications, object lineage, evidence, substitutions, and adoption decisions across human and AI actors. The formal model does not prescribe one scheduler, approval protocol, or harness. Open research includes task boundaries, RTC semantics, edge composition, CMA typing, and evaluation against strong persistence/reuse baselines.
 
@@ -122,18 +122,18 @@ The TSG manuscript synthesizes two earlier August 2026 research tracks into a si
 
 | Stage | Manuscript | Core Focus | How It Entered TSG |
 |---|---|---|---|
-| **Precursor A** | **[Task-Level Intelligence: Task Substrate Graphs for Recursive Intelligent Creation](/assets/papers/tsg/v0.1/tli-aug-v4.2.pdf)** (`Aug-V4.2`, 29 pp.) | Asks what lies above the agent harness; introduces the TSG name and typed Intent / Representation / Transformation / Constraint specifications | Became the step-level `Spec = R x T x C` and `Intent(E x F x P)` coordinates inside `V_T` |
-| **Precursor B** | **[Toward an AI-Native Workbench: Unifying Consume, Digest, and Create](/assets/papers/tsg/v0.1/workbench-aug-v0.1.pdf)** (`Aug-V0.1`, 28 pp.) | Organizes AI work around persistent human activity instead of applications; introduces Consume / Digest / Create and Location | Became the persistent object layer `O`, `CDC` macro-operations, and empirical case-study workbench |
+| **Precursor A** | **Task-Level Intelligence: Task Substrate Graphs for Recursive Intelligent Creation (private archive)** (`Aug-V4.2`, 29 pp.) | Asks what lies above the agent harness; introduces the TSG name and typed Intent / Representation / Transformation / Constraint specifications | Became the step-level `Spec = R x T x C` and `Intent(E x F x P)` coordinates inside `V_T` |
+| **Precursor B** | **Toward an AI-Native Workbench: Unifying Consume, Digest, and Create (private archive)** (`Aug-V0.1`, 28 pp.) | Organizes AI work around persistent human activity instead of applications; introduces Consume / Digest / Create and Location | Became the persistent object layer `O`, `CDC` macro-operations, and empirical case-study workbench |
 | **Unified Track** | **[Task Substrate Graph: A Formal Model of Evolving Human&ndash;AI Tasks](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf)** (`Sep-V3.1.13`, 27 pp.) | Substrate-level task graph `G_T`, activity-relative `CMA` roles, and `Instantiation` / `Intra-Task` / `Inter-Task Evolve` | Unifies step-level cognitive specs and hub-level lifecycle into a general task-world substrate |
 
 ## Version History
 
 | Date | Version Tag | Artifact / Snapshot | Substantive Changes &amp; Provenance |
 |---|---|---|---|
-| **2026-09-20** | `Sep-V3.1.14` | **[Source .tar.gz](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.14-source.tar.gz)** | Representation-framing revision; reframed runtime protocols (`propose -> apply`, approval gates) as reference implementation choices rather than core graph semantics. |
+| **2026-09-20** | `Sep-V3.1.14` | **Source .tar.gz (private archive)** | Representation-framing revision; reframed runtime protocols (`propose -> apply`, approval gates) as reference implementation choices rather than core graph semantics. |
 | **2026-09-20** | `Sep-V3.1.13` | **[Compiled PDF](/assets/papers/tsg/v0.1/tsg-preprint-v3.1.13.pdf)** | Preprint dated 24 September (27 pages): restored architecture figures, 24-entry bibliography, three end-to-end human&ndash;AI task traces. |
 | **2026-09-18** | `Sep-V3.1` | Draft milestone | Completed four-axis context (`Owner x Actor x Location x CDC`) and `CMA` role formalization across research, engineering, and creative tasks. |
-| **2026-08-19** | `TLI Aug-V4.2` | **[Precursor PDF](/assets/papers/tsg/v0.1/tli-aug-v4.2.pdf)** | *Task-Level Intelligence* draft (29 pages): TSG name, typed `IRTC` specifications, multi-domain protocols. |
-| **2026-08-19** | `Workbench Aug-V0.1` | **[Precursor PDF](/assets/papers/tsg/v0.1/workbench-aug-v0.1.pdf)** | *Toward an AI-Native Workbench* draft (28 pages): Consume / Digest / Create, Location, and materialization across tools. |
+| **2026-08-19** | `TLI Aug-V4.2` | **Precursor PDF (private archive)** | *Task-Level Intelligence* draft (29 pages): TSG name, typed `IRTC` specifications, multi-domain protocols. |
+| **2026-08-19** | `Workbench Aug-V0.1` | **Precursor PDF (private archive)** | *Toward an AI-Native Workbench* draft (28 pages): Consume / Digest / Create, Location, and materialization across tools. |
 
 [Explore Companion Series: SSG &rarr;](/research/ssg/) &middot; [Explore Methodology: Three Models &rarr;](/research/three-models/) &middot; [All Publications](/publications/)
