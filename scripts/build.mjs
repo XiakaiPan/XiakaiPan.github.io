@@ -32,7 +32,7 @@ export async function build() {
   // Explicit manifest. Never copy the entire private source asset directory.
   const publicAssets = new Set(['assets/site.css', 'assets/favicon.svg', ...(config.publicAssets || [])]);
   for (const rel of publicAssets) {
-    if (typeof rel !== 'string' || !/^assets\/(?:[A-Za-z0-9_-]+\/)*[A-Za-z0-9_.-]+$/.test(rel) ||
+    if (typeof rel !== 'string' || !/^assets\/(?:[A-Za-z0-9_.-]+\/)*[A-Za-z0-9_.-]+$/.test(rel) ||
         rel.split('/').includes('..') || !/\.(css|svg|png|jpe?g|webp|pdf)$/.test(rel)) {
       throw new Error('Invalid public asset path: ' + rel);
     }
