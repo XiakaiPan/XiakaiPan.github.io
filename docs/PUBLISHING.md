@@ -1,35 +1,23 @@
-# Local development, approval and deployment
+# Local development, review and private-repository deployment
 
-## Single-repository workflow
+The full editable website source, PDF candidates, research drafts and tools live exclusively in the PRIVATE XiakaiPan/XiakaiPan.github.io repository. With Node.js 22+, run npm ci and npm run dev; preview at http://127.0.0.1:4321. Run npm run check to validate generated content; npm run build produces static dist/.
 
-Source: XiakaiPan/XiakaiPan.github.io. The complete site, build scripts, drawings, candidate PDFs, CI and release workflow are committed here. Clone the default branch after merging the website PR:
+## Release approval
 
-    git clone https://github.com/XiakaiPan/XiakaiPan.github.io.git
-    cd XiakaiPan.github.io
-    npm ci
-    npm run dev
+The build packages only site.config.json publicAssets plus CSS and favicon; unrelated historical PDF/source archives stay private. Current SSG and TSG paper PDFs and some figures are still candidates, not approved for public release. Complete full-text, author, coauthor/employer/IP, data provenance and future conference-policy review first.
 
-Open http://127.0.0.1:4321. Markdown is under content/. Run npm run check or npm run build for standalone dist/. Keep the repository PRIVATE.
+publication-approval.json defaults to approved:false. Each approved file must be documented by a real reviewer/basis and exact Git blob hash. Fill final reviewedAt and approval only after the actual review. npm run release:check verifies this gate and a real HTTPS canonical domain.
 
-## What is actually published?
+## Free hosting with a separate private showcase repo
 
-scripts/build.mjs copies only the paths listed in site.config.json publicAssets plus site.css and favicon; it does not recursively publish all of assets/. The archived Agent-SSG PDF, TSG source archive and TLI/Workbench historical PDFs remain private. The release workflow uploads only dist/.
+GitHub Free Pages requires a public source repository. Use Cloudflare Pages Free, which supports a private GitHub repo.
 
-However, publicAssets currently includes candidate SSG and TSG PDFs and figures. Each requires full content and disclosure approval. A green build does NOT mean a PDF is safe or licensed for distribution. Confirm all authorship, employer and coauthor rights, third-party materials, data provenance, follow-up submission rules and contact information.
+1. In the authoring repo, run bash scripts/setup-showcase-repo.sh XiakaiPan/research-portfolio using your authenticated local gh CLI. This creates a NEW PRIVATE repo with only a harmless placeholder.
+2. Connect ONLY the new private showcase repository to Cloudflare Pages Git integration; production branch main, output directory public, no build command.
+3. Read the actual assigned pages.dev URL in Cloudflare. Set site.config.json url to it and indexable to true if approved for indexing.
+4. Complete file-by-file disclosure approval, then run npm run check, npm run release:check, and bash scripts/export-showcase.sh XiakaiPan/research-portfolio.
+5. The export copies only reviewed dist/ into showcase public/, and Cloudflare hosts that directory. Verify public URL, PDF links, mobile rendering and external links after release.
 
-publication-approval.json defaults to approved:false for the site and every asset. Each asset is bound to its Git blob SHA. After reviewing the exact file, set its approved flag and real reviewer and basis. Final site review requires a reviewer, date and approved:true; only then set indexable:true in site.config.json. Editing an asset invalidates its original SHA and requires renewed review. Never enter fabricated approvals to make a workflow pass.
+The former direct GitHub Pages workflow in the source repository has been retired. The research source remains private, the showcase repo is private, but its hosted public/ files are accessible to website visitors.
 
-    npm run check
-    npm run release:check
-
-The release check deliberately fails while approval is incomplete.
-
-## GitHub Pages
-
-GitHub Pages can publish from Private repositories only on eligible GitHub plans. In Settings → Pages select GitHub Actions as Source. Once the PR is merged into master and the review is actually completed, open Actions → Publish approved research website → Run workflow → APPROVED_AND_REVIEWED.
-
-This manual-only workflow runs npm ci, npm audit, build, internal link/asset checks, release-review verification, then uploads only dist/ using official GitHub Pages actions. It never publishes on push or PR merge. Keep source Private; do not expose Git history, archived papers or authoring docs.
-
-The planned canonical site is https://xiakaipan.github.io/. Confirm the real deployment URL, PDF links, desktop/mobile layout, indexing and public accessibility. Browser/manual checks cannot be replaced by CI. If Private Pages is unavailable, use another static host for only the verified dist/ output with the same release gate.
-
-Current release status: BLOCKED by unverified document-level/IP authorization and unknown Pages settings; no claim of live deployment.
+See docs/SHOWCASE.md for detailed instructions and REVIEW_BEFORE_PUBLISH.md for unresolved safety checks.
