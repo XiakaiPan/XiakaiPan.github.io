@@ -6,6 +6,34 @@
   "notes": "NOT APPROVED: Author-edition SSG PDF and full TSG preprint are intended public research artifacts, but exact-byte IP/disclosure review remains required. The old anonymous SSG PDF stays private.",
   "assets": [
     {
+      "path": "assets/cv/xiakai-pan-cv-preview.png",
+      "gitBlobSha": "97a0368cb78dca9be6cd8ef18afe18c72652f1a9",
+      "approved": false,
+      "reviewer": "",
+      "basis": ""
+    },
+    {
+      "path": "assets/cv/xiakai-pan-cv.pdf",
+      "gitBlobSha": "815237e8ed308a071287b25ebc7c6e24e797fc74",
+      "approved": false,
+      "reviewer": "",
+      "basis": ""
+    },
+    {
+      "path": "assets/cv/xiakai-pan-resume-engineer-preview.png",
+      "gitBlobSha": "ceff4d90a0dd5fc3e489e71865636f9955e634b0",
+      "approved": false,
+      "reviewer": "",
+      "basis": ""
+    },
+    {
+      "path": "assets/cv/xiakai-pan-resume-engineer.pdf",
+      "gitBlobSha": "7b24e2479ee212aef44ecaad7998b440b2c0e27d",
+      "approved": false,
+      "reviewer": "",
+      "basis": ""
+    },
+    {
       "path": "assets/figures/research-program-overview.svg",
       "gitBlobSha": "9b7a6f441a7ab354de63437c31806faf919e0bac",
       "approved": false,
@@ -13,15 +41,8 @@
       "basis": ""
     },
     {
-      "path": "assets/figures/ssg-mnk-overview-paper.png",
-      "gitBlobSha": "ed2177103b991c6276aed7b9427211002f23f335",
-      "approved": false,
-      "reviewer": "",
-      "basis": ""
-    },
-    {
-      "path": "assets/figures/ssg-workload-system-paper.png",
-      "gitBlobSha": "8bd4b1e23d71ee9507d8f4ad3530c0b990781a5d",
+      "path": "assets/figures/ssg-dt-correspondence.svg",
+      "gitBlobSha": "22f0afd69ce25e338e0450251af6044776b1e36d",
       "approved": false,
       "reviewer": "",
       "basis": ""
@@ -41,15 +62,15 @@
       "basis": ""
     },
     {
-      "path": "assets/figures/ssg-dt-correspondence.svg",
-      "gitBlobSha": "22f0afd69ce25e338e0450251af6044776b1e36d",
+      "path": "assets/figures/ssg-mnk-overview-paper.png",
+      "gitBlobSha": "ed2177103b991c6276aed7b9427211002f23f335",
       "approved": false,
       "reviewer": "",
       "basis": ""
     },
     {
-      "path": "assets/figures/tsg-three-aspects.svg",
-      "gitBlobSha": "2aa9729c7a39d1403d01a7602f063611530cd6a9",
+      "path": "assets/figures/ssg-workload-system-paper.png",
+      "gitBlobSha": "8bd4b1e23d71ee9507d8f4ad3530c0b990781a5d",
       "approved": false,
       "reviewer": "",
       "basis": ""
@@ -57,6 +78,13 @@
     {
       "path": "assets/figures/three-models-triangle.svg",
       "gitBlobSha": "acc336ac8a683681997e02fc72dac7ab053d8c07",
+      "approved": false,
+      "reviewer": "",
+      "basis": ""
+    },
+    {
+      "path": "assets/figures/tsg-three-aspects.svg",
+      "gitBlobSha": "2aa9729c7a39d1403d01a7602f063611530cd6a9",
       "approved": false,
       "reviewer": "",
       "basis": ""

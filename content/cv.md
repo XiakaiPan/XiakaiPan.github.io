@@ -77,4 +77,20 @@ C/C++ · Python · CUDA/Triton · GPU/NPU operators · TVM/MLIR/XLA · vLLM · g
 
 *Updated November 2026. Statements of research scope do not imply completed implementation. Experimental figures are attributed to the linked manuscript and have not been independently reproduced for this website.*
 
-[Download Markdown CV](/downloads/Xiakai_Pan_CV.md) · [Industry Resume](/resume/)
+## PDF version
+
+Two typeset documents, both in Chinese: the two-page full CV and the one-page
+industry resume. Click a preview to open the PDF.
+
+<div class="fig-grid">
+  <figure class="hero-figure">
+    <a href="/assets/cv/xiakai-pan-cv.pdf"><img src="/assets/cv/xiakai-pan-cv-preview.png" alt="First page of the two-page CV PDF"></a>
+    <figcaption><strong>Curriculum Vitae</strong> &middot; 2 pages, Chinese &middot; <a href="/assets/cv/xiakai-pan-cv.pdf">Open PDF &nearr;</a></figcaption>
+  </figure>
+  <figure class="hero-figure">
+    <a href="/assets/cv/xiakai-pan-resume-engineer.pdf"><img src="/assets/cv/xiakai-pan-resume-engineer-preview.png" alt="First page of the one-page industry resume PDF"></a>
+    <figcaption><strong>Industry Resume</strong> &middot; 1 page, Chinese &middot; <a href="/assets/cv/xiakai-pan-resume-engineer.pdf">Open PDF &nearr;</a></figcaption>
+  </figure>
+</div>
+
+The same content is readable as HTML on the [Industry Resume](/resume/) page.
