@@ -17,9 +17,9 @@ A methodological position and two parallel research lines.
   a formal model of tasks that persist and evolve across actors, specifications
   and implementations.
 
-The site also carries a research statement, an academic CV in Chinese and
-English, a publications list that states the evidence status of each document,
-and ten previously published technical articles on RISC-V virtualization.
+The site also carries a research statement, an academic CV, a publications list
+that states the evidence status of each document, and ten previously published
+technical articles on RISC-V virtualization.
 
 ## Local preview
 

@@ -43,7 +43,7 @@ draft: true
 
 ## 提交前
 
-运行 `npm ci && npm run check`。检查浏览器桌面和手机宽度，确认长标题、表格、导航、CV 下载和实际 PDF。这里的检查器不验证外部链接、论文事实或学术元数据，不提供自动截图测试。
+运行 `npm ci && npm run check`。检查浏览器桌面和手机宽度，确认长标题、表格、导航与实际 PDF。这里的检查器不验证外部链接、论文事实或学术元数据，不提供自动截图测试。
 
 旧首页、旧 Jekyll 配置与历史文章保存在 legacy/，不会进入 dist。
 
@@ -55,4 +55,4 @@ draft: true
 
 白名单并不构成保密、知识产权或后续投稿策略的许可；发布前应审核 PDF 全文与图示。原 Agent-SSG 独立页面已设置 draft: true，后续不再作为现行研究页发布，相关方向统一收回 SSG。
 
-Research Statement 位于 content/statement.md，须与 Publications 的真实状态一致。站点不发布按岗位定制的 Industry Resume；对外只提供完整 CV 的中英两版。
+Research Statement 位于 content/statement.md，须与 Publications 的真实状态一致。站点不发布 CV / Resume 的 PDF：CV 正文以 HTML 呈现，排版稿按需向前来索取的人私下提供。

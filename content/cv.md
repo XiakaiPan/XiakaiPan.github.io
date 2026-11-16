@@ -77,13 +77,8 @@ C/C++ · Python · CUDA/Triton · GPU/NPU operators · TVM/MLIR/XLA · vLLM · g
 
 *Updated November 2026. Statements of research scope do not imply completed implementation. Experimental figures are attributed to the linked manuscript and have not been independently reproduced for this website.*
 
-## PDF version
+## Typeset copy
 
-The complete CV is also available as a typeset PDF. Click the preview to open it.
-
-<figure class="hero-figure">
-  <a href="/assets/cv/xiakai-pan-cv.pdf"><img src="/assets/cv/xiakai-pan-cv-preview.png" alt="First page of the two-page CV PDF"></a>
-  <figcaption><strong>Curriculum Vitae</strong> &middot; 2 pages, Chinese &middot; <a href="/assets/cv/xiakai-pan-cv.pdf">Open PDF &nearr;</a></figcaption>
-</figure>
-
-The PDF omits the telephone number; use the contact address above.
+The typeset PDF is not published here. If you need it for a specific purpose,
+write to [xiakpan@gmail.com](mailto:xiakpan@gmail.com) and say what it is for;
+I will send the current version directly.
