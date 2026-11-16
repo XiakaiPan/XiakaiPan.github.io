@@ -14,11 +14,11 @@ SSG studies how explicit **Compute, Memory, Communication (CMC)** structures rep
 
 <div class="jump-bar">
   <span class="jump-label">Quick Jump</span>
-  <a class="btn-pill primary" href="/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf">Paper PDF &nearr;</a>
+  <a class="btn-pill primary" href="/assets/papers/ssg/author-2026-11/ssg-technical-report-xiakai-pan.pdf">Full Paper PDF &nearr;</a>
   <a class="btn-pill" href="#measured-results">Measured Results &darr;</a>
   <a class="btn-pill" href="#workload-scope-operators-models-and-agents">Workload Scope &darr;</a>
-  <a class="btn-pill" href="#core-architecture-abstract-calibrated-and-instantiated-ssg">Core Architecture &darr;</a>
-  <a class="btn-pill" href="#manuscripts-and-artifacts">Manuscript &amp; Abstract &darr;</a>
+  <a class="btn-pill" href="#key-figures-and-evidence">Figures &amp; Mechanism &darr;</a>
+  <a class="btn-pill" href="#full-paper-and-versions">Full Paper &amp; Versions &darr;</a>
   <a class="btn-pill" href="#version-history">Version History &darr;</a>
 </div>
 
@@ -29,23 +29,31 @@ SSG studies how explicit **Compute, Memory, Communication (CMC)** structures rep
   </div>
   <div class="paper-meta">
     <strong>Author:</strong> Xiakai Pan<br>
-    <strong>Format:</strong> 13 pages, ACM format, anonymized for review.<br>
+    <strong>Format:</strong> 14-page author edition: cover plus original 13-page ACM-format manuscript, unchanged.<br>
     <strong>Contributions:</strong> (1) paired Op and System hierarchies over shared Compute&ndash;Memory&ndash;Communication, bound by a Parallel &times; Pipeline schedule and materialized as Compute&ndash;Remap&ndash;Sync; (2) a Build / Traverse / Translate architecture that separates graph transformation from strategy mapping; (3) a three-group evaluation on H20 and 8&times;A800 that reports representation, legality, correctness, and measured performance as separate evidence states.
   </div>
   <div class="paper-actions">
-    <a class="btn-pill primary" href="/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf">PDF (485 KB) &nearr;</a>
+    <a class="btn-pill primary" href="/assets/papers/ssg/author-2026-11/ssg-technical-report-xiakai-pan.pdf">Author edition PDF (14 pp.) &nearr;</a>
     <a class="btn-pill" href="#measured-results">Measured results &darr;</a>
     <a class="btn-pill" href="#version-history">Versions &darr;</a>
   </div>
 </div>
 
-## Scope and Evidence Boundaries
+## Overview: Research Question and Scope
+
+SSG asks whether explicit Workload, System, and Schedule structures can make otherwise fragmented AI execution decisions expressible, constrained, translatable, and experimentally testable. Its central design is a separation of workload structure, resource capabilities, legal mapping, and target-specific realization.
+
+### Scope and Evidence Boundaries
 
 SSG now treats **Agent/tool/model execution as a Workload scope**, alongside operators and model training/inference/RL. The former Agent-SSG label is historical and no longer designates an independent active research line. SSG-DT is a predictive modeling direction, not the definition of the functional substrate.
 
 A public research overview emphasizes the representation and evidence boundaries, rather than internal execution roadmaps and experimental resource plans.
 
-## Core Architecture: Abstract, Calibrated and Instantiated SSG
+## Key Figures and Evidence
+
+The figures describe the structural motivation, workload/system hierarchies, bounded strategy space, and implementation evidence from the historical manuscript. They are not evidence of unmeasured generality across all Agent workloads or accelerators.
+
+### Core Architecture: Abstract, Calibrated and Instantiated SSG
 
 Between open frontend IRs (PyTorch FX, ONNX, Triton, StableHLO) and closed vendor backends, SSG provides a hardware-independent **Schedule &amp; Resource Orchestration IR** built around three graph objects and a **Build&ndash;Traverse&ndash;Translate (BTT)** pipeline:
 
@@ -121,19 +129,28 @@ Numbers reported in the September 2026 technical manuscript (&sect;5&ndash;7). T
 | **Framework: training / RL** | SFT scales 1.316&times; from 4 to 8 devices (65.8% efficiency); two RL resource partitions give 13.05 s and 22.32 s step times | Plans emitted to framework-native execution |
 | **Model path: Qwen3 MoE** | A mixed execution configuration records 205.0 tok/s, 95.6% of framework decode throughput, with substantially slower prefill | Graph capture records 48 fallbacks, so decode replay can use the framework implementation. This measures the mixed configuration, not isolated SSG-router throughput or an end-to-end speedup |
 
-## Manuscripts and Artifacts
+## Full Paper and Versions
+
+**[Download the complete SSG Technical Report — Xiakai Pan, Author Web Edition (PDF, 14 pages)](/assets/papers/ssg/author-2026-11/ssg-technical-report-xiakai-pan.pdf).**
+
+The new first page identifies the author, without institutional affiliation; pages 2–14 preserve the original anonymous September 2026 technical manuscript unchanged. The additional cover is **not a revised experiment or a peer-reviewed publication**. The original 13-page anonymous PDF remains in the private source repository, rather than being shipped as a second public paper.
+
+### Manuscript Scope and Status
 
 ### *System Substrate Graph: One Cross-Scale Representation of Workload, System, and Schedule for AI Computing*
 
 - **Status:** September 2026 technical manuscript (Sep-V2.4.7), not peer-reviewed; later research content is kept distinct from this historical snapshot.
-- **PDF:** **[ssg-asplos27-v2.4.7.pdf](/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf)** (13 pages, anonymized).
+- **Public PDF:** **[Author Web Edition — full technical report](/assets/papers/ssg/author-2026-11/ssg-technical-report-xiakai-pan.pdf)** (14 pages, including the new cover).
 - **Claim Modality:** *Attainability and structural coverage*, not universal superiority over hand-tuned vendor libraries. Calibrated runtime prediction and hardware co-design are explicitly scoped to **[SSG-DT](/research/ssg-dt/)**.
 
 ## Version History
 
+**2026-11-16 — [SSG Author Web Edition (PDF)](/assets/papers/ssg/author-2026-11/ssg-technical-report-xiakai-pan.pdf):** attribution cover plus unchanged original body, not a new scientific version.
+
+
 | Date | Version Tag | Artifact / Snapshot | Substantive Changes &amp; Provenance |
 |---|---|---|---|
-| **2026-09-14** | `Sep-V2.4.7` | **[PDF](/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf)** | Historical manuscript: revised introduction, G1&ndash;G3 measured figures (H20 and A800), RS-DSA appendix. |
+| **2026-09-14** | `Sep-V2.4.7` | Private anonymous historical PDF | Historical manuscript: revised introduction, G1&ndash;G3 measured figures (H20 and A800), RS-DSA appendix. |
 | **2026-08-29** | `Aug-V4.3.2` | Internal draft | Terminology alignment, wording audit of unmeasured claims, paired Workload&ndash;System diagrams. |
 | **2026-08-18** | `Aug-V3.0` | Internal draft | First measured experiment figures; unified `AbstractSSG / CalibratedSSG / InstantiatedSSG` terminology. |
 | **2026-08-17** | `Aug-V2.4.3` | Internal draft | First complete ACM-format build; related work including TAOT, CUDA Tile IR, and CuTe. |
