@@ -1,10 +1,6 @@
 name: Deploy site to GitHub Pages
 
-# Publishes dist/ to GitHub Pages.
-#
-# This repository is the PUBLIC half of the site: it holds only outward-facing
-# content. The complete private archive (draft pages, historical PDFs, source
-# archives, authoring metadata) lives in the private "my-research" repository.
+# Builds the site and publishes dist/ to GitHub Pages.
 #
 # Setup, once:
 #   1. Repository visibility = Public (Pages on a free plan needs a public source)
