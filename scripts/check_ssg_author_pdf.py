@@ -5,6 +5,8 @@ root = Path(__file__).resolve().parent.parent
 original = PdfReader(str(root / 'assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf'), strict=True)
 author = PdfReader(str(root / 'assets/papers/ssg/author-2026-11/ssg-technical-report-xiakai-pan.pdf'), strict=True)
 
+pg = original.trailer['/Root'].raw_get('/Pages')
+print('CATALOG REF',repr(original.trailer.raw_get('/Root')),'PAGES REF',repr(getattr(pg,'indirect_reference',None)),'KIDS',repr(pg.raw_get('/Kids')),'KEYS',list(pg.keys()),flush=True)
 print('ORIGINAL PAGES ROOT:', original.trailer['/Root'].raw_get('/Pages'), 'COUNT:', len(original.pages), flush=True)
 print('DERIVED PAGES COUNT:', len(author.pages), flush=True)
 
