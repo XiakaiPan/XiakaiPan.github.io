@@ -76,7 +76,7 @@
   <!-- Left Column: Series A (SSG) -->
   <rect x="40" y="210" width="405" height="236" class="card-green"/>
   <text x="62" y="236" class="kicker" style="fill:#19614f">SERIES A · AI COMPUTING EXECUTION WORLD</text>
-  <text x="62" y="260" class="title">SSG — System Substrate Graph (includes Agent workloads)</text>
+  <text x="62" y="260" class="title">SSG — System Substrate Graph</text>
   <text x="62" y="280" class="b"><tspan class="mono">Execution = Schedule(Workload, System)</tspan> over CMC</text>
 
   <!-- SSG Core Box -->
@@ -87,14 +87,14 @@
   <!-- SSG Tracks -->
   <rect x="62" y="350" width="114" height="78" class="card"/>
   <text x="72" y="370" class="h-sm" style="fill:#19614f">SSG · Core</text>
-  <text x="72" y="387" class="b-sm">Op + Trainfer</text>
+  <text x="72" y="387" class="b-sm">Op · Model</text>
   <text x="72" y="402" class="b-sm">Coverage &amp; Emit</text>
   <text x="72" y="418" class="mono" style="font-size:10px">Report · 2026</text>
 
   <rect x="185" y="350" width="114" height="78" class="card"/>
   <text x="195" y="370" class="h-sm" style="fill:#19614f">SSG Agent</text>
   <text x="195" y="387" class="b-sm">Agent · Model · Op</text>
-  <text x="195" y="402" class="b-sm">CPU + GPU Sched.</text>
+  <text x="195" y="402" class="b-sm">CPU / GPU</text>
   <text x="195" y="418" class="mono" style="font-size:10px">In progress</text>
 
   <rect x="309" y="350" width="114" height="78" class="card"/>

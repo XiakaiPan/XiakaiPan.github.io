@@ -87,7 +87,7 @@ Cyclotron informs the logical-communication versus physical-event boundary; Prim
 
 ## Roadmap and Manuscript Status
 
-SSG-DT occupies **Operator + Trainfer × Performance Prototype** in the [SSG research space](/research/ssg/#ssg-3d-research-space). Initial evidence can come from a bounded H20 operator-to-model path; cross-architecture and scale-out/RL claims require their own realizations and observations. The future future Agent-workload twin depends on both this twin machinery and actual SSG Agent execution support.
+SSG-DT occupies **Operator + Trainfer × Performance Prototype** in the [SSG research space](/research/ssg/#workload-scope-operators-models-and-agents). Initial evidence can come from a bounded H20 operator-to-model path; cross-architecture and scale-out/RL claims require their own realizations and observations. The future Agent-workload twin depends on both this twin machinery and actual SSG Agent execution support.
 
 | Snapshot | Development |
 |---|---|
