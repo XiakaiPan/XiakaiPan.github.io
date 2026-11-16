@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 410" role="img" aria-label="Agent-SSG Cross-Layer Composition across Agent, Model, and Operator Scales">
+  
+  <defs>
+    <style>
+      .title { font: 700 18px Georgia, "Times New Roman", serif; fill: #1c2825; }
+      .subtitle { font: 600 13px system-ui, -apple-system, sans-serif; fill: #19614f; letter-spacing: 0.4px; }
+      .kicker { font: 700 10.5px system-ui, -apple-system, sans-serif; fill: #64726d; letter-spacing: 1.2px; text-transform: uppercase; }
+      .h { font: 650 14px system-ui, -apple-system, sans-serif; fill: #1c2825; }
+      .h-sm { font: 650 12.5px system-ui, -apple-system, sans-serif; fill: #1c2825; }
+      .b { font: 450 12px system-ui, -apple-system, sans-serif; fill: #33433e; }
+      .b-sm { font: 450 11px system-ui, -apple-system, sans-serif; fill: #52615c; }
+      .mono { font: 600 11px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #19614f; }
+      .mono-amber { font: 600 11px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #8a5612; }
+      .mono-blue { font: 600 11px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #1e4b7a; }
+      .card { fill: #ffffff; stroke: #ced8d1; stroke-width: 1.25; rx: 8; }
+      .card-green { fill: #f2f7f5; stroke: #19614f; stroke-width: 1.5; rx: 8; }
+      .card-blue { fill: #f3f7fb; stroke: #2b5c8f; stroke-width: 1.5; rx: 8; }
+      .card-amber { fill: #fdf8f0; stroke: #b07219; stroke-width: 1.5; rx: 8; }
+      .pill-green { fill: #e3f0ec; stroke: #19614f; stroke-width: 1; rx: 5; }
+      .pill-blue { fill: #e6eff8; stroke: #2b5c8f; stroke-width: 1; rx: 5; }
+      .pill-amber { fill: #faeedb; stroke: #b07219; stroke-width: 1; rx: 5; }
+      .pill-gray { fill: #eef2ef; stroke: #95a39d; stroke-width: 1; rx: 5; }
+      .arr { stroke: #19614f; stroke-width: 1.6; fill: none; marker-end: url(#arrow-green); }
+      .arr-blue { stroke: #2b5c8f; stroke-width: 1.6; fill: none; marker-end: url(#arrow-blue); }
+      .arr-amber { stroke: #b07219; stroke-width: 1.6; fill: none; marker-end: url(#arrow-amber); }
+      .arr-muted { stroke: #64726d; stroke-width: 1.4; stroke-dasharray: 5 4; fill: none; marker-end: url(#arrow-muted); }
+    </style>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#19614f"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#2b5c8f"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#b07219"/>
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#64726d"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="410" fill="#fafbf8" rx="10" stroke="#dbe2dc" stroke-width="1.5"/>
+  <text x="450" y="30" text-anchor="middle" class="kicker">AGENT-SSG · CROSS-LAYER COMPOSITION ACROSS AGENT WORKFLOW, MODEL SERVING &amp; OPERATOR KERNELS</text>
+
+  <!-- Left: Workload Hierarchy (T3) -->
+  <rect x="36" y="50" width="380" height="295" class="card-green"/>
+  <text x="56" y="75" class="kicker" style="fill:#19614f">EXTENDED WORKLOAD HIERARCHY (TICK T3)</text>
+  <text x="56" y="98" class="title" style="font-size:17px">Agent → Model → Operator</text>
+
+  <rect x="56" y="114" width="340" height="62" class="card"/>
+  <text x="72" y="135" class="h-sm" style="fill:#19614f">L0 · Agent Workflow &amp; Tool Graph</text>
+  <text x="72" y="153" class="b-sm">Coding Agent turns · Tool calls · Context/Artifact I/O</text>
+  <text x="72" y="168" class="mono" style="font-size:10px">Known graph grows as work is revealed</text>
+
+  <path d="M 226 176 L 226 192" class="arr"/>
+
+  <rect x="56" y="194" width="340" height="62" class="card"/>
+  <text x="72" y="215" class="h-sm" style="fill:#19614f">L1 · Model Invocation &amp; KV State</text>
+  <text x="72" y="233" class="b-sm">Prefill / Decode stages · Prefix reuse · Batching</text>
+  <text x="72" y="248" class="mono" style="font-size:10px">Opaque or refined: backend authority required</text>
+
+  <path d="M 226 256 L 226 272" class="arr"/>
+
+  <rect x="56" y="274" width="340" height="54" class="card"/>
+  <text x="72" y="295" class="h-sm" style="fill:#19614f">L2 · Operator &amp; Kernel Realization</text>
+  <text x="72" y="313" class="b-sm">Attention / MoE / Projection subgraphs &amp; fusion</text>
+
+  <!-- Right: Heterogeneous System Substrate -->
+  <rect x="484" y="50" width="380" height="295" class="card-blue"/>
+  <text x="504" y="75" class="kicker" style="fill:#2b5c8f">HETEROGENEOUS SYSTEM SUBSTRATE</text>
+  <text x="504" y="98" class="title" style="font-size:17px">Host CPU / NUMA + GPU / Device</text>
+
+  <rect x="504" y="114" width="340" height="62" class="card"/>
+  <text x="520" y="135" class="h-sm" style="fill:#2b5c8f">Host Tier · CPU Cores, DRAM &amp; Storage</text>
+  <text x="520" y="153" class="b-sm">Sandbox execution · Repo/test I/O · Context staging</text>
+  <text x="520" y="168" class="mono-blue" style="font-size:10px">Domain: Host_NUMA ↔ PCIe / CXL</text>
+
+  <path d="M 674 176 L 674 192" class="arr-blue"/>
+
+  <rect x="504" y="194" width="340" height="62" class="card"/>
+  <text x="520" y="215" class="h-sm" style="fill:#2b5c8f">Inter-Device Tier · Serving &amp; Comm Fabric</text>
+  <text x="520" y="233" class="b-sm">CPU–GPU paths under supported adapters</text>
+  <text x="520" y="248" class="mono-blue" style="font-size:10px">Initial evidence scope: single-node CPU–GPU</text>
+
+  <path d="M 674 256 L 674 272" class="arr-blue"/>
+
+  <rect x="504" y="274" width="340" height="54" class="card"/>
+  <text x="520" y="295" class="h-sm" style="fill:#2b5c8f">Intra-Device Tier · GPU / NPU Hierarchy</text>
+  <text x="520" y="313" class="b-sm">HBM ↔ L2 ↔ SMEM ↔ Register File · SMs / Cores</text>
+
+  <!-- Cross-level Schedule Bridge Arrows -->
+  <path d="M 416 145 L 484 145" class="arr"/>
+  <path d="M 416 225 L 484 225" class="arr"/>
+  <path d="M 416 301 L 484 301" class="arr"/>
+
+  <!-- Bottom Summary -->
+  <rect x="36" y="356" width="828" height="38" class="pill-gray"/>
+  <text x="450" y="380" text-anchor="middle" class="b-sm">
+    <tspan style="font-weight:700">Proposed Contract:</tspan> Preserve dependencies/effects; link selected plans, artifacts and actual dispatch events.
+  </text>
+</svg>

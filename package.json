@@ -1,0 +1,20 @@
+{
+  "name": "xiakai-pan-research-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Markdown-first research website",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "release:check": "node scripts/release-check.mjs"
+  },
+  "dependencies": {
+    "marked": "18.1.2",
+    "yaml": "2.9.1"
+  }
+}

@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 490" role="img" aria-label="TSG Three Core Aspects: Context and Graph Structure, CMA Roles, and Task Evolution">
+  
+  <defs>
+    <style>
+      .title { font: 700 18px Georgia, "Times New Roman", serif; fill: #1c2825; }
+      .subtitle { font: 600 13px system-ui, -apple-system, sans-serif; fill: #19614f; letter-spacing: 0.4px; }
+      .kicker { font: 700 10.5px system-ui, -apple-system, sans-serif; fill: #64726d; letter-spacing: 1.2px; text-transform: uppercase; }
+      .h { font: 650 14px system-ui, -apple-system, sans-serif; fill: #1c2825; }
+      .h-sm { font: 650 12.5px system-ui, -apple-system, sans-serif; fill: #1c2825; }
+      .b { font: 450 12px system-ui, -apple-system, sans-serif; fill: #33433e; }
+      .b-sm { font: 450 11px system-ui, -apple-system, sans-serif; fill: #52615c; }
+      .mono { font: 600 11px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #19614f; }
+      .mono-amber { font: 600 11px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #8a5612; }
+      .mono-blue { font: 600 11px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #1e4b7a; }
+      .card { fill: #ffffff; stroke: #ced8d1; stroke-width: 1.25; rx: 8; }
+      .card-green { fill: #f2f7f5; stroke: #19614f; stroke-width: 1.5; rx: 8; }
+      .card-blue { fill: #f3f7fb; stroke: #2b5c8f; stroke-width: 1.5; rx: 8; }
+      .card-amber { fill: #fdf8f0; stroke: #b07219; stroke-width: 1.5; rx: 8; }
+      .pill-green { fill: #e3f0ec; stroke: #19614f; stroke-width: 1; rx: 5; }
+      .pill-blue { fill: #e6eff8; stroke: #2b5c8f; stroke-width: 1; rx: 5; }
+      .pill-amber { fill: #faeedb; stroke: #b07219; stroke-width: 1; rx: 5; }
+      .pill-gray { fill: #eef2ef; stroke: #95a39d; stroke-width: 1; rx: 5; }
+      .arr { stroke: #19614f; stroke-width: 1.6; fill: none; marker-end: url(#arrow-green); }
+      .arr-blue { stroke: #2b5c8f; stroke-width: 1.6; fill: none; marker-end: url(#arrow-blue); }
+      .arr-amber { stroke: #b07219; stroke-width: 1.6; fill: none; marker-end: url(#arrow-amber); }
+      .arr-muted { stroke: #64726d; stroke-width: 1.4; stroke-dasharray: 5 4; fill: none; marker-end: url(#arrow-muted); }
+    </style>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#19614f"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#2b5c8f"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#b07219"/>
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#64726d"/>
+    </marker>
+  </defs>
+
+  <rect width="920" height="490" fill="#fafbf8" rx="10" stroke="#dbe2dc" stroke-width="1.5"/>
+  <text x="460" y="30" text-anchor="middle" class="kicker">TASK SUBSTRATE GRAPH (TSG) · THREE ASPECTS OF PERSISTENT &amp; EVOLVING HUMAN–AI TASKS</text>
+
+  <!-- Top Context Banner -->
+  <rect x="36" y="46" width="848" height="62" class="card-blue"/>
+  <text x="56" y="68" class="kicker" style="fill:#2b5c8f">SEMANTIC &amp; ACTIVITY SITUATION (ABOVE HARNESS / SESSION / CHAT)</text>
+  <text x="56" y="87" class="mono-blue" style="font-size:11px">Context = Owner × Location(Intent, Discipline) × Operation(CDC)</text>
+  <text x="56" y="102" class="b-sm">Owner: persistent responsibility · Actor: current executor at activity / graph-node level</text>
+
+  <path d="M 460 108 L 460 132" class="arr-blue"/>
+
+  <!-- Aspect 1: Left Column -->
+  <rect x="36" y="136" width="268" height="278" class="card"/>
+  <rect x="52" y="152" width="236" height="26" class="pill-blue"/>
+  <text x="170" y="169" text-anchor="middle" class="h-sm" style="fill:#183a5e">Aspect 1 · Task Graph Structure</text>
+
+  <text x="54" y="198" class="h-sm">Concrete Task Graph G_T = (V_T, E_T)</text>
+  <text x="54" y="216" class="b-sm">Vertices factorize who, what, and how:</text>
+
+  <rect x="54" y="226" width="232" height="34" class="pill-gray"/>
+  <text x="170" y="248" text-anchor="middle" class="mono-blue">V_T ⊆ Actor × Spec × Impl</text>
+
+  <text x="54" y="280" class="b-sm">• <tspan style="font-weight:650">Actor:</tspan> Human, AI model, program, team</text>
+  <text x="54" y="298" class="b-sm">• <tspan style="font-weight:650">Spec:</tspan> Relatively stable specification</text>
+  <text x="54" y="316" class="b-sm">• <tspan style="font-weight:650">Impl:</tspan> Concrete realization / harness run</text>
+
+  <rect x="54" y="330" width="232" height="68" class="card-blue"/>
+  <text x="170" y="349" text-anchor="middle" class="h-sm" style="font-size:11.5px;fill:#183a5e">Spec Semantics (RTC)</text>
+  <text x="170" y="368" text-anchor="middle" class="mono-blue" style="font-size:10.5px">Representation × Transformation</text>
+  <text x="170" y="384" text-anchor="middle" class="mono-blue" style="font-size:10.5px">× Constraint</text>
+
+  <!-- Aspect 2: Center Column -->
+  <rect x="326" y="136" width="268" height="278" class="card"/>
+  <rect x="342" y="152" width="236" height="26" class="pill-green"/>
+  <text x="460" y="169" text-anchor="middle" class="h-sm" style="fill:#114538">Aspect 2 · Activity-Relative CMA</text>
+
+  <text x="344" y="198" class="h-sm">Exchanged Objects ≠ Graph Nodes</text>
+  <text x="344" y="216" class="b-sm">Roles are relative to each activity step:</text>
+
+  <rect x="344" y="228" width="232" height="46" class="pill-green"/>
+  <text x="356" y="246" class="h-sm" style="font-size:12px;fill:#114538">Component (C)</text>
+  <text x="356" y="263" class="b-sm">Reusable capability / structure / procedure</text>
+
+  <rect x="344" y="282" width="232" height="46" class="pill-green"/>
+  <text x="356" y="300" class="h-sm" style="font-size:12px;fill:#114538">Model (M)</text>
+  <text x="356" y="317" class="b-sm">Reasoning representation (G_T can be M)</text>
+
+  <rect x="344" y="336" width="232" height="62" class="pill-green"/>
+  <text x="356" y="354" class="h-sm" style="font-size:12px;fill:#114538">Artifact (A)</text>
+  <text x="356" y="371" class="b-sm">Materialized output; an Artifact of step i</text>
+  <text x="356" y="386" class="b-sm">can enter step j as a Component</text>
+
+  <!-- Aspect 3: Right Column -->
+  <rect x="616" y="136" width="268" height="278" class="card"/>
+  <rect x="632" y="152" width="236" height="26" class="pill-amber"/>
+  <text x="750" y="169" text-anchor="middle" class="h-sm" style="fill:#694009">Aspect 3 · Instantiation &amp; Evolution</text>
+
+  <rect x="634" y="190" width="232" height="58" class="card-amber"/>
+  <text x="646" y="209" class="h-sm" style="font-size:12px;fill:#694009">Instantiation (Formalism to Task)</text>
+  <text x="646" y="226" class="b-sm">TSG formalism → concrete G_T;</text>
+  <text x="646" y="240" class="b-sm">then elaborate the same persistent graph</text>
+
+  <rect x="634" y="258" width="232" height="68" class="card-amber"/>
+  <text x="646" y="277" class="h-sm" style="font-size:12px;fill:#694009">Intra-Task Evolve (Same Identity)</text>
+  <text x="646" y="294" class="b-sm">G_T(t) → G_T(t'): revise Spec, switch</text>
+  <text x="646" y="309" class="b-sm">Impl/Actor, or branch on failure</text>
+  <text x="646" y="321" class="b-sm">while preserving task identity</text>
+
+  <rect x="634" y="336" width="232" height="62" class="card-amber"/>
+  <text x="646" y="355" class="h-sm" style="font-size:12px;fill:#694009">Inter-Task Evolve (Selective Reuse)</text>
+  <text x="646" y="372" class="b-sm">Task G_i → CMA / subgraph → Task G_j'</text>
+  <text x="646" y="387" class="b-sm">Adoption under receiving-task constraints</text>
+
+  <!-- Arrows between columns -->
+  <path d="M 304 275 L 326 275" class="arr-blue"/>
+  <path d="M 594 275 L 616 275" class="arr-amber"/>
+
+  <!-- Bottom Closed-Loop Strip -->
+  <rect x="36" y="428" width="848" height="46" class="pill-gray"/>
+  <text x="56" y="443" class="h-sm">Open Research &amp; Engineering Loop:</text>
+  <text x="56" y="457" class="b-sm" style="font-size:10px">Evidence (CMA) → AI Literature/Synthesis → Human Abstraction Spec → Agent Prototype Impl →</text>
+  <text x="56" y="470" class="b-sm" style="font-size:10px">Experiment / Failure Evidence → <tspan class="mono-blue">Intra-Task Spec Revision</tspan> (without losing task lineage across sessions or harnesses).</text>
+</svg>

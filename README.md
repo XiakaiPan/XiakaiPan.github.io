@@ -1,13 +1,45 @@
-# Your GitHub Learning Lab Repository for GitHub Pages
+# Xiakai Pan — Research Portfolio
 
-Welcome to **your** repository for your GitHub Learning Lab course. This repository will be used during the different activities that I will be guiding you through. 
+This PRIVATE repository is the single source of truth for the website and PhD/Research application materials.
 
-Oh! I haven't introduced myself...
+Research: Three Models (method), SSG (heterogeneous execution including Agent workloads), TSG (evolving human–AI tasks). The old standalone Agent-SSG page is an excluded historical draft.
 
-I'm the GitHub Learning Lab bot and I'm here to help guide you in your journey to learn and master the various topics covered in this course. I will be using Issue and Pull Request comments to communicate with you. In fact, I already added an issue for you to check out.
+## Local editing (Node.js 22+)
 
-![issue tab](https://lab.github.com/public/images/issue_tab.png)
+    git clone https://github.com/XiakaiPan/XiakaiPan.github.io.git
+    cd XiakaiPan.github.io
+    npm ci
+    npm run dev
 
-I'll meet you over there, can't wait to get started!
+Visit http://127.0.0.1:4321. Edit content/, assets/, or site.config.json and refresh. The latest website branch before merge is draft/research-site-2026-10.
 
-This repository is licensed under [MIT](../LICENSE) (c) 2019 GitHub, Inc.
+    npm run check
+    npm run build
+
+Standalone static output is dist/. Never deploy the repository root.
+
+## Files
+
+- content/index.md — homepage
+- content/statement.md — Research Statement
+- content/research.md and content/research/*.md — research methods/projects
+- content/publications.md — paper status and evidence
+- content/cv.md and content/resume.md — application materials
+- assets/ — source images and PDFs, including PRIVATE historical files
+- site.config.json — navigation, canonical site URL, public asset allowlist
+- publication-approval.json — exact-blob publication review approvals
+- scripts/ — build, check, release-check, local server
+- .github/workflows/publish.yml — MANUAL approved-only Pages release
+
+## Public release protection
+
+There is no automatic deployment. The local site includes *candidate* PDF and PNG assets, whose publication rights have NOT been fully verified.
+
+After legitimate PDF, image, employer/coauthor and venue review, update the exact-file approval records and indexable flag, then run:
+
+    npm run check
+    npm run release:check
+
+The second command is intentionally BLOCKED until real approvals are recorded. Pages requires repository Settings → Pages → Source: GitHub Actions, a compatible private-repo plan, and explicit manual dispatch. Never make this source repository public merely to host Pages.
+
+See docs/PUBLISHING.md and REVIEW_BEFORE_PUBLISH.md for the full handoff.
