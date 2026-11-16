@@ -55,4 +55,4 @@ draft: true
 
 白名单并不构成保密、知识产权或后续投稿策略的许可；发布前应审核 PDF 全文与图示。原 Agent-SSG 独立页面已设置 draft: true，后续不再作为现行研究页发布，相关方向统一收回 SSG。
 
-Research Statement 位于 content/statement.md，须与 Publications 的真实状态一致。Industry Resume 不对外发布：那类材料按岗位定制，只保留在私有仓 my-research。
+Research Statement 位于 content/statement.md，须与 Publications 的真实状态一致。站点不发布按岗位定制的 Industry Resume；对外只提供完整 CV 的中英两版。

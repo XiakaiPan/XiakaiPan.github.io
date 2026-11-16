@@ -79,18 +79,11 @@ C/C++ · Python · CUDA/Triton · GPU/NPU operators · TVM/MLIR/XLA · vLLM · g
 
 ## PDF version
 
-The complete CV is available as a typeset PDF in both languages. Click a
-preview to open it.
+The complete CV is also available as a typeset PDF. Click the preview to open it.
 
-<div class="fig-grid">
-  <figure class="hero-figure">
-    <a href="/assets/cv/xiakai-pan-cv.pdf"><img src="/assets/cv/xiakai-pan-cv-preview.png" alt="First page of the Chinese CV PDF"></a>
-    <figcaption><strong>中文完整履历</strong> &middot; 2 pages &middot; <a href="/assets/cv/xiakai-pan-cv.pdf">Open PDF &nearr;</a></figcaption>
-  </figure>
-  <figure class="hero-figure">
-    <a href="/assets/cv/xiakai-pan-cv-en.pdf"><img src="/assets/cv/xiakai-pan-cv-en-preview.png" alt="First page of the English CV PDF"></a>
-    <figcaption><strong>English CV</strong> &middot; 2 pages &middot; <a href="/assets/cv/xiakai-pan-cv-en.pdf">Open PDF &nearr;</a></figcaption>
-  </figure>
-</div>
+<figure class="hero-figure">
+  <a href="/assets/cv/xiakai-pan-cv.pdf"><img src="/assets/cv/xiakai-pan-cv-preview.png" alt="First page of the two-page CV PDF"></a>
+  <figcaption><strong>Curriculum Vitae</strong> &middot; 2 pages, Chinese &middot; <a href="/assets/cv/xiakai-pan-cv.pdf">Open PDF &nearr;</a></figcaption>
+</figure>
 
-Both files omit the telephone number; use the contact address above.
+The PDF omits the telephone number; use the contact address above.

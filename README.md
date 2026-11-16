@@ -1,74 +1,79 @@
 # Xiakai Pan — Research Portfolio
 
-Public research site: Three Models, SSG (including Agent workloads), TSG, the
-Research Statement, the academic CV, and ten previously published TinyLab RISC-V
-articles.
+Source for <https://xiakaipan.github.io>, a personal research site.
 
-Live at **https://xiakaipan.github.io/** once Pages is enabled.
+## What the site covers
 
-## Two repositories, one direction
+A methodological position and two parallel research lines.
 
-| Repository | Visibility | Holds |
-|---|---|---|
-| `my-research` | private | The **complete** record: draft pages, historical and candidate PDFs, LaTeX source archives, authoring metadata, the site's own private history |
-| this repository | **public** | Only outward-facing content: the pages, the publishable figures and manuscripts, the build scripts, and the release notes |
+- **[Three Models of World Modeling](https://xiakaipan.github.io/research/three-models/)** —
+  how formal, simulation and statistical models compose, and why measurement
+  stays outside the triangle.
+- **[SSG — System Substrate Graph](https://xiakaipan.github.io/research/ssg/)** —
+  one representation of how an AI workload is scheduled onto a system, from
+  operator kernels through distributed training, inference and RL to agent
+  workloads.
+- **[TSG — Task Substrate Graph](https://xiakaipan.github.io/research/tsg/)** —
+  a formal model of tasks that persist and evolve across actors, specifications
+  and implementations.
 
-Nothing private is added here. Anything that must stay private, or that is only
-of historical interest, belongs in `my-research`.
+The site also carries a research statement, an academic CV in Chinese and
+English, a publications list that states the evidence status of each document,
+and ten previously published technical articles on RISC-V virtualization.
 
 ## Local preview
 
-Requires Node.js 22+.
+Node.js 22 or newer.
 
     git clone https://github.com/XiakaiPan/XiakaiPan.github.io.git
     cd XiakaiPan.github.io
     npm ci
     npm run dev
 
-Open http://127.0.0.1:4321 and edit `content/`, `assets/` or
-`site.config.json`. Validate and build:
+Then open <http://127.0.0.1:4321>. Editing anything under `content/`,
+`assets/` or `site.config.json` rebuilds and is visible after a refresh.
 
-    npm run check
-    npm run build
+    npm run check    # build and validate every link, asset and anchor
+    npm run build    # build dist/ only
 
-The standalone site lands in `dist/`. Only the paths listed in
-`site.config.json` → `publicAssets`, plus `site.css` and `favicon.svg`, are
-copied into `dist/`; the check fails if the built asset set diverges from that
-allowlist.
+The site is plain static HTML: no framework, no client-side routing, no CDN
+requests. Fonts and styling are local, so a build has no network dependency.
+
+## Writing content
+
+Pages are Markdown files under `content/` with YAML front matter:
+
+```yaml
+---
+title: "Page title"
+permalink: /section/page/
+description: "One-line summary used for the page metadata."
+---
+```
+
+`permalink` is the route and must be unique. Heading anchors are generated
+automatically. Internal links are written as site-absolute paths (`/research/ssg/`)
+and are checked by `npm run check`.
+
+Figures and PDFs live under `assets/`. Files listed in `site.config.json` →
+`publicAssets`, together with the stylesheet and favicon, are the only assets
+copied into `dist/`; anything else in the tree is not published.
 
 ## Deployment
 
-`.github/workflows/pages.yml` builds and validates, then publishes `dist/` as a
-GitHub Pages artifact on every push to `master`, and can also be run manually
-from the Actions tab.
+A push to `master` builds, validates and publishes `dist/` to GitHub Pages
+through `.github/workflows/pages.yml`. The workflow can also be started by hand
+from the Actions tab. Pages is configured with **Source: GitHub Actions**, not a
+branch folder, because the branch root is authoring source rather than built
+output.
 
-One-time setup: repository Settings → Pages → **Source: GitHub Actions**.
-Never select a branch folder — the branch root is authoring source, not the
-built site.
+## Licence
 
-No build secrets are required. `dist/` is not committed.
+Text, figures and manuscripts are licensed under
+[CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/): share
+unmodified with attribution, no commercial use, no derivatives. The build
+scripts are all rights reserved. See [LICENSE](LICENSE) for the exact scope.
 
-## Files
+## Contact
 
-- `content/index.md` — homepage
-- `content/statement.md` — Research Statement
-- `content/research.md`, `content/research/*.md` — research method and projects
-- `content/publications.md` — manuscripts, preprints and evidence status
-- `content/cv.md` — academic CV
-- `content/writing.md` — published TinyLab articles
-- `assets/` — figures and manuscripts that may be published
-- `site.config.json` — navigation, canonical URL, public asset allowlist
-- `publication-approval.json` — per-file disclosure sign-off record
-- `scripts/` — build, check, release-check, local server
-
-## Disclosure status
-
-`publication-approval.json` records whether each manuscript and figure may be
-distributed. It currently shows `approved: false` and is **not** enforced by the
-deploy: the site builds and publishes regardless, so that the outward-facing
-pages stay reachable while the review is completed. Run
-
-    npm run release:check
-
-to see the exact remaining items, and read `REVIEW_BEFORE_PUBLISH.md` for the
-outstanding human review.
+xiakpan@gmail.com
