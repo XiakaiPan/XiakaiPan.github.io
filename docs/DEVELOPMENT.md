@@ -47,3 +47,12 @@ draft: true
 
 旧首页、旧 Jekyll 配置与历史文章保存在 legacy/，不会进入 dist。
 
+
+
+## 公开资源白名单（2026-11 新增）
+
+站点构建不再递归公开 assets。新增图片或 PDF 后，必须同时更新 site.config.json 中的 publicAssets 白名单，确认页面引用，并运行 npm run check。默认保留在私有 Git 源码的附件不会进入 dist。
+
+白名单并不构成保密、知识产权或后续投稿策略的许可；发布前应审核 PDF 全文与图示。原 Agent-SSG 独立页面已设置 draft: true，后续不再作为现行研究页发布，相关方向统一收回 SSG。
+
+Research Statement 位于 content/statement.md；Industry Resume 位于 content/resume.md。两者面向 PhD 和 Research 岗位，须与 Publications 的真实状态一致。
