@@ -57,13 +57,17 @@ NVDLA-oriented simulation infrastructure and model integration.
 ### PLCT Lab — RISC-V Virtualization Research Intern
 **July 2022 – January 2023**
 
-RISC-V hypervisor extensions, KVM/QEMU/Spike, and [public virtualization article](https://tinylab.org/riscv-kvm-mem-virt-impl/).
+RISC-V hypervisor extensions, KVM/QEMU/Spike, and a [ten-article technical series on RISC-V virtualization](/writing/) published on TinyLab in 2023.
 
 ## Education
 
 **Tsinghua University** — M.S., Data Science and Information Technology, 2021–2024; computer architecture, CPU simulation and industrial vision.
 
 **Nankai University** — B.S., Chemistry, 2017–2021; additional study in Chinese language and literature and experience in machine learning.
+
+## Technical Writing
+
+**RISC-V Virtualization: 10 technical articles**, TinyLab / 泰晓科技 (2023). Covers privilege transitions, Host/Guest boot, memory virtualization, KVM userspace, exception/interrupt handling, and Spike/QEMU/kvmtool implementations. [Complete series and original links](/writing/).
 
 ## Technical Skills
 

@@ -20,7 +20,7 @@ Peer-reviewed work, unreviewed technical manuscripts, self-hosted preprints and 
 
 <div class="paper-anchor-box" id="ssg-technical-manuscript">
 <div class="paper-anchor-header"><span class="paper-anchor-title">System Substrate Graph: One Cross-Scale Representation of Workload, System, and Schedule for AI Computing</span><span class="badge amber">Technical manuscript · 2026</span></div>
-<div class="paper-meta">September technical manuscript Sep-V2.4.7, 13 pages. <strong>Not peer-reviewed.</strong> H20 and 8×A800 evidence belongs to that version, not later generalizations.</div>
+<div class="paper-meta"><strong>Author:</strong> Xiakai Pan · September technical manuscript Sep-V2.4.7, 13 pages. <strong>Not peer-reviewed.</strong> H20 and 8×A800 evidence belongs to that version, not later generalizations.</div>
 <div class="paper-actions"><a class="btn-pill primary" href="/assets/papers/ssg/v0.1/ssg-asplos27-v2.4.7.pdf">PDF</a><a class="btn-pill" href="/research/ssg/">Project and evidence</a></div>
 </div>
 

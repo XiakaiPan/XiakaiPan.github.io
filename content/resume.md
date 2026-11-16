@@ -33,7 +33,7 @@ Microarchitecture modeling, system-level performance exploration and compiler/ru
 NVDLA simulation and model integration.
 
 **PLCT Lab — RISC-V Virtualization Intern (Jul 2022–Jan 2023)**  
-KVM/QEMU/Spike virtualization; [published technical article](https://tinylab.org/riscv-kvm-mem-virt-impl/).
+KVM/QEMU/Spike virtualization; [ten published technical articles on RISC-V virtualization](/writing/).
 
 ## Education and Tools
 
