@@ -28,7 +28,7 @@ SSG studies how explicit **Compute, Memory, Communication (CMC)** structures rep
     <span class="badge">Technical manuscript · 2026 · not peer-reviewed</span>
   </div>
   <div class="paper-meta">
-    <strong>Authors:</strong> Xiakai Pan, Peichao Han<br>
+    <strong>Authors:</strong> Xiakai Pan, Chaohan Pei<br>
     <strong>Format:</strong> 14-page author edition: cover plus original 13-page ACM-format manuscript, unchanged.<br>
     <strong>Contributions:</strong> (1) paired Op and System hierarchies over shared Compute&ndash;Memory&ndash;Communication, bound by a Parallel &times; Pipeline schedule and materialized as Compute&ndash;Remap&ndash;Sync; (2) a Build / Traverse / Translate architecture that separates graph transformation from strategy mapping; (3) a three-group evaluation on H20 and 8&times;A800 that reports representation, legality, correctness, and measured performance as separate evidence states.
   </div>
@@ -131,7 +131,7 @@ Numbers reported in the September 2026 technical manuscript (&sect;5&ndash;7). T
 
 ## Full Paper and Versions
 
-**[Download the complete SSG Technical Report — Xiakai Pan and Peichao Han, Author Web Edition (PDF, 14 pages)](/assets/papers/ssg/author-2026-11/ssg-technical-report-2026-11.pdf).**
+**[Download the complete SSG Technical Report — Xiakai Pan and Chaohan Pei, Author Web Edition (PDF, 14 pages)](/assets/papers/ssg/author-2026-11/ssg-technical-report-2026-11.pdf).**
 
 The new first page identifies the author, without institutional affiliation; pages 2–14 preserve the original anonymous September 2026 technical manuscript unchanged. The additional cover is **not a revised experiment or a peer-reviewed publication**. The original 13-page anonymous PDF remains in the private source repository, rather than being shipped as a second public paper.
 
